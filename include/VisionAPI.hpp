@@ -2,12 +2,11 @@
 
 #include <array>
 #include <vector>
-#include <opencv4/opencv2/opencv.hpp>
+#include <opencv2/opencv.hpp>
 
 #include "./HumanDetector.hpp"
 #include "./PositionEstimator.hpp"
 #include "./Detection.hpp"
-// #include cv2
 
 class VisionAPI {
   private:
