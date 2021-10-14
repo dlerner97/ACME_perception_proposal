@@ -1,0 +1,6 @@
+#include <vector>
+#include <opencv4/opencv2/opencv.hpp>
+
+#include "../include/VisionAPI.hpp"
+
+std::vector<std::array<double, 3>> VisionAPI::get_xyz(cv::Mat orig_frame) {}
