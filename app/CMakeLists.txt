@@ -1,4 +1,4 @@
-add_executable(shell-app main.cpp)
+add_executable(shell-app main.cpp ParamParser.cpp)
 
 find_package(OpenCV REQUIRED)
 include_directories(${OpenCV_INCLUDE_DIRS})
