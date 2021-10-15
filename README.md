@@ -35,4 +35,4 @@ Since our vision system is hardware agnostic, one must simply edit the [robot_pa
 Many of these parameters are arbitrary since we do not have a physical robot to test. However, some are carefully selected to provide a realistic system. For example, while the distances between the camera and robot center are selected at random, the pitch is 90 deg. This is because robot "x" generally corresponds to a camera's "z." Additionally, the proposal specifies that the camera is "front-facing" and therefore, we prevent any roll or yaw from occuring. We believe that this is realistic in the real world as well since cameras are nearly always horizontal and front facing. However, the pitch can still be selected in case the user would like to change this parameter. If changing, please remember that the value must be 90 + *desired pitch* to account for the change in coordinate system.
 
 #### Visual of Camera Position
-![Camera Position visual](/visual_reps/Physical_Robot,jpg?raw=true "Camera Position")
+![Camera Position visual](/visual_reps/Physical_Robot.jpg?raw=true "Camera Position")
