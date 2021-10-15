@@ -1,0 +1,2 @@
+ROBOT_DIAMETER = 5 [cm]
+CAM2ROBOT_CENTER = 2 [mm]
