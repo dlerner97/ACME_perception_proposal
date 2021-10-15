@@ -2,6 +2,9 @@
 
 #include <array>
 #include <vector>
+#include <string>
+#include <unordered_map>
+#include <eigen3/Eigen/Dense>
 
 #include "Detection.hpp"
 
@@ -11,11 +14,28 @@ class PositionEstimator {
     double prob_threshold = 0;
     double avg_human_height = 0;
     bool human_detected = false;
-    std::array<std::array<double, 4>, 4> cam2robot_transform{};
+    Eigen::Matrix<double, 4, 4> cam2robot_transform{};
+
+  /**
+   * @brief Computes homogenous transform between robot center and camera
+   * 
+   * @param x change in x
+   * @param y change in y
+   * @param z change in z
+   * @param p change in pitch
+   * @result Changes the cam2robot_transform variable
+   */
+    void compute_transform_from_xyzp(double x, double y, double z, double p);
 
   public:
-    PositionEstimator(/* args */);
-    ~PositionEstimator();
+    PositionEstimator(const std::unordered_map<std::string, double>& robot_params) {
+      double x = robot_params.at("DX_CAM2ROBOT_CENTER");
+      double y = robot_params.at("DY_CAM2ROBOT_CENTER");
+      double z = robot_params.at("DZ_CAM2ROBOT_CENTER");
+      double pitch = robot_params.at("PITCH_CAM2ROBOT_CENTER");
+      compute_transform_from_xyzp(x, y, z, pitch);
+    }
+    // ~PositionEstimator();
 
     /**
      * @brief This function removes noise by discarding frames with low probability of human detection.
