@@ -1,5 +1,6 @@
 
 #include <iostream>
+#include <math.h>
 #include <cctype>
 #include <array>
 #include <vector>
@@ -81,15 +82,29 @@ double ParamParser::set_variable(const std::array<std::string, 3>& var) {
     
     bool name_found{false};
     for (const auto &expected_var : _var_list) {
-        std::cout << var[0] << ", " << expected_var.name << std::endl;
         if (var[0] == expected_var.name) {
             name_found = true;
+            std::string upon_error = "Unnacceptable unit: '" + var[2] + "'. " + var[0] + " should have units of ";
+            std::string upon_error_end = " Please fix the robot parameter text document.";
             if (expected_var.default_unit == "m") {
-                if (var[2] == "");
+                if (var[2] == "" || var[2] == "m");
                 else if (var[2] == "cm") out /= 100.0;
                 else if (var[2] == "mm") out /= 1000.0;
-                else throw std::runtime_error("Unnacceptable unit: '" + var[2] + "'. " + var[0] + " should have units of m, cm, or mm. Please fix the robot parameter text document.");
+                else throw std::runtime_error(upon_error + "m, cm, or mm." + upon_error_end);
+            } else if (expected_var.default_unit == "radians" || expected_var.default_unit == "rad") {
+                static const double PI = std::atan(1.0)*4;
+                if (var[2] == "" || var[2] == "rad" || var[2] == "rads" || var[2] == "radian" || var[2] == "radians");
+                else if (var[2] == "deg" || var[2] == "degs" || var[2] == "degrees" || var[2] == "degree") out *= PI/180;
+                else throw std::runtime_error(upon_error + "radians, rad, deg, or degrees." + upon_error_end);
+            } else if (expected_var.default_unit == "fraction" || expected_var.default_unit == "frac") {
+                if (var[2] == "fraction" || var[2] == "frac");
+                else if (var[2] == "per" || var[2] == "percent" || var[2] == "%") out /= 100.0;
+                else throw std::runtime_error(upon_error + "fraction, percent, or %." + upon_error_end);
+            } else if (expected_var.default_unit == "px" || expected_var.default_unit == "pixels") {
+                if (var[2] == "px" || var[2] == "pixels" || var[2] == "pixels");
+                else throw std::runtime_error(upon_error + "pixels or px." + upon_error_end);
             }
+            
             break;
         }
     }
@@ -104,7 +119,7 @@ std::unordered_map<std::string, double> ParamParser::parse_robot_params(std::str
     std::string line;
     if (infile) {
         while (getline(infile, line)) {
-            std::cout << '\n' << line << std::endl;
+            if (line.length() < 3) continue;
             auto variable = split_variable(line);
             robot_param_dict[variable[0]] = set_variable(variable);
         }
