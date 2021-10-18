@@ -9,8 +9,12 @@ In this proposal, we will develop a human obstacle detection prototype for mobil
 
 This repo contains coursework for the ENPM808X Midterm project. 
 
-### Required Libraries
-  1. OpenCV. Please install the OpenCV package as follows: (OpenCV Installation)[https://docs.opencv.org/3.4.15/d7/d9f/tutorial_linux_install.html]
+### Required Libraries and Software
+  1. **OpenCV**. Please install the OpenCV package using the following link: (OpenCV Installation)[https://docs.opencv.org/3.4.15/d7/d9f/tutorial_linux_install.html]
+  2. **Eigen**. This library should already be installed on a standard linux system.
+  3. **math**. This library should already be installed on a standard linux system.
+  4. **C++ std libs**. This library is certainly installed on a standard linux system.
+  5. **CMake**. This software should already be installed on a standard linux system.
 
 ### Visual Representations of Code
 The following Activity Diagram and UML's are jpg files and will not work well with zoom. See the [visual representation pdf](/visual_reps/activity_and_UML.drawio.pdf) for a higher quality image.
@@ -23,7 +27,7 @@ The following Activity Diagram and UML's are jpg files and will not work well wi
 
 ### Deliverables
 - QuadChart and Proposal is in Phase 0 folder
-- Activity diagram and UML can be found in the visual reps folder.
+- The most recent activity diagram and UML can be found in the visual reps folder.
 - Presentation (Slides) link: https://docs.google.com/presentation/d/1rxVNtMLtl6_6DkGCbjWONe4ORViMRBE8y-tto7cjHgU/edit?usp=sharing
 - Video link: https://drive.google.com/file/d/1ZpRo9nZlphS_IJwaAQhYeR1XUmBKe5Q5/view?usp=sharing
 
