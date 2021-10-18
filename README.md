@@ -33,11 +33,12 @@ The following Activity Diagram and UML's are jpg files and will not work well wi
 
 ### Input Robot Parameters
 Since our vision system is hardware agnostic, one must simply edit the [robot_params](/robot_params/robot_params.txt) text file to input their respective robot parameters. The robot parameters include: 
-- Full transform (in x, y, z, pitch, yaw) between the robot's center of mass (or any other desired model center). 
+- Partial transform (in x, y, z, pitch) between the robot's center of mass (or any other desired model center). 
 - Average height of humans in order to estimate the z-location of a detected human. [Source](https://www.worlddata.info/average-bodyheight.php).
 - The probability threshold for classification. Any image with a probability threshold less than this value will be considered noise and subsequently discarded. If the probability is larger than the threshold we will consider there to be a human in sight.
 - Image height and width. This parameter depends on the specific detection algorithm we will be using. 
 - Low and high alert thresholds. The robot should have different reactions to humans at different distances. If the distance < high_alert, the robot should stop. If the the high_alert < distance < low_alert, the robot should plan new path and if the human is further than the low alert, we should ignore them until they come within the given distances.
+- Camera matrix parameters.
     
 Many of these parameters are arbitrary since we do not have a physical robot to test. However, some are carefully selected to provide a realistic system. For example, while the distances between the camera and robot center are selected at random, the pitch is 90 deg. This is because robot "x" generally corresponds to a camera's "z." Additionally, the proposal specifies that the camera is "front-facing" and therefore, we prevent any roll or yaw from occuring. We believe that this is realistic in the real world as well since cameras are nearly always horizontal and front facing. However, the pitch can still be selected in case the user would like to change this parameter. If changing, please remember that the value must be 90 + *desired pitch* to account for the change in coordinate system.
 
