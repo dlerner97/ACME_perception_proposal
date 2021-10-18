@@ -1,7 +1,7 @@
 # ACME_perception_proposal
 [![Build Status](https://app.travis-ci.com/dlerner97/ACME_perception_proposal.svg?branch=position_estimator_test)](https://app.travis-ci.com/dlerner97/ACME_perception_proposal)
 [![Coverage Status](https://coveralls.io/repos/github/dlerner97/ACME_perception_proposal/badge.svg?branch=main)](https://coveralls.io/github/dlerner97/ACME_perception_proposal?branch=main)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)---
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 ### Authors
 
