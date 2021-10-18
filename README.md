@@ -3,6 +3,7 @@
 [![Coverage Status](https://coveralls.io/repos/github/dlerner97/ACME_perception_proposal/badge.svg?branch=main)](https://coveralls.io/github/dlerner97/ACME_perception_proposal?branch=main)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
+Please note that we are having issues setting up Travis-CI. The code does in fact build on our local machines despite the Travis build status.
 ### Authors
 
 - Dani Lerner (dlerner97)
@@ -16,11 +17,11 @@ This repo contains coursework for the ENPM808X Midterm project.
 
 ### Agile Iterative Process (AIP)
 
-Please see this link to find our (AIP implementation document)[https://docs.google.com/spreadsheets/d/1gBVo8C_xLlcH5OcivV810-puy338YpDrUkYAftgQPH4/edit?usp=sharing].
+Please see this link to find our [AIP implementation document](https://docs.google.com/spreadsheets/d/1gBVo8C_xLlcH5OcivV810-puy338YpDrUkYAftgQPH4/edit?usp=sharing).
 
 ### Required Libraries and Software
 
-  1. **OpenCV**. Please install the OpenCV package using the following link: (OpenCV Installation)[https://docs.opencv.org/3.4.15/d7/d9f/tutorial_linux_install.html]
+  1. **OpenCV**. Please install the OpenCV package using the following link: [OpenCV Installation](https://docs.opencv.org/3.4.15/d7/d9f/tutorial_linux_install.html)
   2. **Eigen**. This library should already be installed on a standard linux system.
   3. **math**. This library should already be installed on a standard linux system.
   4. **C++ std libs**. This library is certainly installed on a standard linux system.
@@ -42,8 +43,8 @@ The following Activity Diagram and UML's are jpg files and will not work well wi
 
 - QuadChart and Proposal is in Phase 0 folder
 - The most recent activity diagram and UML can be found in the visual reps folder.
-- Presentation (Slides) link: https://docs.google.com/presentation/d/1rxVNtMLtl6_6DkGCbjWONe4ORViMRBE8y-tto7cjHgU/edit?usp=sharing
-- Video link: https://drive.google.com/file/d/1ZpRo9nZlphS_IJwaAQhYeR1XUmBKe5Q5/view?usp=sharing
+- [Presentation Slides link:] (https://docs.google.com/presentation/d/1rxVNtMLtl6_6DkGCbjWONe4ORViMRBE8y-tto7cjHgU/edit?usp=sharing)
+- [Video link:] (https://drive.google.com/file/d/1ZpRo9nZlphS_IJwaAQhYeR1XUmBKe5Q5/view?usp=sharing)
 
 ### Input Robot Parameters
 
