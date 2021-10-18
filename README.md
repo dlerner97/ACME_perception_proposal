@@ -16,7 +16,7 @@ This repo contains coursework for the ENPM808X Midterm project.
 
 ### Midterm Phase 1 Deliverables
 
-- The most recent activity diagram and UML can be found in the [visual reps](/visual_reps) folder while the original UML can be found in the (Original UML)[/Original\ UML] folder.
+- The most recent activity diagram and UML can be found in the [visual reps](/visual_reps) folder while the original UML can be found in the (Original UML)[/Original UML] folder.
 
 ### Agile Iterative Process (AIP)
 
