@@ -43,8 +43,8 @@ The following Activity Diagram and UML's are jpg files and will not work well wi
 
 - QuadChart and Proposal is in Phase 0 folder
 - The most recent activity diagram and UML can be found in the visual reps folder.
-- [Presentation Slides link:] (https://docs.google.com/presentation/d/1rxVNtMLtl6_6DkGCbjWONe4ORViMRBE8y-tto7cjHgU/edit?usp=sharing)
-- [Video link:] (https://drive.google.com/file/d/1ZpRo9nZlphS_IJwaAQhYeR1XUmBKe5Q5/view?usp=sharing)
+- [Presentation Slides link:](https://docs.google.com/presentation/d/1rxVNtMLtl6_6DkGCbjWONe4ORViMRBE8y-tto7cjHgU/edit?usp=sharing)
+- [Video link:](https://drive.google.com/file/d/1ZpRo9nZlphS_IJwaAQhYeR1XUmBKe5Q5/view?usp=sharing)
 
 ### Input Robot Parameters
 
