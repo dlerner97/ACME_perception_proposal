@@ -1,0 +1,68 @@
+\hypertarget{class_human_detector}{}\section{Human\+Detector Class Reference}
+\label{class_human_detector}\index{Human\+Detector@{Human\+Detector}}
+
+
+{\ttfamily \#include $<$Human\+Detector.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_human_detector_a1b7551240bdbc20560aa8f2b6c9dedf4}{Human\+Detector} (const std\+::unordered\+\_\+map$<$ std\+::string, double $>$ \&robot\+\_\+params)
+\item 
+std\+::shared\+\_\+ptr$<$ cv\+::\+Mat $>$ \hyperlink{class_human_detector_abb95c995b5b11c93103484f0fc9027c5}{prep\+\_\+frame} (cv\+::\+Mat \&)
+\begin{DoxyCompactList}\small\item\em Prepares frame for human detection and NN input. \end{DoxyCompactList}\item 
+std\+::vector$<$ \hyperlink{struct_detection}{Detection} $>$ \hyperlink{class_human_detector_acd632914e98da1a05d80270b769cfdd3}{detect} (cv\+::\+Mat \&)
+\begin{DoxyCompactList}\small\item\em Detects humans in a given image. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_human_detector_a1b7551240bdbc20560aa8f2b6c9dedf4}\label{class_human_detector_a1b7551240bdbc20560aa8f2b6c9dedf4}} 
+\index{Human\+Detector@{Human\+Detector}!Human\+Detector@{Human\+Detector}}
+\index{Human\+Detector@{Human\+Detector}!Human\+Detector@{Human\+Detector}}
+\subsubsection{\texorpdfstring{Human\+Detector()}{HumanDetector()}}
+{\footnotesize\ttfamily Human\+Detector\+::\+Human\+Detector (\begin{DoxyParamCaption}\item[{const std\+::unordered\+\_\+map$<$ std\+::string, double $>$ \&}]{robot\+\_\+params }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_human_detector_acd632914e98da1a05d80270b769cfdd3}\label{class_human_detector_acd632914e98da1a05d80270b769cfdd3}} 
+\index{Human\+Detector@{Human\+Detector}!detect@{detect}}
+\index{detect@{detect}!Human\+Detector@{Human\+Detector}}
+\subsubsection{\texorpdfstring{detect()}{detect()}}
+{\footnotesize\ttfamily std\+::vector$<$\hyperlink{struct_detection}{Detection}$>$ Human\+Detector\+::detect (\begin{DoxyParamCaption}\item[{cv\+::\+Mat \&}]{ }\end{DoxyParamCaption})}
+
+
+
+Detects humans in a given image. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em prepped\+\_\+frame} & A pre-\/processed frame for NN input \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A detection obj for each human detected in frame. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_human_detector_abb95c995b5b11c93103484f0fc9027c5}\label{class_human_detector_abb95c995b5b11c93103484f0fc9027c5}} 
+\index{Human\+Detector@{Human\+Detector}!prep\+\_\+frame@{prep\+\_\+frame}}
+\index{prep\+\_\+frame@{prep\+\_\+frame}!Human\+Detector@{Human\+Detector}}
+\subsubsection{\texorpdfstring{prep\+\_\+frame()}{prep\_frame()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$cv\+::\+Mat$>$ Human\+Detector\+::prep\+\_\+frame (\begin{DoxyParamCaption}\item[{cv\+::\+Mat \&}]{ }\end{DoxyParamCaption})}
+
+
+
+Prepares frame for human detection and NN input. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em img} & description \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+shared pointer to the NN prepared frame 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/media/diane/\+My Passport/\+U\+M\+D Masters/\+Fall 2021/\+E\+N\+P\+M 808\+X/\+Assignments/\+Midterm/\+A\+C\+M\+E\+\_\+perception\+\_\+proposal/include/\hyperlink{_human_detector_8hpp}{Human\+Detector.\+hpp}\end{DoxyCompactItemize}

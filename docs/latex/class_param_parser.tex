@@ -1,0 +1,108 @@
+\hypertarget{class_param_parser}{}\section{Param\+Parser Class Reference}
+\label{class_param_parser}\index{Param\+Parser@{Param\+Parser}}
+
+
+{\ttfamily \#include $<$Param\+Parser.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_param_parser_a1acf0bbc9dd08f878c050d530e2407ce}{Param\+Parser} (const std\+::vector$<$ \hyperlink{struct_var}{Var} $>$ \&var\+\_\+list)
+\item 
+std\+::array$<$ std\+::string, 2 $>$ \hyperlink{class_param_parser_a93452e252390edc07934ea08f5dce351}{get\+\_\+unit} (const std\+::string \&line)
+\begin{DoxyCompactList}\small\item\em Extracts the unit from a string. \end{DoxyCompactList}\item 
+std\+::array$<$ std\+::string, 3 $>$ \hyperlink{class_param_parser_a4a57d55f9ccfa1e728763fd6ddc844f3}{split\+\_\+variable} (const std\+::string \&line)
+\begin{DoxyCompactList}\small\item\em Splits variable into name, value, unit. \end{DoxyCompactList}\item 
+double \hyperlink{class_param_parser_a2c0289b9e481c8aabd8f68a30d15d906}{set\+\_\+variable} (const std\+::array$<$ std\+::string, 3 $>$ \&var)
+\begin{DoxyCompactList}\small\item\em Uses the value and unit to determine true value for a given variable. \end{DoxyCompactList}\item 
+std\+::unordered\+\_\+map$<$ std\+::string, double $>$ \hyperlink{class_param_parser_ad55f29f701b36351486e4afb8a70b338}{parse\+\_\+robot\+\_\+params} (std\+::string file)
+\begin{DoxyCompactList}\small\item\em Parse robot parameter textfile. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_param_parser_a1acf0bbc9dd08f878c050d530e2407ce}\label{class_param_parser_a1acf0bbc9dd08f878c050d530e2407ce}} 
+\index{Param\+Parser@{Param\+Parser}!Param\+Parser@{Param\+Parser}}
+\index{Param\+Parser@{Param\+Parser}!Param\+Parser@{Param\+Parser}}
+\subsubsection{\texorpdfstring{Param\+Parser()}{ParamParser()}}
+{\footnotesize\ttfamily Param\+Parser\+::\+Param\+Parser (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \hyperlink{struct_var}{Var} $>$ \&}]{var\+\_\+list }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_param_parser_a93452e252390edc07934ea08f5dce351}\label{class_param_parser_a93452e252390edc07934ea08f5dce351}} 
+\index{Param\+Parser@{Param\+Parser}!get\+\_\+unit@{get\+\_\+unit}}
+\index{get\+\_\+unit@{get\+\_\+unit}!Param\+Parser@{Param\+Parser}}
+\subsubsection{\texorpdfstring{get\+\_\+unit()}{get\_unit()}}
+{\footnotesize\ttfamily std\+::array$<$std\+::string, 2$>$ Param\+Parser\+::get\+\_\+unit (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{line }\end{DoxyParamCaption})}
+
+
+
+Extracts the unit from a string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em line} & of text \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the unit specified and the rest of the text on that line 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_param_parser_ad55f29f701b36351486e4afb8a70b338}\label{class_param_parser_ad55f29f701b36351486e4afb8a70b338}} 
+\index{Param\+Parser@{Param\+Parser}!parse\+\_\+robot\+\_\+params@{parse\+\_\+robot\+\_\+params}}
+\index{parse\+\_\+robot\+\_\+params@{parse\+\_\+robot\+\_\+params}!Param\+Parser@{Param\+Parser}}
+\subsubsection{\texorpdfstring{parse\+\_\+robot\+\_\+params()}{parse\_robot\_params()}}
+{\footnotesize\ttfamily std\+::unordered\+\_\+map$<$std\+::string, double$>$ Param\+Parser\+::parse\+\_\+robot\+\_\+params (\begin{DoxyParamCaption}\item[{std\+::string}]{file }\end{DoxyParamCaption})}
+
+
+
+Parse robot parameter textfile. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & name and path of the robot parameter file \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a dictionary corresponding to each robot parameter and their corresponding values. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_param_parser_a2c0289b9e481c8aabd8f68a30d15d906}\label{class_param_parser_a2c0289b9e481c8aabd8f68a30d15d906}} 
+\index{Param\+Parser@{Param\+Parser}!set\+\_\+variable@{set\+\_\+variable}}
+\index{set\+\_\+variable@{set\+\_\+variable}!Param\+Parser@{Param\+Parser}}
+\subsubsection{\texorpdfstring{set\+\_\+variable()}{set\_variable()}}
+{\footnotesize\ttfamily double Param\+Parser\+::set\+\_\+variable (\begin{DoxyParamCaption}\item[{const std\+::array$<$ std\+::string, 3 $>$ \&}]{var }\end{DoxyParamCaption})}
+
+
+
+Uses the value and unit to determine true value for a given variable. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em var} & Variable information \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true variable value 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_param_parser_a4a57d55f9ccfa1e728763fd6ddc844f3}\label{class_param_parser_a4a57d55f9ccfa1e728763fd6ddc844f3}} 
+\index{Param\+Parser@{Param\+Parser}!split\+\_\+variable@{split\+\_\+variable}}
+\index{split\+\_\+variable@{split\+\_\+variable}!Param\+Parser@{Param\+Parser}}
+\subsubsection{\texorpdfstring{split\+\_\+variable()}{split\_variable()}}
+{\footnotesize\ttfamily std\+::array$<$std\+::string, 3$>$ Param\+Parser\+::split\+\_\+variable (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{line }\end{DoxyParamCaption})}
+
+
+
+Splits variable into name, value, unit. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em line} & of text \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an array of strings corresponding to name, value, unit 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/media/diane/\+My Passport/\+U\+M\+D Masters/\+Fall 2021/\+E\+N\+P\+M 808\+X/\+Assignments/\+Midterm/\+A\+C\+M\+E\+\_\+perception\+\_\+proposal/include/\hyperlink{_param_parser_8hpp}{Param\+Parser.\+hpp}\end{DoxyCompactItemize}
