@@ -12,8 +12,11 @@ Please note that we are having issues setting up Travis-CI. The code does in fac
 ### Information
 
 In this proposal, we will develop a human obstacle detection prototype for mobile robots.
-
 This repo contains coursework for the ENPM808X Midterm project. 
+
+### Midterm Phase 1 Deliverables
+
+- The most recent activity diagram and UML can be found in the [visual reps](/visual_reps) folder while the original UML can be found in the (Original UML)[/Original\ UML] folder.
 
 ### Agile Iterative Process (AIP)
 
@@ -38,13 +41,6 @@ The following Activity Diagram and UML's are jpg files and will not work well wi
 #### UML
 
 ![Original UML of the perception stack.](/visual_reps/UML.jpg?raw=true "UML")
-
-### Deliverables
-
-- QuadChart and Proposal is in Phase 0 folder
-- The most recent activity diagram and UML can be found in the visual reps folder.
-- [Presentation Slides link:](https://docs.google.com/presentation/d/1rxVNtMLtl6_6DkGCbjWONe4ORViMRBE8y-tto7cjHgU/edit?usp=sharing)
-- [Video link:](https://drive.google.com/file/d/1ZpRo9nZlphS_IJwaAQhYeR1XUmBKe5Q5/view?usp=sharing)
 
 ### Input Robot Parameters
 
