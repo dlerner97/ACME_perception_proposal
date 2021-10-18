@@ -14,6 +14,10 @@ In this proposal, we will develop a human obstacle detection prototype for mobil
 
 This repo contains coursework for the ENPM808X Midterm project. 
 
+### Agile Iterative Process (AIP)
+
+Please see this link to find our (AIP implementation document)[https://docs.google.com/spreadsheets/d/1gBVo8C_xLlcH5OcivV810-puy338YpDrUkYAftgQPH4/edit?usp=sharing].
+
 ### Required Libraries and Software
 
   1. **OpenCV**. Please install the OpenCV package using the following link: (OpenCV Installation)[https://docs.opencv.org/3.4.15/d7/d9f/tutorial_linux_install.html]
