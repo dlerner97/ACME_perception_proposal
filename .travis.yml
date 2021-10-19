@@ -24,6 +24,7 @@ before_install:
   - pip install --user cpp-coveralls
 install:
   - sudo apt-get install -y -qq lcov
+  - sudo apt install libeigen3-dev
   - sudo apt install libopencv-dev
 script:
   - export CXX=$COMPILER;
