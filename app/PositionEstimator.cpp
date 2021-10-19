@@ -30,11 +30,11 @@ bool PositionEstimator::threshold_frame(double probability) {
      return probability > prob_threshold;
 }
 
-double PositionEstimator::approximate_camera_z(Detection& detection) {
+double PositionEstimator::approximate_camera_z(const Detection& detection) {
      return avg_human_height*cam_focal_len*cam_pix_density/detection.height;
 }
 
-std::array<double, 3> PositionEstimator::estimate_xyz(Detection& detection) {
+std::array<double, 3> PositionEstimator::estimate_xyz(const Detection& detection) {
      auto camera_z = approximate_camera_z(detection);
      double middle_detection_x = detection.x + detection.width/2;
      double middle_detection_y = detection.y + detection.height/2;
@@ -49,4 +49,10 @@ std::array<double, 3> PositionEstimator::estimate_xyz(Detection& detection) {
      return std::array<double, 3>{rob_frame[0], rob_frame[1], rob_frame[2]};
 }
 
-std::vector<std::array<double, 3> > PositionEstimator::estimate_all_xyz(std::vector<Detection>& /* detections */) {return std::vector<std::array<double, 3> > {};}
+std::vector<std::array<double, 3> > PositionEstimator::estimate_all_xyz(const std::vector<Detection>& detections) {
+     std::vector<std::array<double, 3> > all_xyz{};
+     for (const auto& detection : detections)
+          all_xyz.push_back(estimate_xyz(detection));
+     
+     return all_xyz;
+}
