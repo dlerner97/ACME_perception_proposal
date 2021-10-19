@@ -12,9 +12,11 @@ class PositionEstimator {
   private:
     double NO_HUMAN_DETECTED = -1;
     double prob_threshold = 0;
-    double avg_human_height = 0;
+    double avg_human_height{};
+    double cam_focal_len{};
+    double cam_pix_density{};
+    std::array<double, 2> img_center{};
     Eigen::Matrix<double, 4, 4> cam2robot_transform{};
-    Eigen::Matrix<double, 3, 3> inv_camera_matrix{};
 
   /**
    * @brief Computes homogenous transform between robot center and camera
@@ -27,22 +29,14 @@ class PositionEstimator {
    */
     void compute_transform_from_xyzp(double x, double y, double z, double p);
 
-    /**
-     * @brief Compute camera matrix from parameters
-     * 
-     * @param f_x 
-     * @param f_y 
-     * @param s 
-     */
-    void compute_inv_camera_matrix(double f_x, double f_y, double s, double px, double py);
-
   public:
-    PositionEstimator(double x, double y, double z, 
-                      double pitch, double f_x, double f_y, double s, 
-                      double px, double py, double avg_height) {     
+    PositionEstimator(double x, double y, double z, double pitch, double f, double pix_density, 
+                      double img_w, double img_h, double avg_height) {     
       compute_transform_from_xyzp(x, y, z, pitch);
-      compute_inv_camera_matrix(f_x, f_y, s, px, py);
+      cam_focal_len = f;
+      cam_pix_density = pix_density;
       avg_human_height = avg_height;
+      img_center = {img_w/2.0, img_h/2.0};
     }
 
     PositionEstimator(const std::unordered_map<std::string, double>& robot_params) {
@@ -51,15 +45,14 @@ class PositionEstimator {
       double z = robot_params.at("DZ_CAM2ROBOT_CENTER");
       double pitch = robot_params.at("PITCH_CAM2ROBOT_CENTER");
       
-      double f_x = robot_params.at("CAM_FOCAL_LEN_X");
-      double f_y = robot_params.at("CAM_FOCAL_LEN_Y");
-      double s = robot_params.at("CAM_SKEW");
+      double f = robot_params.at("CAM_FOCAL_LEN");
+      double pix_density = robot_params.at("CAM_PIXEL_DENSITY");
       double avg_height = robot_params.at("AVG_HUMAN_HEIGHT");
 
       double img_w = robot_params.at("IMG_WIDTH_REQ");
       double img_h = robot_params.at("IMG_HEIGHT_REQ");
 
-      PositionEstimator(x, y, z, pitch, f_x, f_y, s, img_w/2, img_h/2, avg_height);
+      PositionEstimator(x, y, z, pitch, f, pix_density, img_w, img_h, avg_height);
     }
     // ~PositionEstimator();
 
@@ -102,15 +95,6 @@ class PositionEstimator {
      */
     const Eigen::Matrix<double, 4, 4>& get_cam2robot_transform() {
       return cam2robot_transform;
-    }
-
-    /**
-     * @brief Get the camera matrix object
-     * 
-     * @return const Eigen::Matrix<2, 2, double>&
-     */
-    const Eigen::Matrix<double, 3, 3>& get_inv_camera_matrix() {
-      return inv_camera_matrix;
     }
 };
 
