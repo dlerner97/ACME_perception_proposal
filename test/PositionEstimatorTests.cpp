@@ -41,14 +41,14 @@ TEST(PositionEstimatorTests, ApproximateZTest) {
   Detection detection;
   detection.height = 100;
 
-  std::vector<Var> params{{"DX_CAM2ROBOT_CENTER", "m"}, {"DZ_CAM2ROBOT_CENTER", "m"},
-                          {"DY_CAM2ROBOT_CENTER", "m"}, {"PITCH_CAM2ROBOT_CENTER", "rad"},
+  std::vector<Var> params{{"DX_CAM2ROBOT_CENTER", "m"}, {"DY_CAM2ROBOT_CENTER", "m"},
+                          {"DZ_CAM2ROBOT_CENTER", "m"}, {"PITCH_CAM2ROBOT_CENTER", "rad"},
                           {"CAM_FOCAL_LEN", "m"}, {"CAM_PIXEL_DENSITY", "ppm"},
                           {"AVG_HUMAN_HEIGHT", "m"}, {"DETECTION_PROBABILITY_THRESHOLD", "fraction"}, 
                           {"IMG_WIDTH_REQ", "px"}, {"IMG_HEIGHT_REQ", "px"}};
 
   ParamParser parser(params);
-  auto ret_params = parser.parse_robot_params("./robot_params_test.txt");
+  auto ret_params = parser.parse_robot_params("../test/robot_params_test.txt");
   PositionEstimator testimator(ret_params);
   auto result = testimator.approximate_camera_z(detection);
   EXPECT_NEAR(result, 1, .01);
@@ -68,7 +68,7 @@ TEST(PositionEstimatorTests, EstimateXYZTest) {
                           {"IMG_WIDTH_REQ", "px"}, {"IMG_HEIGHT_REQ", "px"}};
 
   ParamParser parser(params);
-  auto ret_params = parser.parse_robot_params("./robot_params_test.txt");
+  auto ret_params = parser.parse_robot_params("../test/robot_params_test.txt");
   PositionEstimator testimator(ret_params);
   auto result = testimator.estimate_xyz(detection);
   
@@ -100,7 +100,7 @@ TEST(PositionEstimatorTests, EstimateAllXYZTest) {
                           {"IMG_WIDTH_REQ", "px"}, {"IMG_HEIGHT_REQ", "px"}};
 
   ParamParser parser(params);
-  auto ret_params = parser.parse_robot_params("./robot_params_test.txt");
+  auto ret_params = parser.parse_robot_params("../test/robot_params_test.txt");
   PositionEstimator testimator(ret_params);
   auto result = testimator.estimate_all_xyz(all_detections);
   
