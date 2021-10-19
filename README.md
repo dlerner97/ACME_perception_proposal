@@ -29,39 +29,40 @@ This repo contains coursework for the ENPM808X Midterm project.
 ### Running the code
 To run the code, open a terminal and follow these steps:
 
-  1. Clone the repo.
-    FOR HTTPS CLONES:
-    
-    ```bash
-    git clone https://github.com/dlerner97/ACME_perception_proposal.git
-    ```
+1. Clone the repo.
+  FOR HTTPS CLONES:
 
-    FOR SSH CLONES:
-    
-    ```bash
-    git clone git@github.com:dlerner97/ACME_perception_proposal.git
-    ```
+```bash
+git clone https://github.com/dlerner97/ACME_perception_proposal.git
+```
 
-  2. Build the repo.
+  FOR SSH CLONES:
 
-    ```bash
-    cd <absolute path>/ACME_perception_proposal
-    mkdir build && cd build
-    cmake ..
-    make
-    ```
+```bash
+git clone git@github.com:dlerner97/ACME_perception_proposal.git
+```
 
-  3. To run the main script,
+2. Build the repo.
 
-    ```bash
-    ./app/shell-app
-    ```
+```bash
+cd <absolute path>/ACME_perception_proposal
+mkdir build && cd build
+cmake ..
+make
+```
 
-  4. To run the tests,
+3. To run the main script,
 
-    ```bash
-    ./test/cpp-test
-    ```
+```bash
+./app/shell-app
+```
+
+4. To run the tests,
+
+```bash
+./test/cpp-test
+```
+
 ### Agile Iterative Process (AIP)
 
 Please see this link to find our [AIP implementation document](https://docs.google.com/spreadsheets/d/1gBVo8C_xLlcH5OcivV810-puy338YpDrUkYAftgQPH4/edit?usp=sharing).
