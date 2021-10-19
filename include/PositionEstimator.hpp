@@ -19,6 +19,25 @@ class PositionEstimator {
     Eigen::Matrix<double, 4, 4> cam2robot_transform{};
 
   /**
+   * @brief This method sets all instance variables to avoid repeated code in constructors.
+   * 
+   * @param x 
+   * @param y 
+   * @param z 
+   * @param pitch 
+   * @param f 
+   * @param pix_density 
+   * @param img_w 
+   * @param img_h 
+   * @param threshold 
+   * @param avg_height 
+   * 
+   * @result Input instance vars should be defined.
+   */
+  void set_values(double x, double y, double z, double pitch, double f, double pix_density, 
+                  double img_w, double img_h, double threshold, double avg_height);
+
+  /**
    * @brief Computes homogenous transform between robot center and camera
    * 
    * @param x change in x
@@ -32,12 +51,7 @@ class PositionEstimator {
   public:
     PositionEstimator(double x, double y, double z, double pitch, double f, double pix_density, 
                       double img_w, double img_h, double threshold, double avg_height) {     
-      compute_transform_from_xyzp(x, y, z, pitch);
-      cam_focal_len = f;
-      cam_pix_density = pix_density;
-      avg_human_height = avg_height;
-      img_center = {img_w/2.0, img_h/2.0};
-      prob_threshold = threshold;
+      set_values(x, y, z, pitch, f, pix_density, img_w, img_h, threshold, avg_height);
     }
 
     PositionEstimator(const std::unordered_map<std::string, double>& robot_params) {
@@ -55,7 +69,7 @@ class PositionEstimator {
       double img_w = robot_params.at("IMG_WIDTH_REQ");
       double img_h = robot_params.at("IMG_HEIGHT_REQ");
 
-      PositionEstimator(x, y, z, pitch, f, pix_density, img_w, img_h, threshold, avg_height);
+      set_values(x, y, z, pitch, f, pix_density, img_w, img_h, threshold, avg_height);
     }
     // ~PositionEstimator();
 
