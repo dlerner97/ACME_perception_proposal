@@ -1,9 +1,8 @@
 # ACME_perception_proposal
-[![Build Status](https://app.travis-ci.com/dlerner97/ACME_perception_proposal.svg?branch=position_estimator_test)](https://app.travis-ci.com/dlerner97/ACME_perception_proposal)
-[![Coverage Status](https://coveralls.io/repos/github/dlerner97/ACME_perception_proposal/badge.svg?branch=main)](https://coveralls.io/github/dlerner97/ACME_perception_proposal?branch=main)
+[![Build Status](https://app.travis-ci.com/dlerner97/ACME_perception_proposal.svg?branch=dev)](https://app.travis-ci.com/dlerner97/ACME_perception_proposal)
+[![Coverage Status](https://coveralls.io/repos/github/dlerner97/ACME_perception_proposal/badge.svg?branch=main)](https://coveralls.io/github/dlerner97/ACME_perception_proposal?branch=dev)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
-Please note that we are having issues setting up Travis-CI. The code does in fact build on our local machines despite the Travis build status.
 ### Authors
 
 - Dani Lerner (dlerner97)
@@ -95,3 +94,26 @@ Many of these parameters are arbitrary since we do not have a physical robot to 
 #### Visual of Camera Position
 
 ![Camera Position visual](/visual_reps/Physical_Robot.jpg?raw=true "Camera Position")
+
+### Position Estimation Methods
+In this section, we will briefly describe our world frame position estimation methods. We will start with a diagram and equations we used to derive the equations and will then solve one of the cases we used in our position estimation unit tests. Note that the actual code in the PositionEstimation class uses matrix multiplication to solve the camera to robot transform.
+
+The pinhole model of a camera can be seen below and this simplification gives us the following derivations.
+
+![Pinhole Model](/visual_reps/position_estimation-CDE.drawio.png?raw=true "Pinhole Model") 
+---
+<img src="/visual_reps/LaTex_Imgs/deriving_camera_z_eq0.png" width="200">
+<img src="/visual_reps/LaTex_Imgs/deriving_camera_z_eq.png" width="600">
+<img src="/visual_reps/LaTex_Imgs/deriving_camera_xy.png" width="800">
+---
+
+We will now use these derivation to solve one of the unit test scenarios.
+
+![Unit Test Scenario](/visual_reps/position_estimation-scenario.drawio.png?raw=true "Unit Test Scenario")
+---
+<img src="/visual_reps/LaTex_Imgs/z_camera.png" width="400">
+<img src="/visual_reps/LaTex_Imgs/x_camera.png" width="600">
+<img src="/visual_reps/LaTex_Imgs/y_robot.png" width="600">
+<img src="/visual_reps/LaTex_Imgs/x_robot.png" width="300">
+<img src="/visual_reps/LaTex_Imgs/z_robot.png" width="300">
+---

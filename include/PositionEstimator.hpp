@@ -19,6 +19,25 @@ class PositionEstimator {
     Eigen::Matrix<double, 4, 4> cam2robot_transform{};
 
   /**
+   * @brief This method sets all instance variables to avoid repeated code in constructors.
+   * 
+   * @param x 
+   * @param y 
+   * @param z 
+   * @param pitch 
+   * @param f 
+   * @param pix_density 
+   * @param img_w 
+   * @param img_h 
+   * @param threshold 
+   * @param avg_height 
+   * 
+   * @result Input instance vars should be defined.
+   */
+  void set_values(double x, double y, double z, double pitch, double f, double pix_density, 
+                  double img_w, double img_h, double threshold, double avg_height);
+
+  /**
    * @brief Computes homogenous transform between robot center and camera
    * 
    * @param x change in x
@@ -31,12 +50,8 @@ class PositionEstimator {
 
   public:
     PositionEstimator(double x, double y, double z, double pitch, double f, double pix_density, 
-                      double img_w, double img_h, double avg_height) {     
-      compute_transform_from_xyzp(x, y, z, pitch);
-      cam_focal_len = f;
-      cam_pix_density = pix_density;
-      avg_human_height = avg_height;
-      img_center = {img_w/2.0, img_h/2.0};
+                      double img_w, double img_h, double threshold, double avg_height) {     
+      set_values(x, y, z, pitch, f, pix_density, img_w, img_h, threshold, avg_height);
     }
 
     PositionEstimator(const std::unordered_map<std::string, double>& robot_params) {
@@ -47,12 +62,14 @@ class PositionEstimator {
       
       double f = robot_params.at("CAM_FOCAL_LEN");
       double pix_density = robot_params.at("CAM_PIXEL_DENSITY");
+      
       double avg_height = robot_params.at("AVG_HUMAN_HEIGHT");
+      double threshold = robot_params.at("DETECTION_PROBABILITY_THRESHOLD");
 
       double img_w = robot_params.at("IMG_WIDTH_REQ");
       double img_h = robot_params.at("IMG_HEIGHT_REQ");
 
-      PositionEstimator(x, y, z, pitch, f, pix_density, img_w, img_h, avg_height);
+      set_values(x, y, z, pitch, f, pix_density, img_w, img_h, threshold, avg_height);
     }
     // ~PositionEstimator();
 
@@ -70,7 +87,7 @@ class PositionEstimator {
      * @param detection Detection obj
      * @return approximate depth of human in camera frame UNIT: [m] 
      */
-    double approximate_camera_z(Detection& detection);
+    double approximate_camera_z(const Detection& detection);
 
     /**
      * @brief This method estimates the xyz position of a SINGLE detected human in the WORLD frame.
@@ -78,7 +95,7 @@ class PositionEstimator {
      * @param detection Detection obj
      * @return std::array<double, 3>: x, y, z position of a single human.
      */
-    std::array<double, 3> estimate_xyz(Detection&);
+    std::array<double, 3> estimate_xyz(const Detection&);
 
     /**
      * @brief  This method estimates the xyz position of EACH detected human in the WORLD frame.
@@ -86,7 +103,7 @@ class PositionEstimator {
      * @param detections vector of Detection objs
      * @return std::vector<std::array<double, 3>>: x, y, z position of EACH human in ROBOT frame UNIT: [m]
      */
-    std::vector<std::array<double, 3>> estimate_all_xyz(std::vector<Detection>& detection);
+    std::vector<std::array<double, 3>> estimate_all_xyz(const std::vector<Detection>& detection);
 
     /**
      * @brief Get the cam2robot transform object
