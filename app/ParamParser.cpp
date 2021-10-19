@@ -127,6 +127,7 @@ std::unordered_map<std::string, double> ParamParser::parse_robot_params(std::str
             auto variable = split_variable(line);
             robot_param_dict[variable[0]] = set_variable(variable);
         }
-    }
+    } else
+        throw std::runtime_error("Cannot find robot params file.");
     return robot_param_dict;   
 }
