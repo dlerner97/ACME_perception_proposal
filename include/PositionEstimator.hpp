@@ -87,7 +87,7 @@ class PositionEstimator {
      * @param detection Detection obj
      * @return approximate depth of human in camera frame UNIT: [m] 
      */
-    double approximate_camera_z(Detection& detection);
+    double approximate_camera_z(const Detection& detection);
 
     /**
      * @brief This method estimates the xyz position of a SINGLE detected human in the WORLD frame.
@@ -95,7 +95,7 @@ class PositionEstimator {
      * @param detection Detection obj
      * @return std::array<double, 3>: x, y, z position of a single human.
      */
-    std::array<double, 3> estimate_xyz(Detection&);
+    std::array<double, 3> estimate_xyz(const Detection&);
 
     /**
      * @brief  This method estimates the xyz position of EACH detected human in the WORLD frame.
@@ -103,7 +103,7 @@ class PositionEstimator {
      * @param detections vector of Detection objs
      * @return std::vector<std::array<double, 3>>: x, y, z position of EACH human in ROBOT frame UNIT: [m]
      */
-    std::vector<std::array<double, 3>> estimate_all_xyz(std::vector<Detection>& detection);
+    std::vector<std::array<double, 3>> estimate_all_xyz(const std::vector<Detection>& detection);
 
     /**
      * @brief Get the cam2robot transform object
