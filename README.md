@@ -112,6 +112,7 @@ We will now use these derivation to solve one of the unit test scenarios.
 
 ![Unit Test Scenario](/visual_reps/position_estimation-scenario.drawio.png?raw=true "Unit Test Scenario")
 ---
+$$z_{camera}=\frac{l_{obj}*f*px\_density}{detection.height}=\frac{2*.05*1000}{100}=1\ m$$
 <img src="/visual_reps/LaTex_Imgs/z_camera.png" width="400">
 <img src="/visual_reps/LaTex_Imgs/x_camera.png" width="600">
 <img src="/visual_reps/LaTex_Imgs/y_robot.png" width="600">
