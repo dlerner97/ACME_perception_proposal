@@ -100,13 +100,16 @@ Many of these parameters are arbitrary since we do not have a physical robot to 
 In this section, we will briefly describe our world frame position estimation methods. We will start with a diagram and equations we used to derive the equations and will then solve one of the cases we used in our position estimation unit tests. Note that the actual code in the PositionEstimation class uses matrix multiplication to solve the camera to robot transform.
 
 The pinhole model of a camera can be seen below and this simplification gives us the following derivations.
-![Pinhole Model](/visual_reps/position_estimation-CDE.drawio.png?raw=true "Pinhole Model") <img src="/visual_reps/LaTex_Imgs/deriving_camera_z_eq0.png" width="300"><img src="/visual_reps/LaTex_Imgs/deriving_camera_z_eq.png" width="500"><img src="/visual_reps/LaTex_Imgs/deriving_camera_xy.png" width="500">
-
+![Pinhole Model](/visual_reps/position_estimation-CDE.drawio.png?raw=true "Pinhole Model") 
+<img src="/visual_reps/LaTex_Imgs/deriving_camera_z_eq0.png" width="300">
+<img src="/visual_reps/LaTex_Imgs/deriving_camera_z_eq.png" width="700">
+<img src="/visual_reps/LaTex_Imgs/deriving_camera_xy.png" width="700">
+---
 We will now use these derivation to solve one of the unit test scenarios.
 
 ![Unit Test Scenario](/visual_reps/position_estimation-scenario.drawio.png?raw=true "Unit Test Scenario")
-<img src="/visual_reps/LaTex_Imgs/z_camera.png" width="500">
-<img src="/visual_reps/LaTex_Imgs/x_camera.png" width="500">
-<img src="/visual_reps/LaTex_Imgs/y_robot.png" width="500">
+<img src="/visual_reps/LaTex_Imgs/z_camera.png" width="400">
+<img src="/visual_reps/LaTex_Imgs/x_camera.png" width="700">
+<img src="/visual_reps/LaTex_Imgs/y_robot.png" width="700">
 <img src="/visual_reps/LaTex_Imgs/x_robot.png" width="300">
 <img src="/visual_reps/LaTex_Imgs/z_robot.png" width="300">
