@@ -105,7 +105,7 @@ TEST(PositionEstimatorTests, EstimateAllXYZTest) {
   auto result = testimator.estimate_all_xyz(all_detections);
   
   typedef std::array<double, 3> XYZ;
-  std::vector<XYZ> true_vals{{0.52, -0.1, -0.1 +.03}, {1.02, 0.2, .23}};
+  std::vector<XYZ> true_vals{{2.02, -0.4, 0.43}, {1.02, 0.2, -.17}};
   
   ASSERT_EQ(result.size(), std::vector<XYZ>::size_type{2});
   
