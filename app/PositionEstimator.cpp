@@ -5,6 +5,16 @@
 
 #include "../include/PositionEstimator.hpp"
 
+void PositionEstimator::set_values(double x, double y, double z, double pitch, double f, double pix_density, 
+                double img_w, double img_h, double threshold, double avg_height) {
+     compute_transform_from_xyzp(x, y, z, pitch);
+     cam_focal_len = f;
+     cam_pix_density = pix_density;
+     avg_human_height = avg_height;
+     img_center = {img_w/2.0, img_h/2.0};
+     prob_threshold = threshold;
+}
+
 void PositionEstimator::compute_transform_from_xyzp(double x, double y, double z, double p) {
     auto sin_p = sin(p);
     auto cos_p = cos(p);
@@ -19,7 +29,9 @@ bool PositionEstimator::threshold_frame(double probability) {
      return probability > prob_threshold;
 }
 
-double PositionEstimator::approximate_camera_z(Detection& /* detection */) {return 2.0;}
+double PositionEstimator::approximate_camera_z(Detection& detection) {
+     return avg_human_height*cam_focal_len*cam_pix_density/detection.height;
+}
 
 std::array<double, 3> PositionEstimator::estimate_xyz(Detection& /* detection */) {return std::array<double, 3>{};}
 
