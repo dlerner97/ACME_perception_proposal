@@ -30,6 +30,7 @@ This repo contains coursework for the ENPM808X Midterm project.
 To run the code, open a terminal and follow these steps:
 
 1. Clone the repo.
+
   FOR HTTPS CLONES:
 
 ```bash
