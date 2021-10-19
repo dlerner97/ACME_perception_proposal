@@ -106,7 +106,8 @@ The pinhole model of a camera can be seen below and this simplification gives us
 <img src="/visual_reps/LaTex_Imgs/deriving_camera_z_eq0.png" width="200">
 <img src="/visual_reps/LaTex_Imgs/deriving_camera_z_eq.png" width="600">
 <img src="/visual_reps/LaTex_Imgs/deriving_camera_xy.png" width="800">
----\
+---
+
 We will now use these derivation to solve one of the unit test scenarios.
 
 ![Unit Test Scenario](/visual_reps/position_estimation-scenario.drawio.png?raw=true "Unit Test Scenario")
