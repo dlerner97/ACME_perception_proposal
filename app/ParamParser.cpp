@@ -103,8 +103,12 @@ double ParamParser::set_variable(const std::array<std::string, 3>& var) {
             } else if (expected_var.default_unit == "px" || expected_var.default_unit == "pixels") {
                 if (var[2] == "px" || var[2] == "pixels" || var[2] == "pixels");
                 else throw std::runtime_error(upon_error + "pixels or px." + upon_error_end);
+            } else if (expected_var.default_unit == "ppm") {
+                if (var[2] == "ppm");
+                else if (var[2] == "ppi") out *= 1000/25.4;
+                else if (var[2] == "ppmm") out *= 1000;
+                else throw std::runtime_error(upon_error + "ppi, ppmm or ppm (i.e. pixels per inch, mm, or meter)." + upon_error_end);
             }
-            
             break;
         }
     }
