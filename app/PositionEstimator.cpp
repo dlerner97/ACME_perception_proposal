@@ -15,7 +15,7 @@ void PositionEstimator::compute_transform_from_xyzp(double x, double y, double z
                                 0, 0,     0, 1;
 }
 
-void PositionEstimator::threshold_frame(double /* probability */) {}
+bool PositionEstimator::threshold_frame(double /* probability */) {return true;}
 
 double PositionEstimator::approximate_camera_z(Detection& /* detection */) {return 2.0;}
 

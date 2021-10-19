@@ -1,0 +1,48 @@
+\hypertarget{class_vision_a_p_i}{}\section{Vision\+A\+PI Class Reference}
+\label{class_vision_a_p_i}\index{Vision\+A\+PI@{Vision\+A\+PI}}
+
+
+{\ttfamily \#include $<$Vision\+A\+P\+I.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_vision_a_p_i_a1ebc6d928618773c2fa97e2e593afaa4}{Vision\+A\+PI} (const std\+::unordered\+\_\+map$<$ std\+::string, double $>$ \&\+\_\+robot\+\_\+params)
+\item 
+std\+::vector$<$ std\+::array$<$ double, 3 $>$ $>$ \hyperlink{class_vision_a_p_i_a2abdb5d06b3c66789a970d541a44f55e}{get\+\_\+xyz} (cv\+::\+Mat)
+\begin{DoxyCompactList}\small\item\em This method takes an image, finds all people within the image, and outputs the estimated postions in the R\+O\+B\+OT frame. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_vision_a_p_i_a1ebc6d928618773c2fa97e2e593afaa4}\label{class_vision_a_p_i_a1ebc6d928618773c2fa97e2e593afaa4}} 
+\index{Vision\+A\+PI@{Vision\+A\+PI}!Vision\+A\+PI@{Vision\+A\+PI}}
+\index{Vision\+A\+PI@{Vision\+A\+PI}!Vision\+A\+PI@{Vision\+A\+PI}}
+\subsubsection{\texorpdfstring{Vision\+A\+P\+I()}{VisionAPI()}}
+{\footnotesize\ttfamily Vision\+A\+P\+I\+::\+Vision\+A\+PI (\begin{DoxyParamCaption}\item[{const std\+::unordered\+\_\+map$<$ std\+::string, double $>$ \&}]{\+\_\+robot\+\_\+params }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_vision_a_p_i_a2abdb5d06b3c66789a970d541a44f55e}\label{class_vision_a_p_i_a2abdb5d06b3c66789a970d541a44f55e}} 
+\index{Vision\+A\+PI@{Vision\+A\+PI}!get\+\_\+xyz@{get\+\_\+xyz}}
+\index{get\+\_\+xyz@{get\+\_\+xyz}!Vision\+A\+PI@{Vision\+A\+PI}}
+\subsubsection{\texorpdfstring{get\+\_\+xyz()}{get\_xyz()}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::array$<$double, 3$>$ $>$ Vision\+A\+P\+I\+::get\+\_\+xyz (\begin{DoxyParamCaption}\item[{cv\+::\+Mat}]{ }\end{DoxyParamCaption})}
+
+
+
+This method takes an image, finds all people within the image, and outputs the estimated postions in the R\+O\+B\+OT frame. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em img} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+All estimated x, y, z positions of people in a given image. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/media/diane/\+My Passport/\+U\+M\+D Masters/\+Fall 2021/\+E\+N\+P\+M 808\+X/\+Assignments/\+Midterm/\+A\+C\+M\+E\+\_\+perception\+\_\+proposal/include/\hyperlink{_vision_a_p_i_8hpp}{Vision\+A\+P\+I.\+hpp}\end{DoxyCompactItemize}
