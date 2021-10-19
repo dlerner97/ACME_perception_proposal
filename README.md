@@ -31,16 +31,19 @@ To run the code, open a terminal and follow these steps:
 
   1. Clone the repo.
     FOR HTTPS CLONES:
+    
     ```bash
     git clone https://github.com/dlerner97/ACME_perception_proposal.git
     ```
 
     FOR SSH CLONES:
+    
     ```bash
     git clone git@github.com:dlerner97/ACME_perception_proposal.git
     ```
 
   2. Build the repo.
+
     ```bash
     cd <absolute path>/ACME_perception_proposal
     mkdir build && cd build
@@ -49,11 +52,13 @@ To run the code, open a terminal and follow these steps:
     ```
 
   3. To run the main script,
+
     ```bash
     ./app/shell-app
     ```
 
   4. To run the tests,
+
     ```bash
     ./test/cpp-test
     ```
