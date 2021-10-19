@@ -15,7 +15,7 @@ TEST(PositionEstimatorTests, MissingRobotParamsTest) {
 
 TEST(PositionEstimatorTests, BuildRobot2HumanTransformTest) {
   const double PI = std::atan(1.0)*4;
-  PositionEstimator testimator(2.3, 5, 2.3, 90*PI/180.0, 0, 0, 0, 0, 0);
+  PositionEstimator testimator(2.3, 5, 2.3, 90*PI/180.0, 0, 0, 0, 0, 0, 0);
   Eigen::Matrix<double, 4, 4> test_matrix;
   test_matrix <<  0, 0, 1, 2.3,
                   0, 1, 0,   5,
@@ -23,7 +23,7 @@ TEST(PositionEstimatorTests, BuildRobot2HumanTransformTest) {
                   0, 0, 0,   1;
   EXPECT_TRUE(test_matrix.isApprox(testimator.get_cam2robot_transform()));
 
-  PositionEstimator testimator2(0, 0, -2.3, 0*PI/180.0, 0, 0, 0, 0, 0);
+  PositionEstimator testimator2(0, 0, -2.3, 0*PI/180.0, 0, 0, 0, 0, 0, 0);
   test_matrix << 1, 0, 0,    0,
                  0, 1, 0,    0,
                  0, 0, 1, -2.3,
@@ -32,7 +32,7 @@ TEST(PositionEstimatorTests, BuildRobot2HumanTransformTest) {
 }
 
 TEST(PositionEstimatorTests, ThresholdFrameTest) {
-  PositionEstimator testimator(0, 0, 0, 0, 0, 0, 0, 0, 0);
+  PositionEstimator testimator(0, 0, 0, 0, 0, 0, 0, 0, 0.8, 0);
   EXPECT_TRUE(testimator.threshold_frame(0.9));
   EXPECT_FALSE(testimator.threshold_frame(0.7));
 }
