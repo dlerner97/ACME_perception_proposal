@@ -1,3 +1,4 @@
+#include <iostream>
 #include <math.h>
 #include <array>
 #include <vector>
@@ -33,6 +34,19 @@ double PositionEstimator::approximate_camera_z(Detection& detection) {
      return avg_human_height*cam_focal_len*cam_pix_density/detection.height;
 }
 
-std::array<double, 3> PositionEstimator::estimate_xyz(Detection& /* detection */) {return std::array<double, 3>{};}
+std::array<double, 3> PositionEstimator::estimate_xyz(Detection& detection) {
+     auto camera_z = approximate_camera_z(detection);
+     double middle_detection_x = detection.x + detection.width/2;
+     double middle_detection_y = detection.y + detection.height/2;
+
+     double camz_over_fxdensity = camera_z/(cam_focal_len*cam_pix_density);
+     double camera_x = (middle_detection_x - img_center[0])*camz_over_fxdensity;
+     double camera_y = (middle_detection_y - img_center[1])*camz_over_fxdensity;
+
+     Eigen::Vector4d camera_frame;
+     camera_frame << camera_x, camera_y, camera_z, 1;
+     auto rob_frame = cam2robot_transform*camera_frame;
+     return std::array<double, 3>{rob_frame[0], rob_frame[1], rob_frame[2]};
+}
 
 std::vector<std::array<double, 3> > PositionEstimator::estimate_all_xyz(std::vector<Detection>& /* detections */) {return std::vector<std::array<double, 3> > {};}
