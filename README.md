@@ -18,10 +18,6 @@ This repo contains coursework for the ENPM808X Midterm project.
 
 - The most recent activity diagram and UML can be found in the [visual reps](/visual_reps) folder while the original UML can be found in the [Original UML](/original_UML) folder.
 
-### Agile Iterative Process (AIP)
-
-Please see this link to find our [AIP implementation document](https://docs.google.com/spreadsheets/d/1gBVo8C_xLlcH5OcivV810-puy338YpDrUkYAftgQPH4/edit?usp=sharing).
-
 ### Required Libraries and Software
 
   1. **OpenCV**. Please install the OpenCV package using the following link: [OpenCV Installation](https://docs.opencv.org/3.4.15/d7/d9f/tutorial_linux_install.html)
@@ -29,6 +25,41 @@ Please see this link to find our [AIP implementation document](https://docs.goog
   3. **math**. This library should already be installed on a standard linux system.
   4. **C++ std libs**. This library is certainly installed on a standard linux system.
   5. **CMake**. This software should already be installed on a standard linux system.
+
+### Running the code
+To run the code, open a terminal and follow these steps:
+
+  1. Clone the repo.
+    FOR HTTPS CLONES:
+    ```bash
+    git clone https://github.com/dlerner97/ACME_perception_proposal.git
+    ```
+
+    FOR SSH CLONES:
+    ```bash
+    git clone git@github.com:dlerner97/ACME_perception_proposal.git
+    ```
+
+  2. Build the repo.
+    ```bash
+    cd <absolute path>/ACME_perception_proposal
+    mkdir build && cd build
+    cmake ..
+    make
+    ```
+
+  3. To run the main script,
+    ```bash
+    ./app/shell-app
+    ```
+
+  4. To run the tests,
+    ```bash
+    ./test/cpp-test
+    ```
+### Agile Iterative Process (AIP)
+
+Please see this link to find our [AIP implementation document](https://docs.google.com/spreadsheets/d/1gBVo8C_xLlcH5OcivV810-puy338YpDrUkYAftgQPH4/edit?usp=sharing).
 
 ### Visual Representations of Code
 
