@@ -118,4 +118,3 @@ We will now use these derivation to solve one of the unit test scenarios.
 <img src="/visual_reps/LaTex_Imgs/x_robot.png" width="300">
 <img src="/visual_reps/LaTex_Imgs/z_robot.png" width="300">
 ---
- 
