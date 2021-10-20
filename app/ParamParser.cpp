@@ -97,14 +97,14 @@ double ParamParser::set_variable(const std::array<std::string, 3>& var) {
                 else if (var[2] == "deg" || var[2] == "degs" || var[2] == "degrees" || var[2] == "degree") out *= PI/180;
                 else throw std::runtime_error(upon_error + "radians, rad, deg, or degrees." + upon_error_end);
             } else if (expected_var.default_unit == "fraction" || expected_var.default_unit == "frac") {
-                if (var[2] == "fraction" || var[2] == "frac");
+                if (var[2] == "" || var[2] == "fraction" || var[2] == "frac");
                 else if (var[2] == "per" || var[2] == "percent" || var[2] == "%") out /= 100.0;
                 else throw std::runtime_error(upon_error + "fraction, percent, or %." + upon_error_end);
             } else if (expected_var.default_unit == "px" || expected_var.default_unit == "pixels") {
-                if (var[2] == "px" || var[2] == "pixels" || var[2] == "pixels");
+                if (var[2] == "" || var[2] == "px" || var[2] == "pixels" || var[2] == "pixels");
                 else throw std::runtime_error(upon_error + "pixels or px." + upon_error_end);
             } else if (expected_var.default_unit == "ppm") {
-                if (var[2] == "ppm");
+                if (var[2] == "" || var[2] == "ppm");
                 else if (var[2] == "ppi") out *= 1000/25.4;
                 else if (var[2] == "ppmm") out *= 1000;
                 else throw std::runtime_error(upon_error + "ppi, ppmm or ppm (i.e. pixels per inch, mm, or meter)." + upon_error_end);
@@ -129,5 +129,6 @@ std::unordered_map<std::string, double> ParamParser::parse_robot_params(std::str
         }
     } else
         throw std::runtime_error("Cannot find robot params file.");
+    infile.close();
     return robot_param_dict;   
 }
