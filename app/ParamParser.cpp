@@ -41,8 +41,7 @@ std::array<std::string, 2> ParamParser::get_unit(const std::string &line) {
             return strs{std::string(unit_begin+1, unit_end), std::string(line.begin(), unit_begin)};
         else
             throw std::runtime_error("No end bracket provided. Please fix '" + line + "' line robot parameter text document.");
-    } else
-        std::cerr << "No unit provided. Assigning default unit." << std::endl;
+    }
     
     return strs{std::string(""), line};
 }
@@ -67,7 +66,9 @@ std::array<std::string, 3> ParamParser::split_variable(const std::string &line) 
         }
         ret[0] = line_vec[0];
         ret[1] = line_vec[1];
-    }
+    } else
+        ret[0] = "";
+
     return ret;
 }
 
@@ -75,7 +76,16 @@ double ParamParser::set_variable(const std::array<std::string, 3>& var) {
     
     double out{};
     try {
-        out = std::stod(var[1]);
+        std::size_t idx;
+        out = std::stod(var[1], &idx);
+        std::string remaining(var[1].begin()+idx, var[1].end());
+        for (const auto& chr : remaining) {
+            if (!isspace(chr)) throw std::invalid_argument("");
+        }
+
+        if (var[2] == "") 
+            std::cerr << "No unit provided. Assigning default unit." << std::endl;
+
     } catch (std::invalid_argument) {
         throw std::runtime_error("Conversion to double not working. Please fix the '" + var[0] + "' variable on robot parameter text document.");
     }
@@ -125,6 +135,10 @@ std::unordered_map<std::string, double> ParamParser::parse_robot_params(std::str
         while (getline(infile, line)) {
             if (line.length() < 3) continue;
             auto variable = split_variable(line);
+            if (variable[0] == "" || variable[1] == "") {
+                std::cerr << "Line doesn't follow correct structure. Assuming comment." << std::endl;
+                continue;
+            }
             robot_param_dict[variable[0]] = set_variable(variable);
         }
     } else
