@@ -48,7 +48,7 @@ TEST(PositionEstimatorTests, ApproximateZTest) {
                           {"IMG_WIDTH_REQ", "px"}, {"IMG_HEIGHT_REQ", "px"}};
 
   ParamParser parser(params);
-  auto ret_params = parser.parse_robot_params("../test/robot_params_test.txt");
+  auto ret_params = parser.parse_robot_params("../test/robot_params_textfiles/position_estimator_params_test.txt");
   PositionEstimator testimator(ret_params);
   auto result = testimator.approximate_camera_z(detection);
   EXPECT_NEAR(result, 1, .01);
@@ -68,7 +68,7 @@ TEST(PositionEstimatorTests, EstimateXYZTest) {
                           {"IMG_WIDTH_REQ", "px"}, {"IMG_HEIGHT_REQ", "px"}};
 
   ParamParser parser(params);
-  auto ret_params = parser.parse_robot_params("../test/robot_params_test.txt");
+  auto ret_params = parser.parse_robot_params("../test/robot_params_textfiles/position_estimator_params_test.txt");
   PositionEstimator testimator(ret_params);
   auto result = testimator.estimate_xyz(detection);
   
@@ -100,7 +100,7 @@ TEST(PositionEstimatorTests, EstimateAllXYZTest) {
                           {"IMG_WIDTH_REQ", "px"}, {"IMG_HEIGHT_REQ", "px"}};
 
   ParamParser parser(params);
-  auto ret_params = parser.parse_robot_params("../test/robot_params_test.txt");
+  auto ret_params = parser.parse_robot_params("../test/robot_params_textfiles/position_estimator_params_test.txt");
   PositionEstimator testimator(ret_params);
   auto result = testimator.estimate_all_xyz(all_detections);
   

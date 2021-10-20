@@ -1,0 +1,27 @@
+Any line without an "equals" sign is considered a comment.
+
+no_unit_m = 1
+m = 1 [m]
+mm = 1000 [mm]
+cm = 100 [cm]
+
+no_unit_rad = 3.14
+rad = 3.14[rad]
+radians = 3.14 [radians]
+deg = 180 [deg]
+degrees = 180 [degrees]
+
+no_unit_frac = .5
+fraction = .5 [fraction]
+frac = .5 [frac]
+percent_sign = 50 [%]
+percent = 50 [percent]
+
+no_unit_px = 10
+px = 10 [px]
+pixels = 10 [pixels]
+
+no_unit_ppm = 1000
+ppm = 1000 [ppm]
+ppi = 25.4 [ppi]
+ppmm = 1 [ppmm]

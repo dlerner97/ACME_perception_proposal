@@ -1,3 +1,5 @@
+Any line without an "equals" sign is considered a comment.
+
 DX_CAM2ROBOT_CENTER = 2 [cm]
 DY_CAM2ROBOT_CENTER = 0 [cm]
 DZ_CAM2ROBOT_CENTER = 3 [cm]

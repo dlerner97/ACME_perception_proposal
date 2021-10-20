@@ -4,6 +4,7 @@ add_executable(
     cpp-test
     main.cpp
     PositionEstimatorTests.cpp
+    ParamParserTests.cpp
     ../app/PositionEstimator.cpp
     ../app/ParamParser.cpp
 )
