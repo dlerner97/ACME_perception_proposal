@@ -11,11 +11,24 @@
 
 class HumanDetector {
   private:
+    /**
+     * @brief Necessary img dimension
+     * 
+     * @details width, height
+     */
     std::array<int, 2> img_dim{};
+    std::vector<std::string> detection_classes{};
+
+    // void populate_detection_classes(std::string coco_name_path);
+
   public:
-    HumanDetector(const std::unordered_map<std::string, double>& robot_params) {
+    HumanDetector(const std::unordered_map<std::string, double>& robot_params, const std::string& coco_name_path,
+                  const std::string& yolo_cfg_path, const std::string& yolo_weight_path) {
       img_dim[0] = robot_params.at("IMG_WIDTH_REQ");
       img_dim[1] = robot_params.at("IMG_HEIGHT_REQ");
+
+      // detection_classes = populate_detection_classes();
+
     }
     // ~HumanDetector();
 

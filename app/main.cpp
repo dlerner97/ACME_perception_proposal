@@ -2,14 +2,18 @@
 #include <vector>
 
 #include "../include/ParamParser.hpp"
-#include "../include/VisionAPI.hpp"
+#include "../include/HumanDetector.hpp"
+// #include "../include/VisionAPI.hpp"
 
 using std::cout;
 using std::endl;
 using std::vector;
 
-int main()
-{
+int main() {
+    std::string coco_name_path = "../robot_params/coco.names";
+    std::string yolo_cfg_path = "../robot_params/yolov4.cfg";
+    std::string yolo_weights_path = "../robot_params/yolov4.weights";
+
     vector<Var> params{{"DX_CAM2ROBOT_CENTER", "m"}, {"DZ_CAM2ROBOT_CENTER", "m"},
                        {"DY_CAM2ROBOT_CENTER", "m"}, {"PITCH_CAM2ROBOT_CENTER", "rad"},
                        {"CAM_FOCAL_LEN", "m"}, {"CAM_PIXEL_DENSITY", "ppm"},
@@ -19,9 +23,7 @@ int main()
 
     ParamParser parser(params);
     auto ret_params = parser.parse_robot_params("../robot_params/robot_params.txt");
-    for (const auto& param : ret_params) {
-        cout << param.first << ", " << param.second << endl;
-    }
-    VisionAPI vision_api(ret_params);
+    HumanDetector detector(ret_params, coco_name_path, yolo_cfg_path, yolo_weights_path);
+    // VisionAPI vision_api(ret_params);
     return 0;
 }
