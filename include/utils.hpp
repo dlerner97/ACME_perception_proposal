@@ -2,6 +2,22 @@
 
 #include <string>
 #include <vector>
+#include <stdexcept>
+
+/**
+ * @brief InvalidFile exception for parsers.
+ * 
+ */
+class InvalidFile : public std::exception {
+  private:
+    std::string msg;
+
+  public:
+    explicit InvalidFile(const std::string& message = "") : msg{message} {}
+	const char* what () const throw() {
+    	return msg.c_str();
+    }
+};
 
 /**
  * @brief Splits a string into a series of alpha-numeric words
@@ -12,13 +28,7 @@
  * @result Changes "out" container
  */
 template <typename Out>
-void split(const std::string &s, char delim, Out result) {
-    std::istringstream iss(s);
-    std::string item;
-    while (std::getline(iss, item, delim)) {
-        *result++ = item;
-    }
-}
+void split(const std::string &s, char delim, Out result);
 
 /**
  * @brief Splits string by the delimeter and returns a vector
@@ -27,8 +37,4 @@ void split(const std::string &s, char delim, Out result) {
  * @param delim 
  * @return std::vector<std::string> 
  */
-std::vector<std::string> split(const std::string &s, char delim=' ') {
-    std::vector<std::string> elems;
-    split(s, delim, std::back_inserter(elems));
-    return elems;
-}
+std::vector<std::string> split(const std::string &s, char delim=' ');
