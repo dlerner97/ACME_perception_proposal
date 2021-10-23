@@ -7,7 +7,7 @@ DY_CAM2ROBOT_CENTER = 0 [m]
 PITCH_CAM2ROBOT_CENTER = 90 [deg]
 
 // Camera variables
-CAM_FOCAL_LEN = 1000 [px]
+CAM_FOCAL_LEN = 50 [mm]
 CAM_PIXEL_DENSITY = 300 [ppi]
 
 // Human height assumption
