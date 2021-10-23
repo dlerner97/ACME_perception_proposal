@@ -2,8 +2,13 @@
 #include <vector>
 
 #include "../include/ParamParser.hpp"
+<<<<<<< HEAD
 #include "../include/HumanDetector.hpp"
 // #include "../include/VisionAPI.hpp"
+=======
+#include "../include/VisionAPI.hpp"
+#include "../include/LabelParser.hpp"
+>>>>>>> dev
 
 using std::cout;
 using std::endl;

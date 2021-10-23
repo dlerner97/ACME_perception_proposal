@@ -1,4 +1,12 @@
-add_executable(shell-app main.cpp ParamParser.cpp PositionEstimator.cpp VisionAPI.cpp HumanDetector.cpp)
+add_executable(shell-app
+               main.cpp
+               ParamParser.cpp
+               PositionEstimator.cpp
+               VisionAPI.cpp
+               HumanDetector.cpp
+               LabelParser.cpp
+               utils.cpp
+)
 
 find_package(OpenCV REQUIRED)
 include_directories(${OpenCV_INCLUDE_DIRS})

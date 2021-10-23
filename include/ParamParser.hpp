@@ -25,26 +25,6 @@ class ParamParser {
      */
     bool isnot_alnum(char c);
 
-    /**
-     * @brief Splits a string into a series of alpha-numeric words
-     * 
-     * @cite https://stackoverflow.com/questions/236129/how-do-i-iterate-over-the-words-of-a-string
-     * 
-     * @param input 
-     * @result Changes "out" container
-     */
-    template <typename Out>
-    void split(const std::string &s, char delim, Out result);
-
-    /**
-     * @brief Splits string by the delimeter and returns a vector
-     * 
-     * @param s 
-     * @param delim 
-     * @return std::vector<std::string> 
-     */
-    std::vector<std::string> split(const std::string &s, char delim);
-
 public:
     ParamParser(const std::vector<Var>& var_list): _var_list{var_list} {}
 

@@ -19,11 +19,12 @@ This repo contains coursework for the ENPM808X Midterm project.
 
 ### Required Libraries and Software
 
-  1. **OpenCV**. Please install the OpenCV package using the following link: [OpenCV Installation](https://docs.opencv.org/3.4.15/d7/d9f/tutorial_linux_install.html)
-  2. **Eigen**. This library should already be installed on a standard linux system.
-  3. **math**. This library should already be installed on a standard linux system.
-  4. **C++ std libs**. This library is certainly installed on a standard linux system.
-  5. **CMake**. This software should already be installed on a standard linux system.
+  1. **C++ Version C++17**. The "filesystem" library requires C++17.
+  2. **OpenCV**. Please install the OpenCV package using the following link: [OpenCV Installation](https://docs.opencv.org/3.4.15/d7/d9f/tutorial_linux_install.html)
+  3. **Eigen**. This library should already be installed on a standard linux system.
+  4. **math**. This library should already be installed on a standard linux system.
+  5. **C++ std libs**. This library is certainly installed on a standard linux system.
+  6. **CMake**. This software should already be installed on a standard linux system.
 
 ### Running the code
 To run the code, open a terminal and follow these steps:
