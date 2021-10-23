@@ -5,9 +5,10 @@ add_executable(
     main.cpp
     PositionEstimatorTests.cpp
     ParamParserTests.cpp
+    HumanDetectorTests.cpp
     ../app/PositionEstimator.cpp
     ../app/ParamParser.cpp
-)
+    )
 
 target_include_directories(cpp-test PUBLIC ../vendor/googletest/googletest/include 
                                            ${CMAKE_SOURCE_DIR}/include)
