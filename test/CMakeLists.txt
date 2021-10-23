@@ -5,6 +5,7 @@ add_executable(
     main.cpp
     PositionEstimatorTests.cpp
     ParamParserTests.cpp
+    HumanDetectorTests.cpp
     ../app/LabelParser.cpp
     ../app/PositionEstimator.cpp
     ../app/ParamParser.cpp
