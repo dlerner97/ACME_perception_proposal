@@ -9,9 +9,7 @@ class ManualImgLabeler:
 
     def __bool__(self):
         assert self.name != None
-        if os.path.exists(f"../labels/{self.name}.txt"):
-            return False
-        return True
+        return not os.path.exists(f"../labels/{self.name}.txt")
 
     def cutdown_name(self, path: str):
         name_ind = path.find("/")
