@@ -1,0 +1,10 @@
+1_302
+
+Detection
+top_left: [234, 23]
+bottom_right: [304, 260]
+
+Detection
+top_left: [193, 40]
+bottom_right: [263, 319]
+

@@ -1,0 +1,6 @@
+1_419
+
+Detection
+top_left: [301, 51]
+bottom_right: [372, 219]
+

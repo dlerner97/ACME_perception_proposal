@@ -1,0 +1,18 @@
+1_441
+
+Detection
+top_left: [84, 52]
+bottom_right: [189, 285]
+
+Detection
+top_left: [33, 35]
+bottom_right: [76, 77]
+
+Detection
+top_left: [97, 23]
+bottom_right: [128, 58]
+
+Detection
+top_left: [369, 20]
+bottom_right: [406, 134]
+
