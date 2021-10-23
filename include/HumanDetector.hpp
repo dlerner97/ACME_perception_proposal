@@ -9,6 +9,7 @@
 #include <memory>
 #include <unordered_map>
 #include <opencv2/opencv.hpp>
+#include <opencv2/core/core.hpp>
 #include <opencv2/dnn.hpp>
 #include <opencv2/imgproc.hpp>
 #include <opencv2/highgui.hpp>
@@ -23,7 +24,7 @@ class HumanDetector {
   private:
     /**
      * @brief Necessary img dimension
-     * 
+     *
      * @details width, height
      */
     std::array<int, 2> img_dim_{};
@@ -45,11 +46,11 @@ class HumanDetector {
 
     /**
      * @brief Prepares frame for human detection and NN input
-     * 
+     *
      * @param img description
      * @return shared pointer to the NN prepared frame
      */
-    std::shared_ptr<cv::Mat> prep_frame(cv::Mat&);
+    cv::Mat prep_frame(cv::Mat&);
 
     /**
      * @brief Detects humans in a given image.

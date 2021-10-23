@@ -1,8 +1,11 @@
 #include <math.h>
+#include <iostream>
 #include <vector>
 #include <gtest/gtest.h>
 #include <eigen3/Eigen/Dense>
 #include <opencv2/opencv.hpp>
+#include <opencv2/core/core.hpp>
+#include <opencv2/highgui.hpp>
 
 #include "../include/Detection.hpp"
 #include "../include/ParamParser.hpp"
@@ -33,13 +36,17 @@ TEST(HumanDetectorTests, CorrectFrameSizeTest) {
     ret_params["IMG_HEIGHT_REQ"] = 21.0;
     HumanDetector testimator(ret_params, coco_name_path, yolo_cfg_path, yolo_weights_path);
 
-    cv::Mat img = cv::imread("../dataset/0/0_0.png");
-    std::shared_ptr<cv::Mat> img_ptr = testimator.prep_frame(img);
-    int prep_frame_width = img_ptr -> cols;
-    int prep_frame_height = img_ptr -> rows;
+    cv::Mat img = cv::imread("/home/diane/ACME_perception_proposal/dataset/0/0_0.png");
+    cv::Mat img_ptr = testimator.prep_frame(img);
+    int prep_frame_width = img_ptr.cols;
+    int prep_frame_height = img_ptr.rows;
 
     ASSERT_EQ(13, prep_frame_width);
     ASSERT_EQ(21, prep_frame_height);
-
 }
 
+/**
+ * Create test that goes through all of the different images and run it through NN
+ * See upper left corner, width + height
+ * and see how accurate our human detector class is
+ */
