@@ -11,7 +11,6 @@ struct TestImage {
     cv::Mat img;
 };
 
-
 class LabelParser {
 //   private:
 
