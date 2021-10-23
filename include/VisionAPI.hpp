@@ -13,14 +13,14 @@
 class VisionAPI {
   private:
     const std::unordered_map<std::string, double>& robot_params;
-    HumanDetector detector;
+//    HumanDetector detector;
     PositionEstimator estimator;
     std::array<double, 2> alert_thresholds{};
 
   public:
     VisionAPI(const std::unordered_map<std::string, double>& _robot_params) : 
       robot_params{_robot_params},
-      detector(_robot_params),
+//      detector(_robot_params),
       estimator(_robot_params) {
         alert_thresholds[0] = robot_params.at("LOW_ALERT_THRESHOLD");
         alert_thresholds[1] = robot_params.at("HIGH_ALERT_THRESHOLD");
