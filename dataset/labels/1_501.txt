@@ -1,0 +1,22 @@
+1_501
+
+Detection
+top_left: [36, 213]
+bottom_right: [232, 378]
+
+Detection
+top_left: [332, 36]
+bottom_right: [414, 247]
+
+Detection
+top_left: [196, 62]
+bottom_right: [279, 136]
+
+Detection
+top_left: [72, 82]
+bottom_right: [263, 327]
+
+Detection
+top_left: [222, 44]
+bottom_right: [354, 400]
+
