@@ -1,5 +1,6 @@
 #include <math.h>
 #include <iostream>
+#include <string>
 #include <vector>
 #include <gtest/gtest.h>
 #include <eigen3/Eigen/Dense>
@@ -8,6 +9,7 @@
 #include <opencv2/highgui.hpp>
 
 #include "../include/Detection.hpp"
+#include "../include/LabelParser.hpp"
 #include "../include/ParamParser.hpp"
 #include "../include/HumanDetector.hpp"
 
@@ -45,8 +47,26 @@ TEST(HumanDetectorTests, CorrectFrameSizeTest) {
     ASSERT_EQ(21, prep_frame_height);
 }
 
-/**
- * Create test that goes through all of the different images and run it through NN
- * See upper left corner, width + height
- * and see how accurate our human detector class is
- */
+TEST(HumanDetectorTests, HumanDetectionAccuracyTest) {
+    /*
+     * Create test that goes through all of the different images and run it through NN
+     * See upper left corner, width + height
+     * and see how accurate our human detector class is
+     */
+    LabelParser label_parser;
+    auto labels = label_parser.read_labeled_test_images("../dataset/labels");
+    for (const auto& label : labels) {
+        std::vector<Detection> true_detections = label->all_detections;
+        std::string name = label->name;
+        cv::Mat img = label->img;
+
+        // Basically in this for loop, I go through every single label in the /dataset/label
+        // directory. This not only contains the list of all detections in a given image, it
+        // also contains the image itself. So all you have to do here is run the human detector
+        // (first the image preprocessing then the detection itself) using the "cv::Mat img" as input.
+        // The output of the human_detector.detect() should also be a list of detections.
+        // Therefore, compare the output detections of the detect() method to the true_detections I've
+        // defined above.
+    }
+}
+
