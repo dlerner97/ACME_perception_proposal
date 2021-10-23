@@ -56,9 +56,9 @@ TEST(HumanDetectorTests, HumanDetectionAccuracyTest) {
     LabelParser label_parser;
     auto labels = label_parser.read_labeled_test_images("../dataset/labels");
     for (const auto& label : labels) {
-        std::vector<Detection> true_detections = label->all_detections;
-        std::string name = label->name;
-        cv::Mat img = label->img;
+        const std::vector<Detection>& true_detections = label->all_detections;
+        const std::string& name = label->name;
+        const cv::Mat& img = label->img;
 
         // Basically in this for loop, I go through every single label in the /dataset/label
         // directory. This not only contains the list of all detections in a given image, it
