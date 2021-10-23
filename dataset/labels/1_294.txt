@@ -1,0 +1,6 @@
+1_294
+
+Detection
+top_left: [196, 22]
+bottom_right: [288, 366]
+

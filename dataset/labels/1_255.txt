@@ -1,0 +1,14 @@
+1_255
+
+Detection
+top_left: [195, 1]
+bottom_right: [264, 153]
+
+Detection
+top_left: [234, 39]
+bottom_right: [328, 381]
+
+Detection
+top_left: [301, 27]
+bottom_right: [386, 362]
+

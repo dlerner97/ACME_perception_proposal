@@ -1,0 +1,6 @@
+1_232
+
+Detection
+top_left: [156, 22]
+bottom_right: [319, 414]
+
