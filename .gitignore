@@ -10,3 +10,6 @@ build/
 
 # Python
 *.pyc
+
+.metadata/
+robot_params/yolov4.weights

@@ -1,4 +1,3 @@
-
 #include <iostream>
 #include <math.h>
 #include <cctype>
@@ -12,24 +11,10 @@
 #include <unordered_map>
 
 #include "../include/ParamParser.hpp"
+#include "../include/utils.hpp"
 
 bool ParamParser::isnot_alnum(char c) {
     return !std::isalnum(c);
-}
-
-template <typename Out>
-void ParamParser::split(const std::string &s, char delim, Out result) {
-    std::istringstream iss(s);
-    std::string item;
-    while (std::getline(iss, item, delim)) {
-        *result++ = item;
-    }
-}
-
-std::vector<std::string> ParamParser::split(const std::string &s, char delim=' ') {
-    std::vector<std::string> elems;
-    split(s, delim, std::back_inserter(elems));
-    return elems;
 }
 
 std::array<std::string, 2> ParamParser::get_unit(const std::string &line) {
@@ -40,7 +25,7 @@ std::array<std::string, 2> ParamParser::get_unit(const std::string &line) {
         if (unit_end != line.end())
             return strs{std::string(unit_begin+1, unit_end), std::string(line.begin(), unit_begin)};
         else
-            throw std::runtime_error("No end bracket provided. Please fix '" + line + "' line robot parameter text document.");
+            throw InvalidFile("No end bracket provided. Please fix '" + line + "' line robot parameter text document.");
     }
     
     return strs{std::string(""), line};
@@ -59,7 +44,7 @@ std::array<std::string, 3> ParamParser::split_variable(const std::string &line) 
         line_vec = split(line_no_unit, '=');
 
         if (line_vec.size() > 2) 
-            throw std::runtime_error("Multiple '=' signs on line. Please fix '" + line + "' line robot parameter text document.");
+            throw InvalidFile("Multiple '=' signs on line. Please fix '" + line + "' line robot parameter text document.");
 
         for (auto& val : line_vec) {
             val.erase(std::remove_if(val.begin(), val.end(), isspace), val.end());
@@ -86,8 +71,8 @@ double ParamParser::set_variable(const std::array<std::string, 3>& var) {
         if (var[2] == "") 
             std::cerr << "No unit provided. Assigning default unit." << std::endl;
 
-    } catch (std::invalid_argument) {
-        throw std::runtime_error("Conversion to double not working. Please fix the '" + var[0] + "' variable on robot parameter text document.");
+    } catch (std::invalid_argument const&) {
+        throw InvalidFile("Conversion to double not working. Please fix the '" + var[0] + "' variable on robot parameter text document.");
     }
     
     bool name_found{false};
@@ -100,29 +85,29 @@ double ParamParser::set_variable(const std::array<std::string, 3>& var) {
                 if (var[2] == "" || var[2] == "m");
                 else if (var[2] == "cm") out /= 100.0;
                 else if (var[2] == "mm") out /= 1000.0;
-                else throw std::runtime_error(upon_error + "m, cm, or mm." + upon_error_end);
+                else throw InvalidFile(upon_error + "m, cm, or mm." + upon_error_end);
             } else if (expected_var.default_unit == "radians" || expected_var.default_unit == "rad") {
                 static const double PI = std::atan(1.0)*4;
                 if (var[2] == "" || var[2] == "rad" || var[2] == "rads" || var[2] == "radian" || var[2] == "radians");
                 else if (var[2] == "deg" || var[2] == "degs" || var[2] == "degrees" || var[2] == "degree") out *= PI/180;
-                else throw std::runtime_error(upon_error + "radians, rad, deg, or degrees." + upon_error_end);
+                else throw InvalidFile(upon_error + "radians, rad, deg, or degrees." + upon_error_end);
             } else if (expected_var.default_unit == "fraction" || expected_var.default_unit == "frac") {
                 if (var[2] == "" || var[2] == "fraction" || var[2] == "frac");
                 else if (var[2] == "per" || var[2] == "percent" || var[2] == "%") out /= 100.0;
-                else throw std::runtime_error(upon_error + "fraction, percent, or %." + upon_error_end);
+                else throw InvalidFile(upon_error + "fraction, percent, or %." + upon_error_end);
             } else if (expected_var.default_unit == "px" || expected_var.default_unit == "pixels") {
                 if (var[2] == "" || var[2] == "px" || var[2] == "pixels" || var[2] == "pixels");
-                else throw std::runtime_error(upon_error + "pixels or px." + upon_error_end);
+                else throw InvalidFile(upon_error + "pixels or px." + upon_error_end);
             } else if (expected_var.default_unit == "ppm") {
                 if (var[2] == "" || var[2] == "ppm");
                 else if (var[2] == "ppi") out *= 1000/25.4;
                 else if (var[2] == "ppmm") out *= 1000;
-                else throw std::runtime_error(upon_error + "ppi, ppmm or ppm (i.e. pixels per inch, mm, or meter)." + upon_error_end);
+                else throw InvalidFile(upon_error + "ppi, ppmm or ppm (i.e. pixels per inch, mm, or meter)." + upon_error_end);
             }
             break;
         }
     }
-    if (!name_found) throw std::runtime_error("Cannot find '" + var[0] + "' in the expected robot parameters. Please update 'main.cpp' by adding the {'name', 'default_unit'} to the 'params' vector.");
+    if (!name_found) throw InvalidFile("Cannot find '" + var[0] + "' in the expected robot parameters. Please update 'main.cpp' by adding the {'name', 'default_unit'} to the 'params' vector.");
 
     return out;
 }
@@ -142,7 +127,7 @@ std::unordered_map<std::string, double> ParamParser::parse_robot_params(std::str
             robot_param_dict[variable[0]] = set_variable(variable);
         }
     } else
-        throw std::runtime_error("Cannot find robot params file.");
+        throw InvalidFile("Cannot find robot params file.");
     infile.close();
     return robot_param_dict;   
 }
