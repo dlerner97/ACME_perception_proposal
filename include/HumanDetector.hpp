@@ -14,11 +14,7 @@
 #include <opencv2/imgproc.hpp>
 #include <opencv2/highgui.hpp>
 
-
 #include "Detection.hpp"
-
-using namespace cv;
-using namespace dnn;
 
 class HumanDetector {
   private:
@@ -31,23 +27,18 @@ class HumanDetector {
     std::vector<std::string> detection_classes{};
 
     const std::string coco_path;
-    const std::string yolo_cfg_path;
-    const std::string yolo_weights_path;
+
+    cv::dnn::Net net;
 
     // void populate_detection_classes(std::string coco_name_path);
 
   public:
     HumanDetector(const std::unordered_map<std::string, double>& robot_params, const std::string& _coco_name_path,
                   const std::string& _yolo_cfg_path, const std::string& _yolo_weight_path) :
-                  coco_path{_coco_name_path}, yolo_cfg_path{_yolo_cfg_path}, yolo_weights_path{_yolo_weight_path} {
+                  net{cv::dnn::readNetFromDarknet(_yolo_cfg_path, _yolo_weight_path)} {
       img_dim_[0] = robot_params.at("IMG_WIDTH_REQ");
       img_dim_[1] = robot_params.at("IMG_HEIGHT_REQ");
-
-
-//      get_img_dims(img_dim_);
-
-      // detection_classes = populate_detection_classes();
-
+      net.setPreferableBackend(cv::dnn::DNN_TARGET_CPU);
     }
     // ~HumanDetector();
 
