@@ -6,6 +6,7 @@ add_executable(shell-app
                HumanDetector.cpp
                LabelParser.cpp
                utils.cpp
+               Detection.cpp
 )
 
 find_package(OpenCV REQUIRED)

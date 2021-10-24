@@ -10,6 +10,8 @@ add_executable(
     ../app/PositionEstimator.cpp
     ../app/ParamParser.cpp
     ../app/utils.cpp
+    ../app/Detection.cpp
+    ../app/HumanDetector.cpp
 )
 
 find_package(OpenCV REQUIRED)
