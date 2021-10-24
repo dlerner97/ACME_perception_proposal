@@ -2,12 +2,12 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include <filesystem>
 #include <gtest/gtest.h>
 #include <eigen3/Eigen/Dense>
 #include <opencv2/opencv.hpp>
 #include <opencv2/core/core.hpp>
 #include <opencv2/highgui.hpp>
+#include <boost/filesystem.hpp>
 
 #include "../include/Detection.hpp"
 #include "../include/LabelParser.hpp"
@@ -123,8 +123,8 @@ TEST(HumanDetectorTests, NoDetectionsPresentTest) {
     int num_detections = 0;
     int num_imgs = 0;
 
-    for (const auto& entry : std::filesystem::directory_iterator("../dataset/1")) {
-        auto img = cv::imread(entry.path());
+    for (const auto& entry : boost::filesystem::directory_iterator("../dataset/1")) {
+        auto img = cv::imread(entry.path().string());
         auto prepped_img = detector.prep_frame(img);
         auto results = detector.detect(*prepped_img);
         if (results.size() > 0)

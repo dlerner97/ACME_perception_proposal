@@ -33,7 +33,7 @@ class HumanDetector {
     // void populate_detection_classes(std::string coco_name_path);
 
   public:
-    HumanDetector(const std::unordered_map<std::string, double>& robot_params, const std::string& _coco_name_path,
+    HumanDetector(const std::unordered_map<std::string, double>& robot_params, const std::string& /* _coco_name_path */,
                   const std::string& _yolo_cfg_path, const std::string& _yolo_weight_path) :
                   net{cv::dnn::readNetFromDarknet(_yolo_cfg_path, _yolo_weight_path)} {
       img_dim_[0] = robot_params.at("IMG_WIDTH_REQ");

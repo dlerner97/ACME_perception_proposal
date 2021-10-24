@@ -13,7 +13,7 @@ std::shared_ptr<cv::Mat> HumanDetector::prep_frame(cv::Mat& img) {
     int prepped_img_height = prepped_img_dims[0];
     int prepped_img_width = prepped_img_dims[1];
     auto prepped_img = std::make_shared<cv::Mat>();
-    cv::resize(img, *prepped_img, Size(prepped_img_width, prepped_img_height), INTER_LINEAR);
+    cv::resize(img, *prepped_img, cv::Size(prepped_img_width, prepped_img_height), cv::INTER_LINEAR);
     return prepped_img;
 }
 
@@ -30,7 +30,7 @@ std::vector<Detection> HumanDetector::detect(cv::Mat& prepped_img) {
         
     // Runs the forward pass to get output of the output layers
     std::vector<cv::Mat> outs;
-    net.forward(outs, getOutputsNames(net));
+    // net.forward(outs, getOutputsNames(net));
 
     return std::vector<Detection>{};
 
