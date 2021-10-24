@@ -47,10 +47,10 @@ class HumanDetector {
     /**
      * @brief Prepares frame for human detection and NN input
      *
-     * @param img description
-     * @return shared pointer to the NN prepared frame
+     * @param img Original image to be prepared for NN
+     * @return CV matrix for NN prepared frame
      */
-    cv::Mat prep_frame(cv::Mat&);
+    cv::Mat prep_frame(cv::Mat& img);
 
     /**
      * @brief Detects humans in a given image.
@@ -65,12 +65,5 @@ class HumanDetector {
      * @return Array of image dimensions
      */
     std::array<int, 2> get_img_dims();
-
-    // Give the configuration and weight files for the model
-    String modelConfiguration = "../robot_params/yolov4.cfg";
-    String modelWeights = "../robot_params/yolov4.weights";
-
-    // Load the network
-    Net net = readNetFromDarknet(modelConfiguration, modelWeights);
 };
 
