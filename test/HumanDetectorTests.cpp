@@ -58,7 +58,7 @@ TEST(HumanDetectorTests, HumanDetectionAccuracyTest) {
     for (const auto& label : labels) {
         const std::vector<Detection>& true_detections = label->all_detections;
         const std::string& name = label->name;
-        const cv::Mat& img = label->img;
+        cv::Mat& img = label->img; //removed const
 
         // Basically in this for loop, I go through every single label in the /dataset/label
         // directory. This not only contains the list of all detections in a given image, it
@@ -67,6 +67,12 @@ TEST(HumanDetectorTests, HumanDetectionAccuracyTest) {
         // The output of the human_detector.detect() should also be a list of detections.
         // Therefore, compare the output detections of the detect() method to the true_detections I've
         // defined above.
+        std::unordered_map<std::string, double> ret_params{};
+        HumanDetector testimator(ret_params, coco_name_path, yolo_cfg_path, yolo_weights_path);
+        cv::Mat prep_img = testimator.prep_frame(img); //could'nt use const for prep frame
+        std::vector<Detection> output_detections = testimator.detect(prep_img);
+
+        // accuracy calculation?
     }
 }
 
