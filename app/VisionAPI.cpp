@@ -3,19 +3,11 @@
 #include <math.h>
 #include "../include/VisionAPI.hpp"
 
-std::vector<std::array<double, 3> > VisionAPI::get_xyz(const cv::Mat&  orig_frame) {
-    //Wraps detector + estimator, returns position of human in x, y, z
+std::shared_ptr<std::vector<std::array<double, 3> > > VisionAPI::get_xyz(const cv::Mat&  orig_frame) {
     auto prep_img = detector.prep_frame(orig_frame);
     auto detected = detector.detect(*prep_img);
-    std::vector<std::array<double, 3> > ret;
-    for (const auto& single_detected : detected) {
-        if (estimator.threshold_frame(single_detected.probabilty)) {
-            ret.push_back(estimator.estimate_xyz(single_detected));
-        }
-    }
-    
+    auto ret = estimator.estimate_all_xyz(*detected);
     return ret;
-
 }
 
 double VisionAPI::calculate_distance(std::array<double, 3> xyz) {
