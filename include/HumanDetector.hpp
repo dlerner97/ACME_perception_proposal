@@ -24,21 +24,34 @@ class HumanDetector {
      * @details width, height
      */
     std::array<int, 2> img_dim_{};
-    std::vector<std::string> detection_classes{};
+    std::vector<cv::String> detection_classes{};
+    std::vector<std::string> classes{};
 
     const std::string coco_path;
 
     cv::dnn::Net net;
 
-    // void populate_detection_classes(std::string coco_name_path);
+    void drawPred(int classId, float conf, int left, int top, int right, int bottom, cv::Mat& frame);
 
   public:
     HumanDetector(const std::unordered_map<std::string, double>& robot_params, const std::string& /* _coco_name_path */,
                   const std::string& _yolo_cfg_path, const std::string& _yolo_weight_path) :
                   net{cv::dnn::readNetFromDarknet(_yolo_cfg_path, _yolo_weight_path)} {
-      img_dim_[0] = robot_params.at("IMG_WIDTH_REQ");
-      img_dim_[1] = robot_params.at("IMG_HEIGHT_REQ");
+
+      img_dim_[0] = static_cast<int>(robot_params.at("IMG_WIDTH_REQ"));
+      img_dim_[1] = static_cast<int>(robot_params.at("IMG_HEIGHT_REQ"));
       net.setPreferableBackend(cv::dnn::DNN_TARGET_CPU);
+
+      std::string classesFile = "coco.names";
+      std::ifstream ifs(classesFile.c_str());
+      std::string line;
+      while (getline(ifs, line)) classes.push_back(line);
+
+      auto outLayers = net.getUnconnectedOutLayers();
+      auto layerNames = net.getLayerNames();
+      detection_classes.resize(outLayers.size());
+      for (std::size_t i = 0; i < outLayers.size(); i++) 
+          detection_classes[i] = layerNames[outLayers[i] - 1];
     }
     // ~HumanDetector();
 
