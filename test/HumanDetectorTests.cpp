@@ -43,8 +43,11 @@ TEST(HumanDetectorTests, MissingYoloFilesTest) {
 
 TEST(HumanDetectorTests, CorrectFrameSizeTest) {
     std::unordered_map<std::string, double> ret_params{};
-    ret_params["IMG_WIDTH_REQ"] = 13.0;
-    ret_params["IMG_HEIGHT_REQ"] = 21.0;
+    int width = 100;
+    int height = 200;
+
+    ret_params["IMG_WIDTH_REQ"] = static_cast<double>(width);
+    ret_params["IMG_HEIGHT_REQ"] = static_cast<double>(height);
     HumanDetector detector(ret_params, coco_name_path, yolo_cfg_path, yolo_weights_path);
 
     cv::Mat img = cv::imread("../dataset/0/0_0.png");
@@ -52,21 +55,28 @@ TEST(HumanDetectorTests, CorrectFrameSizeTest) {
     int prep_frame_width = img_ptr->cols;
     int prep_frame_height = img_ptr->rows;
 
-    ASSERT_EQ(13, prep_frame_width);
-    ASSERT_EQ(21, prep_frame_height);
+    ASSERT_EQ(width, prep_frame_width);
+    ASSERT_EQ(height, prep_frame_height);
 }
 
 Detection getClosestDiff(const Detection& detection, const std::vector<Detection>& all_true) {
+    std::cout << "1" << std::endl;
     int min_sum = 5000;
     Detection closest_diff{};
     for (const auto& single_true : all_true) {
+        std::cout << "2" << std::endl;
         Detection diff = detection - single_true;
+        std::cout << "3" << std::endl;
         int sum = diff.x + diff.y + diff.width + diff.height;
+        std::cout << "4" << std::endl;
         if (sum < min_sum) {
             min_sum = sum;
+            std::cout << "5" << std::endl;
             closest_diff = diff;
         }
+        std::cout << "6" << std::endl;
     }
+    std::cout << "10" << std::endl;
     return closest_diff;
 }
 
@@ -89,14 +99,15 @@ TEST(HumanDetectorTests, HumanDetectionAccuracyTest) {
     for (const auto& label : labels) {
         const std::vector<Detection>& true_detections = label->all_detections;
         cv::Mat& img = label->img; //removed const
-        auto prep_img = detector.prep_frame(img); //could'nt use const for prep frame
+        auto prep_img = detector.prep_frame(img); //couldn't use const for prep frame
         std::vector<Detection> output_detections = detector.detect(*prep_img);
 
         num_true_detections += true_detections.size();
         num_detected_detections += output_detections.size();
-        
-        for (const auto& output_detection : output_detections)
+
+        for (const auto& output_detection : output_detections) {
             sum_detect_diff += getClosestDiff(output_detection, true_detections);
+        }
     }
 
     double percent_detections = (num_true_detections - num_detected_detections)/static_cast<double>(num_true_detections);
