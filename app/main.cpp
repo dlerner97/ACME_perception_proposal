@@ -38,7 +38,7 @@ int main() {
                      yolo_weights_path
     );
 
-    auto img = cv::imread("../dataset/1/1_500.png");
+    auto img = cv::imread("../dataset/1/1_269.png");
     auto all_xyz = vision.get_xyz(img, true);
 
     for (const auto& one_detect : *all_xyz) {
