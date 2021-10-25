@@ -8,7 +8,7 @@
 #include "../include/Detection.hpp"
 #include "../include/HumanDetector.hpp"
 
-std::shared_ptr<cv::Mat> HumanDetector::prep_frame(cv::Mat& img) {
+std::shared_ptr<cv::Mat> HumanDetector::prep_frame(const cv::Mat& img) {
     std::array<int, 2> prepped_img_dims = get_img_dims();
     int prepped_img_width = prepped_img_dims[0];
     int prepped_img_height = prepped_img_dims[1];
@@ -17,7 +17,7 @@ std::shared_ptr<cv::Mat> HumanDetector::prep_frame(cv::Mat& img) {
     return prepped_img;
 }
 
-std::vector<Detection> HumanDetector::detect(cv::Mat& prepped_img) {
+std::vector<Detection> HumanDetector::detect(const cv::Mat& prepped_img) {
     std::array<int, 2> prepped_img_dims = get_img_dims();
     int prepped_img_height = prepped_img_dims[0];
     int prepped_img_width = prepped_img_dims[1];
@@ -65,13 +65,13 @@ std::vector<Detection> HumanDetector::detect(cv::Mat& prepped_img) {
     for (size_t i = 0; i < indices.size(); ++i) {
         int idx = indices[i];
         cv::Rect box = boxes[idx];
-        drawPred(classIds[idx], confidences[idx], box.x, box.y,
-                 box.x + box.width, box.y + box.height, prepped_img);
+        // drawPred(classIds[idx], confidences[idx], box.x, box.y,
+        //          box.x + box.width, box.y + box.height, prepped_img);
         ret_detections.push_back({confidences[idx], box.x, box.y, box.width, box.height});      
     }
 
-    cv::imshow("img", prepped_img);
-    cv::waitKey(0);
+    // cv::imshow("img", prepped_img);
+    // cv::waitKey(0);
 
     return ret_detections;
 }

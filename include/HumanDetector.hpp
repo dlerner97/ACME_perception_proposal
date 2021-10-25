@@ -60,7 +60,7 @@ class HumanDetector {
      * @param img Original image to be prepared for NN
      * @return CV matrix for NN prepared frame
      */
-    std::shared_ptr<cv::Mat> prep_frame(cv::Mat& img);
+    std::shared_ptr<cv::Mat> prep_frame(const cv::Mat& img);
 
     /**
      * @brief Detects humans in a given image.
@@ -68,7 +68,7 @@ class HumanDetector {
      * @param prepped_frame A pre-processed frame for NN input
      * @return A detection obj for each human detected in frame.
      */
-    std::vector<Detection> detect(cv::Mat&);
+    std::vector<Detection> detect(const cv::Mat&);
 
     /**
      * @brief Gets the image dimensions (width and height)
