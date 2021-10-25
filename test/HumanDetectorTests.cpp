@@ -60,23 +60,16 @@ TEST(HumanDetectorTests, CorrectFrameSizeTest) {
 }
 
 Detection getClosestDiff(const Detection& detection, const std::vector<Detection>& all_true) {
-    std::cout << "1" << std::endl;
     int min_sum = 5000;
     Detection closest_diff{};
     for (const auto& single_true : all_true) {
-        std::cout << "2" << std::endl;
         Detection diff = detection - single_true;
-        std::cout << "3" << std::endl;
         int sum = diff.x + diff.y + diff.width + diff.height;
-        std::cout << "4" << std::endl;
         if (sum < min_sum) {
             min_sum = sum;
-            std::cout << "5" << std::endl;
             closest_diff = diff;
         }
-        std::cout << "6" << std::endl;
     }
-    std::cout << "10" << std::endl;
     return closest_diff;
 }
 

@@ -3,7 +3,12 @@
 #include "../include/Detection.hpp"
 
 Detection& Detection::operator=(const Detection& detect) {
-    return *this = Detection(detect);
+    this->probabilty = detect.probabilty;
+    this->x = detect.x;
+    this->y = detect.y;
+    this->width = detect.width;
+    this->height = detect.height;
+    return *this;
 }
 
 Detection Detection::operator+(const Detection& detect) const {
