@@ -1,0 +1,27 @@
+➜  ACME_perception_proposal git:(main) ✗ cpplint include/* app/* test/*
+Ignoring app/CMakeLists.txt; not a valid file name (cxx, hpp, c++, hxx, h, hh, cu, h++, cpp, c, cuh, cc)
+Done processing app/CMakeLists.txt
+Done processing app/Detection.cpp
+Done processing app/HumanDetector.cpp
+Done processing app/LabelParser.cpp
+Done processing app/ParamParser.cpp
+Done processing app/PositionEstimator.cpp
+Done processing app/VisionAPI.cpp
+Done processing app/main.cpp
+Done processing app/params_vec.cpp
+Done processing app/utils.cpp
+Done processing include/Detection.hpp
+Done processing include/HumanDetector.hpp
+Done processing include/LabelParser.hpp
+Done processing include/ParamParser.hpp
+Done processing include/PositionEstimator.hpp
+Done processing include/VisionAPI.hpp
+Done processing include/params_vec.hpp
+Done processing include/utils.hpp
+Ignoring test/CMakeLists.txt; not a valid file name (cxx, hpp, c++, hxx, h, hh, cu, h++, cpp, c, cuh, cc)
+Done processing test/CMakeLists.txt
+Done processing test/HumanDetectorTests.cpp
+Done processing test/ParamParserTests.cpp
+Done processing test/PositionEstimatorTests.cpp
+Done processing test/main.cpp
+Skipping input 'test/robot_params_textfiles': Can't open for reading
