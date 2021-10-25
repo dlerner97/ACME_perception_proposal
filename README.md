@@ -6,7 +6,7 @@
 ### Authors
 
 - Dani Lerner (dlerner97)
-* Add bio here
+* Dani Lerner graduated University of Maryland, College Park with a B.S. in Mechanical Engineering. Unhappy with the hardware life, Dani decided to pursue a Masters in Robotics at UMD as a steady transition to the realm of software.
 - Diane Ngo (dngo13)
 * Diane Ngo graduated from Kennesaw State University from Georgia with a B.S. in Mechatronics Engineering, having specialized in a mix of Mech E., Elec E., and Controls she has decided to pursue AI/Machine Learning and programming experience at the University of Maryland's Master's program in Robotics Engineering.
 
@@ -31,7 +31,10 @@ For each image in the dataset, each image with a human/(s) has a label with the 
   5. **math**. This library should already be installed on a standard linux system.
   6. **C++ std libs**. This library is certainly installed on a standard linux system.
   7. **CMake**. This software should already be installed on a standard linux system.
-  8. **YOLOv4**. Please download the weights file from the link [weights] (https://drive.google.com/file/d/125kKy-FkMWs8C2s9kK0rVBYtv7kOsNwq/view?usp=sharing) and place in the /robot_params directory. This file is too large to place on github.
+  8. **YOLOv4**. Please download the weights file from the link [weights](https://drive.google.com/file/d/125kKy-FkMWs8C2s9kK0rVBYtv7kOsNwq/view?usp=sharing) and place in the /robot_params directory. This file is too large to place on github.
+
+### Travis Build Issues
+Travis has not been able to build since we have added the opencv dnn implementation. It seems this binary is not included in the libopencv-dev and Travis fails without it. While my computer has two seperate binaries for the opencv dnn (libopencv-dnn4.2 and libopencv-dnn-dev), Travis has failed to find both of these binaries in apt. With more time, we may have been able to solve this issue but we decided that building up the repo and making sure the code works was more important. Please see the Code Check Results section for unit test and code coverage results.
 
 ### Running the code
 To run the code, open a terminal and follow these steps:
@@ -81,17 +84,30 @@ doxygen Doxyfile
 ```
 To view the documentation, navigate to /html/index.html and open it in a browser. From there, you can navigate to Classes > Class List and click on any respective class for its documentation for each method.
 
+### Code Check Results
+[Code Coverage results](/code-check-results/code_coverage.txt)
+
+[Cppcheck results](/code-check-results/cppcheck.txt)
+
+[Cpplint results](/code-check-results/cpplint.txt)
+
+[Unit Test results](/code-check-results/unit_tests.txt)
+
+[Valgrind results](/code-check-results/valgrind.txt)
+
 ### Visual Representations of Code
 
 The following Activity Diagram and UML's are jpg files and will not work well with zoom. See the [visual representation pdf](/visual_reps/activity_and_UML.drawio.pdf) for a higher quality image.
 
 #### Activity Diagram
 
-![Original activity diagram of the perception stack.](/visual_reps/activity diagram.jpg.jpg?raw=true "Activity Diagram")
+![Original activity diagram of the perception stack.](/visual_reps/activity_diagram.jpg?raw=true "Activity Diagram")
 
 #### UML
 
 ![Original UML of the perception stack.](/visual_reps/UML.jpg?raw=true "UML")
+
+Note that the LabelParser is not in the UML. This is because it is only used within the testing app. It is not a part of the main code base.
 
 ### Unit Tests
 
@@ -106,6 +122,8 @@ There are 3 testing suites in our codebase:
  - EstimateAllXYZTest -> Similarly, this test takes multiple detections and a robot_params input and returns all estimated xyz positions of any detections. These are once again compared to a by-hand calculation.
 3. ParamParserTest: Tests the robustness of the robot ParamParser class. Most important tests:
  - VariousInputsTest -> Tests valid and invalid inputs to the robot_params text file.
+
+Given more time, we would have liked to test the full stack and take an image with a person at a known xyz distance from the camera. This would allow us to test the accuracy of the whole system. However, since each individual section contains a unit test, our code coverage is technically 100%. Note that the LabelParser class is not included in the test coverage include. This is because the class is only used within the testing suite (i.e. to parse the labels for images). Therefore, it does not need to be tested.
 
 ### Input Robot Parameters
 
