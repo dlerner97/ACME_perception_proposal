@@ -81,6 +81,13 @@ doxygen Doxyfile
 ```
 To view the documentation, navigate to /html/index.html and open it in a browser. From there, you can navigate to Classes > Class List and click on any respective class for its documentation for each method.
 
+### Code Check Results
+[Code Coverage results](/code-check-results/code_coverage.txt)
+[Cppcheck results](/code-check-results/cppcheck.txt)
+[Cpplint results](/code-check-results/cpplint.txt)
+[Unit Test results](/code-check-results/unit_tests.txt)
+[Valgrind results](/code-check-results/valgrind.txt)
+
 ### Visual Representations of Code
 
 The following Activity Diagram and UML's are jpg files and will not work well with zoom. See the [visual representation pdf](/visual_reps/activity_and_UML.drawio.pdf) for a higher quality image.
@@ -92,6 +99,8 @@ The following Activity Diagram and UML's are jpg files and will not work well wi
 #### UML
 
 ![Original UML of the perception stack.](/visual_reps/UML.jpg?raw=true "UML")
+
+Note that the LabelParser is not in the UML. This is because it is only used within the testing app. It is not a part of the main code base.
 
 ### Unit Tests
 
@@ -106,6 +115,8 @@ There are 3 testing suites in our codebase:
  - EstimateAllXYZTest -> Similarly, this test takes multiple detections and a robot_params input and returns all estimated xyz positions of any detections. These are once again compared to a by-hand calculation.
 3. ParamParserTest: Tests the robustness of the robot ParamParser class. Most important tests:
  - VariousInputsTest -> Tests valid and invalid inputs to the robot_params text file.
+
+Given more time, we would have liked to test the full stack and take an image with a person at a known xyz distance from the camera. This would allow us to test the accuracy of the whole system. However, since each individual section contains a unit test, our code coverage is technically 100%. Note that the LabelParser class is not included in the test coverage include. This is because the class is only used within the testing suite (i.e. to parse the labels for images). Therefore, it does not need to be tested.
 
 ### Input Robot Parameters
 
