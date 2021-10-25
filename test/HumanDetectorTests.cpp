@@ -137,10 +137,10 @@ TEST(HumanDetectorTests, HumanDetectionAccuracyTest) {
             << " %" << std::endl;
 
         EXPECT_GE(percent_detections, 0.80);
-        EXPECT_LT(average_x_diff, 30);
-        EXPECT_LT(average_y_diff, 30);
-        EXPECT_LT(average_width_diff, 30);
-        EXPECT_LT(average_height_diff, 30);
+        EXPECT_LT(average_x_diff, 10);
+        EXPECT_LT(average_y_diff, 10);
+        EXPECT_LT(average_width_diff, 10);
+        EXPECT_LT(average_height_diff, 10);
     }
     EXPECT_TRUE(true);
 }

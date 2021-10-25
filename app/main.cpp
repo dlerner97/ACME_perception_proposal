@@ -17,8 +17,6 @@
 #include "../include/VisionAPI.hpp"
 #include "../include/params_vec.hpp"
 #include "../include/ParamParser.hpp"
-#include "../include/LabelParser.hpp"
-#include "../include/HumanDetector.hpp"
 
 using std::vector;
 
