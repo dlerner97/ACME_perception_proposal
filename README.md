@@ -6,7 +6,7 @@
 ### Authors
 
 - Dani Lerner (dlerner97)
-* Add bio here
+* Dani Lerner graduated University of Maryland, College Park with a B.S. in Mechanical Engineering. Unhappy with the hardware life, Dani decided to pursue a Masters in Robotics at UMD as a steady transition to the realm of software.
 - Diane Ngo (dngo13)
 * Diane Ngo graduated from Kennesaw State University from Georgia with a B.S. in Mechatronics Engineering, having specialized in a mix of Mech E., Elec E., and Controls she has decided to pursue AI/Machine Learning and programming experience at the University of Maryland's Master's program in Robotics Engineering.
 
