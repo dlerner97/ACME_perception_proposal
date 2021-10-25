@@ -1,8 +1,19 @@
+/**
+ * @file LabelParser.cpp
+ * @author Dani Lerner
+ * @author Diane Ngo
+ * @brief Label Parser definition
+ * @version 0.1
+ * @date 2021-10-25
+ * 
+ * @copyright Copyright (c) 2021
+ * 
+ */
+
 #include <vector>
 #include <string>
 #include <memory>
 #include <fstream>
-#include <iostream>
 #include <algorithm>
 #include <stdexcept>
 #include <opencv2/opencv.hpp>
@@ -23,7 +34,7 @@ std::array<int, 2> LabelParser::parse_corner(const std::string& corner) {
 
     auto corner_vals = split(std::string(open_bracket+1, close_bracket), ',');
     if (corner_vals.size() != 2)
-        throw InvalidFile();;
+        throw InvalidFile();
 
     std::array<int, 2> out{};
     for (std::size_t i=0; i < 2; i++) {
@@ -36,7 +47,8 @@ std::array<int, 2> LabelParser::parse_corner(const std::string& corner) {
     return out;
 }
 
-Detection LabelParser::parse_detection(const std::string& corner1, const std::string& corner2) {
+Detection LabelParser::parse_detection(const std::string& corner1,
+        const std::string& corner2) {
     Detection detection;
     std::array<int, 2> corner_coords1;
     std::array<int, 2> corner_coords2;
@@ -50,12 +62,15 @@ Detection LabelParser::parse_detection(const std::string& corner1, const std::st
 
     detection.x = std::min(corner_coords1[0], corner_coords2[0]);
     detection.y = std::min(corner_coords1[1], corner_coords2[1]);
-    detection.width = std::max(corner_coords1[0], corner_coords2[0]) - detection.x;
-    detection.height = std::max(corner_coords1[1], corner_coords2[1]) - detection.y;
+    detection.width = std::max(corner_coords1[0],
+        corner_coords2[0]) - detection.x;
+    detection.height = std::max(corner_coords1[1],
+        corner_coords2[1]) - detection.y;
     return detection;
 }
 
-std::shared_ptr<TestImage> LabelParser::parse_file(const std::string& file_path) {
+std::shared_ptr<TestImage> LabelParser::parse_file(
+        const std::string& file_path) {
     std::ifstream infile(file_path.c_str());
     std::shared_ptr<TestImage> test_image_ptr = std::make_shared<TestImage>();
     if (infile) {
@@ -72,7 +87,8 @@ std::shared_ptr<TestImage> LabelParser::parse_file(const std::string& file_path)
                     auto detection = parse_detection(top_left, bottom_right);
                     test_image_ptr->all_detections.push_back(detection);
                 } catch (InvalidFile const&) {
-                    throw InvalidFile("File " + file_name + " is invalid. Please fix file before continuing.");
+                    throw InvalidFile("File " + file_name +
+                        " is invalid. Please fix file before continuing.");
                 }
             }
         }
@@ -80,10 +96,12 @@ std::shared_ptr<TestImage> LabelParser::parse_file(const std::string& file_path)
         test_image_ptr->img = cv::imread("../dataset/1/" + file_name + ".png");
         return test_image_ptr;
     }
-    throw InvalidFile("Path " + file_path + " is invalid. Please add the file before continuing.");      
+    throw InvalidFile("Path " + file_path +
+        " is invalid. Please add the file before continuing.");
 }
 
-std::vector<std::shared_ptr<TestImage> > LabelParser::read_labeled_test_images(const std::string& dir_path) {
+std::vector<std::shared_ptr<TestImage> > LabelParser::read_labeled_test_images(
+        const std::string& dir_path) {
     std::vector<std::shared_ptr<TestImage> > out{};
     for (const auto& entry : boost::filesystem::directory_iterator(dir_path)) {
             auto test_image_ptr = parse_file(entry.path().string());

@@ -1,3 +1,15 @@
+/**
+ * @file ParamParser.hpp
+ * @author Dani Lerner
+ * @author Diane Ngo
+ * @brief Param Parser header
+ * @version 0.1
+ * @date 2021-10-25
+ * 
+ * @copyright Copyright (c) 2021
+ * 
+ */
+
 #pragma once
 
 #include <array>
@@ -6,15 +18,15 @@
 #include <unordered_map>
 
 struct Var {
-    Var(std::string _name, std::string _default_unit) : name{_name}, default_unit{_default_unit} {}
+    Var(std::string _name, std::string _default_unit) :
+        name{_name}, default_unit{_default_unit} {}
 
     std::string name;
     std::string default_unit;
 };
 
 class ParamParser {
-  private:
-
+ private:
     const std::vector<Var>& _var_list;
 
     /**
@@ -25,8 +37,9 @@ class ParamParser {
      */
     bool isnot_alnum(char c);
 
-public:
-    ParamParser(const std::vector<Var>& var_list): _var_list{var_list} {}
+ public:
+    explicit ParamParser(const std::vector<Var>& var_list):
+        _var_list{var_list} {}
 
     /**
      * @brief Extracts the unit from a string
@@ -58,5 +71,6 @@ public:
      * @param file name and path of the robot parameter file
      * @return a dictionary corresponding to each robot parameter and their corresponding values.
      */
-    std::unordered_map<std::string, double> parse_robot_params(std::string file);
+    std::unordered_map<std::string, double> parse_robot_params(
+        std::string file);
 };

@@ -1,19 +1,32 @@
+/**
+ * @file PositionEstimatorTests.cpp
+ * @author Dani Lerner
+ * @author Diane Ngo
+ * @brief Position Estimator Tests
+ * @version 0.1
+ * @date 2021-10-25
+ * 
+ * @copyright Copyright (c) 2021
+ * 
+ */
+
 #include <math.h>
-#include <vector>
 #include <gtest/gtest.h>
 #include <eigen3/Eigen/Dense>
+#include <vector>
 
 #include "../include/Detection.hpp"
 #include "../include/ParamParser.hpp"
 #include "../include/PositionEstimator.hpp"
 
-const std::vector<Var> params{{"DX_CAM2ROBOT_CENTER", "m"}, {"DZ_CAM2ROBOT_CENTER", "m"},
-                              {"DY_CAM2ROBOT_CENTER", "m"}, {"PITCH_CAM2ROBOT_CENTER", "rad"},
-                              {"CAM_FOCAL_LEN", "m"}, {"CAM_PIXEL_DENSITY", "ppm"},
-                              {"AVG_HUMAN_HEIGHT", "m"}, {"DETECTION_PROBABILITY_THRESHOLD", "fraction"},
-                              {"SCORE_THRESHOLD", "fraction"}, {"NMS_THRESHOLD", "fraction"}, 
-                              {"IMG_WIDTH_REQ", "px"}, {"IMG_HEIGHT_REQ", "px"},
-                              {"LOW_ALERT_THRESHOLD", "m"}, {"HIGH_ALERT_THRESHOLD", "m"}};
+std::vector<Var> params{{"DX_CAM2ROBOT_CENTER", "m"},
+        {"DY_CAM2ROBOT_CENTER", "m"}, {"DZ_CAM2ROBOT_CENTER", "m"},
+        {"PITCH_CAM2ROBOT_CENTER", "rad"}, {"AVG_HUMAN_HEIGHT", "m"},
+        {"CAM_FOCAL_LEN", "m"}, {"CAM_PIXEL_DENSITY", "ppm"},
+        {"DETECTION_PROBABILITY_THRESHOLD", "fraction"},
+        {"SCORE_THRESHOLD", "fraction"}, {"NMS_THRESHOLD", "fraction"},
+        {"IMG_WIDTH_REQ", "px"}, {"IMG_HEIGHT_REQ", "px"},
+        {"LOW_ALERT_THRESHOLD", "m"}, {"HIGH_ALERT_THRESHOLD", "m"}};
 
 TEST(PositionEstimatorTests, MissingRobotParamsTest) {
   std::unordered_map<std::string, double> ret_params{};
@@ -43,7 +56,8 @@ TEST(PositionEstimatorTests, ApproximateZTest) {
   Detection detection;
   detection.height = 100;
   ParamParser parser(params);
-  auto ret_params = parser.parse_robot_params("../test/robot_params_textfiles/position_estimator_params_test.txt");
+  auto ret_params = parser.parse_robot_params(
+    "../test/robot_params_textfiles/position_estimator_params_test.txt");
   PositionEstimator testimator(ret_params);
   auto result = testimator.approximate_camera_z(detection);
   EXPECT_NEAR(result, 1, .01);
@@ -57,13 +71,14 @@ TEST(PositionEstimatorTests, EstimateXYZTest) {
   detection.height = 100;
 
   ParamParser parser(params);
-  auto ret_params = parser.parse_robot_params("../test/robot_params_textfiles/position_estimator_params_test.txt");
+  auto ret_params = parser.parse_robot_params(
+    "../test/robot_params_textfiles/position_estimator_params_test.txt");
   PositionEstimator testimator(ret_params);
   auto result = testimator.estimate_xyz(detection);
-  
+
   typedef std::array<double, 3> XYZ;
   XYZ true_vals{1.02, 0, .03};
-  for (XYZ::size_type i = 0; i < result.size(); i++) 
+  for (XYZ::size_type i = 0; i < result.size(); i++)
     EXPECT_NEAR(result[i], true_vals[i], .01);
 }
 
@@ -78,22 +93,23 @@ TEST(PositionEstimatorTests, EstimateAllXYZTest) {
   detection2.x = 80;
   detection2.y = 60;
   detection2.width = 60;
-  detection2.height = 100;  
+  detection2.height = 100;
 
   std::vector<Detection> all_detections{detection1, detection2};
 
   ParamParser parser(params);
-  auto ret_params = parser.parse_robot_params("../test/robot_params_textfiles/position_estimator_params_test.txt");
+  auto ret_params = parser.parse_robot_params(
+    "../test/robot_params_textfiles/position_estimator_params_test.txt");
   PositionEstimator testimator(ret_params);
   auto result = testimator.estimate_all_xyz(all_detections);
-  
+
   typedef std::array<double, 3> XYZ;
   std::vector<XYZ> true_vals{{2.02, -0.4, 0.43}, {1.02, 0.2, -.17}};
-  
+
   ASSERT_EQ(result->size(), std::vector<XYZ>::size_type{2});
-  
+
   for (std::vector<XYZ>::size_type i = 0; i < result->size(); i++) {
-    for (XYZ::size_type j = 0; j < (*result)[i].size(); j++) 
+    for (XYZ::size_type j = 0; j < (*result)[i].size(); j++)
       EXPECT_NEAR((*result)[i][j], true_vals[i][j], .01);
   }
 }
