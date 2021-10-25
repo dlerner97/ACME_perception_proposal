@@ -14,7 +14,6 @@
 #include <string>
 #include <memory>
 #include <fstream>
-#include <iostream>
 #include <algorithm>
 #include <stdexcept>
 #include <opencv2/opencv.hpp>

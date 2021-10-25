@@ -13,7 +13,6 @@
 #include <math.h>
 #include <eigen3/Eigen/Dense>
 
-#include <iostream>
 #include <array>
 #include <vector>
 #include <memory>

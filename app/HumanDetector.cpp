@@ -12,9 +12,6 @@
 
 #include <vector>
 #include <memory>
-#include <fstream>
-#include <sstream>
-#include <iostream>
 #include <opencv2/opencv.hpp>
 
 #include "../include/Detection.hpp"
