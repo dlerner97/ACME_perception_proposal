@@ -49,7 +49,7 @@ class VisionAPI {
      * @return All estimated x, y, z positions of people in a given image.
      */
     std::shared_ptr<std::vector<std::array<double, 3> > >
-      get_xyz(const cv::Mat&);
+      get_xyz(const cv::Mat&, bool show_detection=false);
 
     /**
      * @brief Calculates the distance of how far the human is away from the robot

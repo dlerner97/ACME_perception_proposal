@@ -29,16 +29,27 @@ int main() {
 
     ParamParser parser(all_params::params);
     auto ret_params = parser.parse_robot_params(
-        "../robot_params/robot_params.txt");
-    VisionAPI vision(ret_params, coco_name_path,
-        yolo_cfg_path, yolo_weights_path);
+        "../robot_params/robot_params.txt"
+    );
+
+    VisionAPI vision(ret_params,
+                     coco_name_path,
+                     yolo_cfg_path,
+                     yolo_weights_path
+    );
+
     auto img = cv::imread("../dataset/1/1_500.png");
-    auto all_xyz = vision.get_xyz(img);
+    auto all_xyz = vision.get_xyz(img, true);
+
     for (const auto& one_detect : *all_xyz) {
-        std::cout << "Position of Human: x\t: " << one_detect[0] <<
-            "\ty: " << one_detect[1] << "\tz: " << one_detect[2] <<
-            std::endl;
+        std::cout << "Position of Human: x\t: " 
+                  << one_detect[0] << "\ty: "
+                  << one_detect[1] << "\tz: "
+                  << one_detect[2]
+                  << std::endl;
     }
+
     vision.print_alerts(*all_xyz);
+    cv::waitKey(0);
     return 0;
 }

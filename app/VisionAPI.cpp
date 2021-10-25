@@ -17,9 +17,13 @@
 #include "../include/VisionAPI.hpp"
 
 std::shared_ptr<std::vector<std::array<double, 3> > >
-    VisionAPI::get_xyz(const cv::Mat&  orig_frame) {
+    VisionAPI::get_xyz(
+        const cv::Mat&  orig_frame, bool show_detection) {
     auto prep_img = detector.prep_frame(orig_frame);
-    auto detected = detector.detect(*prep_img);
+    auto detected = detector.detect(*prep_img, show_detection);
+    if (show_detection) {
+        cv::imshow("Frame", *prep_img);
+    }
     auto ret = estimator.estimate_all_xyz(*detected);
     return ret;
 }
