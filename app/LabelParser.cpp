@@ -1,12 +1,12 @@
 #include <vector>
 #include <string>
 #include <memory>
-#include <filesystem>
 #include <fstream>
 #include <iostream>
 #include <algorithm>
 #include <stdexcept>
 #include <opencv2/opencv.hpp>
+#include <boost/filesystem.hpp>
 
 #include "../include/utils.hpp"
 #include "../include/Detection.hpp"
@@ -85,8 +85,8 @@ std::shared_ptr<TestImage> LabelParser::parse_file(const std::string& file_path)
 
 std::vector<std::shared_ptr<TestImage> > LabelParser::read_labeled_test_images(const std::string& dir_path) {
     std::vector<std::shared_ptr<TestImage> > out{};
-    for (const auto& entry : std::filesystem::directory_iterator(dir_path)) {
-            auto test_image_ptr = parse_file(entry.path());
+    for (const auto& entry : boost::filesystem::directory_iterator(dir_path)) {
+            auto test_image_ptr = parse_file(entry.path().string());
             out.push_back(test_image_ptr);
     }
 

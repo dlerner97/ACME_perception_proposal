@@ -121,7 +121,7 @@ std::unordered_map<std::string, double> ParamParser::parse_robot_params(std::str
             if (line.length() < 3) continue;
             auto variable = split_variable(line);
             if (variable[0] == "" || variable[1] == "") {
-                std::cerr << "Line doesn't follow correct structure. Assuming comment." << std::endl;
+                // std::cerr << "Line doesn't follow correct structure. Assuming comment." << std::endl;
                 continue;
             }
             robot_param_dict[variable[0]] = set_variable(variable);

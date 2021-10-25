@@ -11,5 +11,9 @@ build/
 # Python
 *.pyc
 
-.metadata/
+# Weights
 robot_params/yolov4.weights
+
+# Misc
+.metadata/
+.idea/
