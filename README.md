@@ -26,11 +26,12 @@ For each image in the dataset, each image with a human/(s) has a label with the 
 
   1. **C++ Version C++14**. This program requires C++14.
   2. **OpenCV**. Please install the OpenCV package using the following link: [OpenCV Installation](https://docs.opencv.org/3.4.15/d7/d9f/tutorial_linux_install.html)
-  3. **Eigen**. This library should already be installed on a standard linux system.
-  4. **math**. This library should already be installed on a standard linux system.
-  5. **C++ std libs**. This library is certainly installed on a standard linux system.
-  6. **CMake**. This software should already be installed on a standard linux system.
-  7. **YOLOv4**. Please download the weights file from the link [weights] (https://drive.google.com/file/d/125kKy-FkMWs8C2s9kK0rVBYtv7kOsNwq/view?usp=sharing) and place in the /robot_params directory. This file is too large to place on github.
+  3. **Boost/filesystem**. Please install the boost library if not already installed. [Boost installation](https://stackoverflow.com/questions/12578499/how-to-install-boost-on-ubuntu)
+  4. **Eigen**. This library should already be installed on a standard linux system.
+  5. **math**. This library should already be installed on a standard linux system.
+  6. **C++ std libs**. This library is certainly installed on a standard linux system.
+  7. **CMake**. This software should already be installed on a standard linux system.
+  8. **YOLOv4**. Please download the weights file from the link [weights] (https://drive.google.com/file/d/125kKy-FkMWs8C2s9kK0rVBYtv7kOsNwq/view?usp=sharing) and place in the /robot_params directory. This file is too large to place on github.
 
 ### Running the code
 To run the code, open a terminal and follow these steps:
@@ -49,7 +50,9 @@ git clone https://github.com/dlerner97/ACME_perception_proposal.git
 git clone git@github.com:dlerner97/ACME_perception_proposal.git
 ```
 
-2. Build the repo.
+2. Download the [yolov4.weights](https://drive.google.com/file/d/125kKy-FkMWs8C2s9kK0rVBYtv7kOsNwq/view?usp=sharing) file and store it int the ACME_perception_proposal/robot_params directory.
+
+3. Build the repo.
 
 ```bash
 cd <absolute path>/ACME_perception_proposal
@@ -58,13 +61,13 @@ cmake ..
 make
 ```
 
-3. To run the main script,
+4. To run the main script,
 
 ```bash
 ./app/shell-app
 ```
 
-4. To run the tests,
+5. To run the tests,
 
 ```bash
 ./test/cpp-test
@@ -84,11 +87,25 @@ The following Activity Diagram and UML's are jpg files and will not work well wi
 
 #### Activity Diagram
 
-![Original activity diagram of the perception stack.](/visual_reps/activity_diagram.jpg?raw=true "Activity Diagram")
+![Original activity diagram of the perception stack.](/visual_reps/activity diagram.jpg.jpg?raw=true "Activity Diagram")
 
 #### UML
 
 ![Original UML of the perception stack.](/visual_reps/UML.jpg?raw=true "UML")
+
+### Unit Tests
+
+There are 3 testing suites in our codebase:
+
+1. HumanDetectorTests: tests each individual method as well as construction of a given Human Detector instance with the proper inputs. 3 most important tests:
+ - CorrectFrameSizeTest -> Applies a specific/unique width and height and tests if the prep_frame() method outputs an image of that size.
+ - HumanDetectionAccuracyTest -> Runs through 50 labeled images and compares the detect() method with the true outputs. Tests accuracy by looking at the number of detections then also tests the accuracy of the x, y, width, and height that it outpus.
+ - NoDetectionsPresentTest -> Runs through 50 images with no humans in sight and measures accuracy by counting the number of images a human was not detected.
+2. PositionEstimatorTests: tests each individual method as well as construction of a given Position Estimator instance with the proper inputs. 2 most important tests:
+ - ApproximateZTest -> Takes Detection and robot_params input and returns the estimated "z" in the camera frame. We compare this value with the result of a by-hand calculation.
+ - EstimateAllXYZTest -> Similarly, this test takes multiple detections and a robot_params input and returns all estimated xyz positions of any detections. These are once again compared to a by-hand calculation.
+3. ParamParserTest: Tests the robustness of the robot ParamParser class. Most important tests:
+ - VariousInputsTest -> Tests valid and invalid inputs to the robot_params text file.
 
 ### Input Robot Parameters
 
@@ -96,9 +113,11 @@ Since our vision system is hardware agnostic, one must simply edit the [robot_pa
 - Partial transform (in x, y, z, pitch) between the robot's center of mass (or any other desired model center). 
 - Average height of humans in order to estimate the z-location of a detected human. [Source](https://www.worlddata.info/average-bodyheight.php).
 - The probability threshold for classification. Any image with a probability threshold less than this value will be considered noise and subsequently discarded. If the probability is larger than the threshold we will consider there to be a human in sight.
+- The non-max suppression threshold is used for grouping almost identical detections of humans.
+- Score threshold is also used in the detection.
 - Image height and width. This parameter depends on the specific detection algorithm we will be using. 
 - Low and high alert thresholds. The robot should have different reactions to humans at different distances. If the distance < high_alert, the robot should stop. If the the high_alert < distance < low_alert, the robot should plan new path and if the human is further than the low alert, we should ignore them until they come within the given distances.
-- Camera matrix parameters.
+- Camera focal length and pixel density are needed for position estimation. See Position Estimation Methods below.
     
 Many of these parameters are arbitrary since we do not have a physical robot to test. However, some are carefully selected to provide a realistic system. For example, while the distances between the camera and robot center are selected at random, the pitch is 90 deg. This is because robot "x" generally corresponds to a camera's "z." Additionally, the proposal specifies that the camera is "front-facing" and therefore, we prevent any roll or yaw from occuring. We believe that this is realistic in the real world as well since cameras are nearly always horizontal and front facing. However, the pitch can still be selected in case the user would like to change this parameter. If changing, please remember that the value must be 90 + *desired pitch* to account for the change in coordinate system.
 
@@ -130,5 +149,7 @@ We will now use these derivation to solve one of the unit test scenarios.
 ---
 
 ### Citations
-1. YOLOv4 [link](https://github.com/AlexeyAB/darknet)
-2. YOLO Object Detection Example [link](https://learnopencv.com/deep-learning-based-object-detection-using-yolov3-with-opencv-python-c/#disqus_thread)
+1. [YOLOv4](https://github.com/AlexeyAB/darknet)
+2. [YOLO Object Detection Example](https://learnopencv.com/deep-learning-based-object-detection-using-yolov3-with-opencv-python-c/#disqus_thread)
+3. [Stack Overflow iterate over string](https://stackoverflow.com/questions/236129/how-do-i-iterate-over-the-words-of-a-string)
+4. [Stack Overflow string ends with function](https://stackoverflow.com/questions/874134/find-out-if-string-ends-with-another-string-in-c)
