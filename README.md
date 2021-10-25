@@ -87,7 +87,7 @@ The following Activity Diagram and UML's are jpg files and will not work well wi
 
 #### Activity Diagram
 
-![Original activity diagram of the perception stack.](/visual_reps/activity_diagram.jpg.jpg?raw=true "Activity Diagram")
+![Original activity diagram of the perception stack.](/visual_reps/activity_diagram.jpg?raw=true "Activity Diagram")
 
 #### UML
 
