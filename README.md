@@ -21,6 +21,8 @@ For each image in the dataset, each image with a human/(s) has a label with the 
 
 - The most recent activity diagram and UML can be found in the [visual reps](/visual_reps) folder while the original UML can be found in the [Original UML](/original_UML) folder.
 - Agile Iterative Process (AIP): Please see this link to find our [AIP implementation document](https://docs.google.com/spreadsheets/d/1gBVo8C_xLlcH5OcivV810-puy338YpDrUkYAftgQPH4/edit?usp=sharing).
+- Sprint Planning and Meeting notes: Please use this link for the [Sprint Notes](https://docs.google.com/document/d/1KFCfRIqDh1Te3YSnpcdl4eH9uiJLewzJ4zg7lOhnv3o/edit?usp=sharing).
+- Presentation Slides: Please reference these slides used for the video. [Slides](https://docs.google.com/presentation/d/14bq05kKl44ph-wbTQiV9oI9hK0dTPtglScRY0AiwXUI/edit?usp=sharing).
 
 ### Required Libraries and Software
 
