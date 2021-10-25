@@ -1,3 +1,15 @@
+/**
+ * @file Detection.hpp
+ * @author Dani Lerner
+ * @author Diane Ngo
+ * @brief Vision API header
+ * @version 0.1
+ * @date 2021-10-25
+ * 
+ * @copyright Copyright (c) 2021
+ * 
+ */
+
 #pragma once
 
 #include <array>
@@ -11,13 +23,13 @@
 #include "./Detection.hpp"
 
 class VisionAPI {
-  private:
+ private:
     const std::unordered_map<std::string, double>& robot_params;
     // HumanDetector detector;
     PositionEstimator estimator;
     std::array<double, 2> alert_thresholds{};
 
-  public:
+ public:
     VisionAPI(const std::unordered_map<std::string, double>& _robot_params) : 
       robot_params{_robot_params},
 //      detector(_robot_params),
