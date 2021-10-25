@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <opencv2/opencv.hpp>
 
 #include "../include/ParamParser.hpp"
 #include "../include/HumanDetector.hpp"
@@ -25,6 +26,9 @@ int main() {
     ParamParser parser(params);
     auto ret_params = parser.parse_robot_params("../robot_params/robot_params.txt");
     HumanDetector detector(ret_params, coco_name_path, yolo_cfg_path, yolo_weights_path);
-    // VisionAPI vision_api(ret_params);
+    auto img = cv::imread("../dataset/1/1_500.png");
+    auto prepped = detector.prep_frame(img);
+    detector.detect(*prepped);
+    
     return 0;
 }
