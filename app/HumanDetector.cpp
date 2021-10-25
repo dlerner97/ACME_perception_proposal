@@ -39,12 +39,12 @@ std::vector<Detection> HumanDetector::detect(cv::Mat& prepped_img) {
     std::vector<Detection> ret_detections{};
     for (std::size_t i=0; i<detections.size(); i++) {
         auto data = (float*)(detections[i].data);
-        for (std::size_t j = 0; j < detections[i].rows; ++j, data+=detections[i].cols) {
+        for (int j = 0; j < detections[i].rows; ++j, data+=detections[i].cols) {
             cv::Mat scores = detections[i].row(j).colRange(5, detections[i].cols);
             cv::Point classIdPt;
             double confidence;
             cv::minMaxLoc(scores, 0, &confidence, 0, &classIdPt);
-            if (confidence > 0.8) {
+            if ((confidence > 0.7) && (classes[classIdPt.x] == "person")) {
                 int centerX = static_cast<int>(data[0] * prepped_img.cols);
                 int centerY = static_cast<int>(data[1] * prepped_img.rows);
                 int width = static_cast<int>(data[2] * prepped_img.cols);
