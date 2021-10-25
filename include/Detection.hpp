@@ -16,6 +16,14 @@ struct Detection {
 
     Detection() {}
 
+    Detection(double prob, int x_, int y_, int w, int h) {
+        this->probabilty = prob;
+        this->x = x_;
+        this->y = y_;
+        this->width = w;
+        this->height = h;
+    }
+
     Detection(const Detection& detect) {
         this->probabilty = detect.probabilty;
         this->x = detect.x;
