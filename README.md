@@ -31,7 +31,7 @@ For each image in the dataset, each image with a human/(s) has a label with the 
   5. **math**. This library should already be installed on a standard linux system.
   6. **C++ std libs**. This library is certainly installed on a standard linux system.
   7. **CMake**. This software should already be installed on a standard linux system.
-  8. **YOLOv4**. Please download the weights file from the link [weights] (https://drive.google.com/file/d/125kKy-FkMWs8C2s9kK0rVBYtv7kOsNwq/view?usp=sharing) and place in the /robot_params directory. This file is too large to place on github.
+  8. **YOLOv4**. Please download the weights file from the link [weights](https://drive.google.com/file/d/125kKy-FkMWs8C2s9kK0rVBYtv7kOsNwq/view?usp=sharing) and place in the /robot_params directory. This file is too large to place on github.
 
 ### Running the code
 To run the code, open a terminal and follow these steps:
