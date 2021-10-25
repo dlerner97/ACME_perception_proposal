@@ -1,0 +1,10 @@
+1_301
+
+Detection
+top_left: [184, 28]
+bottom_right: [264, 291]
+
+Detection
+top_left: [226, 62]
+bottom_right: [301, 346]
+

@@ -1,0 +1,146 @@
+\hypertarget{class_position_estimator}{}\section{Position\+Estimator Class Reference}
+\label{class_position_estimator}\index{Position\+Estimator@{Position\+Estimator}}
+
+
+{\ttfamily \#include $<$Position\+Estimator.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_position_estimator_a39de44247f8c8feaed5bd1de8438245f}{Position\+Estimator} (double x, double y, double z, double pitch, double f\+\_\+x, double f\+\_\+y, double s, double px, double py, double avg\+\_\+height)
+\item 
+\hyperlink{class_position_estimator_af0b8305de010b7f15f0b18499d8d50c3}{Position\+Estimator} (const std\+::unordered\+\_\+map$<$ std\+::string, double $>$ \&robot\+\_\+params)
+\item 
+bool \hyperlink{class_position_estimator_a6414758ee472d223f6b97369abe27968}{threshold\+\_\+frame} (double probability)
+\begin{DoxyCompactList}\small\item\em This function removes noise by discarding frames with low probability of human detection. \end{DoxyCompactList}\item 
+double \hyperlink{class_position_estimator_aaa7e82a010bfb5dbcc795af9718c9eb0}{approximate\+\_\+camera\+\_\+z} (\hyperlink{struct_detection}{Detection} \&detection)
+\begin{DoxyCompactList}\small\item\em This function approximates the z location of the human in the C\+A\+M\+E\+RA frame based on the size of the bounding box. \end{DoxyCompactList}\item 
+std\+::array$<$ double, 3 $>$ \hyperlink{class_position_estimator_a90f4ced196e47ac347fcf53e834fbcab}{estimate\+\_\+xyz} (\hyperlink{struct_detection}{Detection} \&)
+\begin{DoxyCompactList}\small\item\em This method estimates the xyz position of a S\+I\+N\+G\+LE detected human in the W\+O\+R\+LD frame. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::array$<$ double, 3 $>$ $>$ \hyperlink{class_position_estimator_a9bc700bc3de4749f5ec40a892c52a09d}{estimate\+\_\+all\+\_\+xyz} (std\+::vector$<$ \hyperlink{struct_detection}{Detection} $>$ \&detection)
+\begin{DoxyCompactList}\small\item\em This method estimates the xyz position of E\+A\+CH detected human in the W\+O\+R\+LD frame. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix$<$ double, 4, 4 $>$ \& \hyperlink{class_position_estimator_a12ae9fe6ea2f7ca1e2054e018c5dabf5}{get\+\_\+cam2robot\+\_\+transform} ()
+\begin{DoxyCompactList}\small\item\em Get the cam2robot transform object. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix$<$ double, 3, 3 $>$ \& \hyperlink{class_position_estimator_a6832a1905352d24cbc834f2f205ba09b}{get\+\_\+inv\+\_\+camera\+\_\+matrix} ()
+\begin{DoxyCompactList}\small\item\em Get the camera matrix object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_position_estimator_a39de44247f8c8feaed5bd1de8438245f}\label{class_position_estimator_a39de44247f8c8feaed5bd1de8438245f}} 
+\index{Position\+Estimator@{Position\+Estimator}!Position\+Estimator@{Position\+Estimator}}
+\index{Position\+Estimator@{Position\+Estimator}!Position\+Estimator@{Position\+Estimator}}
+\subsubsection{\texorpdfstring{Position\+Estimator()}{PositionEstimator()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Position\+Estimator\+::\+Position\+Estimator (\begin{DoxyParamCaption}\item[{double}]{x,  }\item[{double}]{y,  }\item[{double}]{z,  }\item[{double}]{pitch,  }\item[{double}]{f\+\_\+x,  }\item[{double}]{f\+\_\+y,  }\item[{double}]{s,  }\item[{double}]{px,  }\item[{double}]{py,  }\item[{double}]{avg\+\_\+height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_position_estimator_af0b8305de010b7f15f0b18499d8d50c3}\label{class_position_estimator_af0b8305de010b7f15f0b18499d8d50c3}} 
+\index{Position\+Estimator@{Position\+Estimator}!Position\+Estimator@{Position\+Estimator}}
+\index{Position\+Estimator@{Position\+Estimator}!Position\+Estimator@{Position\+Estimator}}
+\subsubsection{\texorpdfstring{Position\+Estimator()}{PositionEstimator()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Position\+Estimator\+::\+Position\+Estimator (\begin{DoxyParamCaption}\item[{const std\+::unordered\+\_\+map$<$ std\+::string, double $>$ \&}]{robot\+\_\+params }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_position_estimator_aaa7e82a010bfb5dbcc795af9718c9eb0}\label{class_position_estimator_aaa7e82a010bfb5dbcc795af9718c9eb0}} 
+\index{Position\+Estimator@{Position\+Estimator}!approximate\+\_\+camera\+\_\+z@{approximate\+\_\+camera\+\_\+z}}
+\index{approximate\+\_\+camera\+\_\+z@{approximate\+\_\+camera\+\_\+z}!Position\+Estimator@{Position\+Estimator}}
+\subsubsection{\texorpdfstring{approximate\+\_\+camera\+\_\+z()}{approximate\_camera\_z()}}
+{\footnotesize\ttfamily double Position\+Estimator\+::approximate\+\_\+camera\+\_\+z (\begin{DoxyParamCaption}\item[{\hyperlink{struct_detection}{Detection} \&}]{detection }\end{DoxyParamCaption})}
+
+
+
+This function approximates the z location of the human in the C\+A\+M\+E\+RA frame based on the size of the bounding box. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em detection} & \hyperlink{struct_detection}{Detection} obj \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+approximate depth of human in camera frame U\+N\+IT\+: \mbox{[}m\mbox{]} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_position_estimator_a9bc700bc3de4749f5ec40a892c52a09d}\label{class_position_estimator_a9bc700bc3de4749f5ec40a892c52a09d}} 
+\index{Position\+Estimator@{Position\+Estimator}!estimate\+\_\+all\+\_\+xyz@{estimate\+\_\+all\+\_\+xyz}}
+\index{estimate\+\_\+all\+\_\+xyz@{estimate\+\_\+all\+\_\+xyz}!Position\+Estimator@{Position\+Estimator}}
+\subsubsection{\texorpdfstring{estimate\+\_\+all\+\_\+xyz()}{estimate\_all\_xyz()}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::array$<$double, 3$>$ $>$ Position\+Estimator\+::estimate\+\_\+all\+\_\+xyz (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \hyperlink{struct_detection}{Detection} $>$ \&}]{detection }\end{DoxyParamCaption})}
+
+
+
+This method estimates the xyz position of E\+A\+CH detected human in the W\+O\+R\+LD frame. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em detections} & vector of \hyperlink{struct_detection}{Detection} objs \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$std\+::array$<$double, 3$>$$>$\+: x, y, z position of E\+A\+CH human in R\+O\+B\+OT frame U\+N\+IT\+: \mbox{[}m\mbox{]} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_position_estimator_a90f4ced196e47ac347fcf53e834fbcab}\label{class_position_estimator_a90f4ced196e47ac347fcf53e834fbcab}} 
+\index{Position\+Estimator@{Position\+Estimator}!estimate\+\_\+xyz@{estimate\+\_\+xyz}}
+\index{estimate\+\_\+xyz@{estimate\+\_\+xyz}!Position\+Estimator@{Position\+Estimator}}
+\subsubsection{\texorpdfstring{estimate\+\_\+xyz()}{estimate\_xyz()}}
+{\footnotesize\ttfamily std\+::array$<$double, 3$>$ Position\+Estimator\+::estimate\+\_\+xyz (\begin{DoxyParamCaption}\item[{\hyperlink{struct_detection}{Detection} \&}]{ }\end{DoxyParamCaption})}
+
+
+
+This method estimates the xyz position of a S\+I\+N\+G\+LE detected human in the W\+O\+R\+LD frame. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em detection} & \hyperlink{struct_detection}{Detection} obj \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::array$<$double, 3$>$\+: x, y, z position of a single human. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_position_estimator_a12ae9fe6ea2f7ca1e2054e018c5dabf5}\label{class_position_estimator_a12ae9fe6ea2f7ca1e2054e018c5dabf5}} 
+\index{Position\+Estimator@{Position\+Estimator}!get\+\_\+cam2robot\+\_\+transform@{get\+\_\+cam2robot\+\_\+transform}}
+\index{get\+\_\+cam2robot\+\_\+transform@{get\+\_\+cam2robot\+\_\+transform}!Position\+Estimator@{Position\+Estimator}}
+\subsubsection{\texorpdfstring{get\+\_\+cam2robot\+\_\+transform()}{get\_cam2robot\_transform()}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix$<$double, 4, 4$>$\& Position\+Estimator\+::get\+\_\+cam2robot\+\_\+transform (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the cam2robot transform object. 
+
+\begin{DoxyReturn}{Returns}
+const Eigen\+::\+Matrix$<$double, 4, 4$>$\& 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_position_estimator_a6832a1905352d24cbc834f2f205ba09b}\label{class_position_estimator_a6832a1905352d24cbc834f2f205ba09b}} 
+\index{Position\+Estimator@{Position\+Estimator}!get\+\_\+inv\+\_\+camera\+\_\+matrix@{get\+\_\+inv\+\_\+camera\+\_\+matrix}}
+\index{get\+\_\+inv\+\_\+camera\+\_\+matrix@{get\+\_\+inv\+\_\+camera\+\_\+matrix}!Position\+Estimator@{Position\+Estimator}}
+\subsubsection{\texorpdfstring{get\+\_\+inv\+\_\+camera\+\_\+matrix()}{get\_inv\_camera\_matrix()}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix$<$double, 3, 3$>$\& Position\+Estimator\+::get\+\_\+inv\+\_\+camera\+\_\+matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the camera matrix object. 
+
+\begin{DoxyReturn}{Returns}
+const Eigen\+::\+Matrix$<$2, 2, double$>$\& 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_position_estimator_a6414758ee472d223f6b97369abe27968}\label{class_position_estimator_a6414758ee472d223f6b97369abe27968}} 
+\index{Position\+Estimator@{Position\+Estimator}!threshold\+\_\+frame@{threshold\+\_\+frame}}
+\index{threshold\+\_\+frame@{threshold\+\_\+frame}!Position\+Estimator@{Position\+Estimator}}
+\subsubsection{\texorpdfstring{threshold\+\_\+frame()}{threshold\_frame()}}
+{\footnotesize\ttfamily bool Position\+Estimator\+::threshold\+\_\+frame (\begin{DoxyParamCaption}\item[{double}]{probability }\end{DoxyParamCaption})}
+
+
+
+This function removes noise by discarding frames with low probability of human detection. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em probability} & Human detection probability \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+whether we have decided the frame has a human in it or not 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/media/diane/\+My Passport/\+U\+M\+D Masters/\+Fall 2021/\+E\+N\+P\+M 808\+X/\+Assignments/\+Midterm/\+A\+C\+M\+E\+\_\+perception\+\_\+proposal/include/\hyperlink{_position_estimator_8hpp}{Position\+Estimator.\+hpp}\end{DoxyCompactItemize}

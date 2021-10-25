@@ -1,0 +1,34 @@
+1_410
+
+Detection
+top_left: [172, 194]
+bottom_right: [217, 349]
+
+Detection
+top_left: [197, 229]
+bottom_right: [229, 399]
+
+Detection
+top_left: [234, 193]
+bottom_right: [260, 345]
+
+Detection
+top_left: [238, 252]
+bottom_right: [288, 414]
+
+Detection
+top_left: [283, 247]
+bottom_right: [340, 352]
+
+Detection
+top_left: [294, 302]
+bottom_right: [360, 394]
+
+Detection
+top_left: [379, 278]
+bottom_right: [414, 356]
+
+Detection
+top_left: [357, 294]
+bottom_right: [405, 370]
+

@@ -1,0 +1,10 @@
+1_435
+
+Detection
+top_left: [0, 240]
+bottom_right: [39, 371]
+
+Detection
+top_left: [35, 211]
+bottom_right: [138, 400]
+

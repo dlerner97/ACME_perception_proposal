@@ -1,0 +1,22 @@
+1_352
+
+Detection
+top_left: [241, 73]
+bottom_right: [282, 244]
+
+Detection
+top_left: [273, 16]
+bottom_right: [291, 91]
+
+Detection
+top_left: [255, 9]
+bottom_right: [275, 76]
+
+Detection
+top_left: [241, 1]
+bottom_right: [258, 78]
+
+Detection
+top_left: [222, 4]
+bottom_right: [241, 82]
+

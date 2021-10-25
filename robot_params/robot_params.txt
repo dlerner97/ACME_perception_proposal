@@ -1,0 +1,31 @@
+Any line without an "equals" sign is considered a comment.
+
+// Camera to robot transform variables
+DX_CAM2ROBOT_CENTER = 2 [cm]
+DZ_CAM2ROBOT_CENTER = 3 [cm]
+DY_CAM2ROBOT_CENTER = 0 [m]
+PITCH_CAM2ROBOT_CENTER = 90 [deg]
+
+// Camera variables
+CAM_FOCAL_LEN = 50 [mm]
+CAM_PIXEL_DENSITY = 300 [ppi]
+
+// Human height assumption
+AVG_HUMAN_HEIGHT = 1.77 [m]
+
+// Probability of a human detection within an image to be considered a positive match
+DETECTION_PROBABILITY_THRESHOLD = 50 [%]
+
+// Non-maximum suppression threshold (used in human detection)
+NMS_THRESHOLD = 40 [%]
+
+// Score threshold (used in human detection)
+SCORE_THRESHOLD = 60 [%]
+
+// Neural network image dimension requirements
+IMG_WIDTH_REQ = 416 [px]
+IMG_HEIGHT_REQ = 416 [px]
+
+// Distance thresholds used be alerting system
+LOW_ALERT_THRESHOLD = 3 [m]
+HIGH_ALERT_THRESHOLD = 1 [m]

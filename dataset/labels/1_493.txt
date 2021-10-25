@@ -1,0 +1,18 @@
+1_493
+
+Detection
+top_left: [17, 308]
+bottom_right: [244, 414]
+
+Detection
+top_left: [0, 5]
+bottom_right: [34, 179]
+
+Detection
+top_left: [69, 1]
+bottom_right: [129, 64]
+
+Detection
+top_left: [15, 36]
+bottom_right: [241, 372]
+

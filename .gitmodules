@@ -1,0 +1,9 @@
+[submodule "vendor/googletest"]
+	path = vendor/googletest
+	url = https://github.com/google/googletest
+[submodule "vendor/boost"]
+	path = vendor/boost
+	url = git@github.com:boostorg/boost.git
+[submodule "vendor/opencv"]
+	path = vendor/opencv
+	url = https://github.com/opencv/opencv
