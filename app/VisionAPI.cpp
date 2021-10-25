@@ -10,12 +10,14 @@
  * 
  */
 
+#include <math.h>
 #include <vector>
 #include <opencv2/opencv.hpp>
-#include <math.h>
+
 #include "../include/VisionAPI.hpp"
 
-std::shared_ptr<std::vector<std::array<double, 3> > > VisionAPI::get_xyz(const cv::Mat&  orig_frame) {
+std::shared_ptr<std::vector<std::array<double, 3> > >
+    VisionAPI::get_xyz(const cv::Mat&  orig_frame) {
     auto prep_img = detector.prep_frame(orig_frame);
     auto detected = detector.detect(*prep_img);
     auto ret = estimator.estimate_all_xyz(*detected);
@@ -26,7 +28,8 @@ double VisionAPI::calculate_distance(std::array<double, 3> xyz) {
     return std::hypot(xyz[0], xyz[1]);
 }
 
-void VisionAPI::print_alerts(const std::vector<std::array<double, 3> > &all_xyz) {
+void VisionAPI::print_alerts(
+        const std::vector<std::array<double, 3> > &all_xyz) {
     double min_distance = 10;
     for (const auto& xyz : all_xyz) {
         double distance = calculate_distance(xyz);
@@ -35,15 +38,17 @@ void VisionAPI::print_alerts(const std::vector<std::array<double, 3> > &all_xyz)
         }
     }
     if (min_distance < alert_thresholds[1]) {
-        std::cout << "Human is " << min_distance << " meters away, danger!" << std::endl;
+        std::cout << "Human is " << min_distance <<
+            " meters away, danger!" << std::endl;
         std::cout << "Robot needs to stop." << std::endl;
-    }
-    else if (min_distance >= alert_thresholds[1] && min_distance <= alert_thresholds[0]) {
-        std::cout << "Human is " << min_distance << " meters away. " << std::endl;
+    } else if (min_distance >= alert_thresholds[1] &&
+            min_distance <= alert_thresholds[0]) {
+        std::cout << "Human is " << min_distance <<
+            " meters away. " << std::endl;
         std::cout << "Robot needs to redirect its path. " << std::endl;
-    }
-    else if (min_distance >= alert_thresholds[0]) {
-        std::cout << "Human is " << min_distance << " meters away. " << std::endl;
+    } else if (min_distance >= alert_thresholds[0]) {
+        std::cout << "Human is " << min_distance <<
+            " meters away. " << std::endl;
         std::cout << "Robot will continue its current path. " << std::endl;
     }
 }
