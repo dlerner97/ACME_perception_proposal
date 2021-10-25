@@ -86,6 +86,7 @@ TEST(HumanDetectorTests, HumanDetectionAccuracyTest) {
 
     HumanDetector detector(ret_params, coco_name_path, yolo_cfg_path, yolo_weights_path);
 
+    int num_imgs = 0;
     int num_true_detections = 0;
     int num_detected_detections = 0;
     Detection sum_detect_diff{};
@@ -93,9 +94,10 @@ TEST(HumanDetectorTests, HumanDetectionAccuracyTest) {
     LabelParser label_parser;
     auto labels = label_parser.read_labeled_test_images("../dataset/labels");
     for (const auto& label : labels) {
+        if (num_imgs > 50) break;
         const std::vector<Detection>& true_detections = label->all_detections;
-        cv::Mat& img = label->img; //removed const
-        auto prep_img = detector.prep_frame(img); //couldn't use const for prep frame
+        cv::Mat& img = label->img;
+        auto prep_img = detector.prep_frame(img);
         auto output_detections = detector.detect(*prep_img);
 
         num_true_detections += true_detections.size();
@@ -104,9 +106,10 @@ TEST(HumanDetectorTests, HumanDetectionAccuracyTest) {
         for (const auto& output_detection : *output_detections) {
             sum_detect_diff += getClosestDiff(output_detection, true_detections);
         }
+        num_imgs++;
     }
 
-    double percent_detections = (num_true_detections - num_detected_detections)/static_cast<double>(num_true_detections);
+    double percent_detections = num_detected_detections/static_cast<double>(num_true_detections);
     double average_x_diff = sum_detect_diff.x/static_cast<double>(num_true_detections);
     double average_y_diff = sum_detect_diff.y/static_cast<double>(num_true_detections);
     double average_width_diff = sum_detect_diff.width/static_cast<double>(num_true_detections);
@@ -114,7 +117,7 @@ TEST(HumanDetectorTests, HumanDetectionAccuracyTest) {
 
     std::cout << "Percent detected: " << 100*percent_detections << " %" << std::endl;
 
-    EXPECT_GE(percent_detections, 0.40);
+    EXPECT_GE(percent_detections, 0.80);
     EXPECT_LT(average_x_diff, 30);
     EXPECT_LT(average_y_diff, 30);
     EXPECT_LT(average_width_diff, 30);
@@ -147,19 +150,22 @@ TEST(HumanDetectorTests, NoDetectionsPresentTest) {
 
     HumanDetector detector(ret_params, coco_name_path, yolo_cfg_path, yolo_weights_path);
 
-    int num_detections = 0;
+    int num_images_w_fps = 0;
     int num_imgs = 0;
 
-    for (const auto& entry : boost::filesystem::directory_iterator("../dataset/1")) {
+    for (const auto& entry : boost::filesystem::directory_iterator("../dataset/0")) {
         if (hasEnding(entry.path().string(), ".png")) {
+            if (num_imgs > 50) break;
             auto img = cv::imread(entry.path().string());
             auto prepped_img = detector.prep_frame(img);
             auto results = detector.detect(*prepped_img);
+
             if (results->size() > 0)
-                num_detections++;
+                num_images_w_fps++;
             num_imgs++;
         }
     }
-    double accuracy = (num_imgs - num_detections)/static_cast<double>(num_imgs);
-    EXPECT_GT(accuracy, 0.6);
+    double accuracy = (num_imgs - num_images_w_fps)/static_cast<double>(num_imgs);
+    std::cout << "Percent of no detections: " << 100*accuracy << " %" << std::endl;
+    EXPECT_GT(accuracy, 0.8);
 }
