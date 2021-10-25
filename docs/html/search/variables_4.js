@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['width',['width',['../struct_detection.html#af88e469657d3bc4807caff6c5f9e9475',1,'Detection']]]
+  ['name',['name',['../struct_test_image.html#a53e7396d578566495ce7a5291b5e8dc5',1,'TestImage::name()'],['../struct_var.html#ad112053ba9381eb7b8b26b3c5702410a',1,'Var::name()']]]
 ];

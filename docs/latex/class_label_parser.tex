@@ -1,0 +1,57 @@
+\hypertarget{class_label_parser}{}\section{Label\+Parser Class Reference}
+\label{class_label_parser}\index{Label\+Parser@{Label\+Parser}}
+
+
+{\ttfamily \#include $<$Label\+Parser.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::shared\+\_\+ptr$<$ \hyperlink{struct_test_image}{Test\+Image} $>$ \hyperlink{class_label_parser_ac524e2136bcf06560e53fadf0c7eb9ad}{parse\+\_\+file} (const std\+::string \&file\+\_\+path)
+\begin{DoxyCompactList}\small\item\em Parses labeled image file. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \hyperlink{struct_test_image}{Test\+Image} $>$ $>$ \hyperlink{class_label_parser_a2de825ad0f48b9e5b8b3a27c2cf697a7}{read\+\_\+labeled\+\_\+test\+\_\+images} (const std\+::string \&dir\+\_\+path)
+\begin{DoxyCompactList}\small\item\em Parses ever labeled image file in the input directory. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_label_parser_ac524e2136bcf06560e53fadf0c7eb9ad}\label{class_label_parser_ac524e2136bcf06560e53fadf0c7eb9ad}} 
+\index{Label\+Parser@{Label\+Parser}!parse\+\_\+file@{parse\+\_\+file}}
+\index{parse\+\_\+file@{parse\+\_\+file}!Label\+Parser@{Label\+Parser}}
+\subsubsection{\texorpdfstring{parse\+\_\+file()}{parse\_file()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\hyperlink{struct_test_image}{Test\+Image}$>$ Label\+Parser\+::parse\+\_\+file (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+\_\+path }\end{DoxyParamCaption})}
+
+
+
+Parses labeled image file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+\_\+path} & std\+::string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::shared\+\_\+ptr$<$\+Test\+Image$>$ shared pointer to a \hyperlink{struct_test_image}{Test\+Image} instance. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_label_parser_a2de825ad0f48b9e5b8b3a27c2cf697a7}\label{class_label_parser_a2de825ad0f48b9e5b8b3a27c2cf697a7}} 
+\index{Label\+Parser@{Label\+Parser}!read\+\_\+labeled\+\_\+test\+\_\+images@{read\+\_\+labeled\+\_\+test\+\_\+images}}
+\index{read\+\_\+labeled\+\_\+test\+\_\+images@{read\+\_\+labeled\+\_\+test\+\_\+images}!Label\+Parser@{Label\+Parser}}
+\subsubsection{\texorpdfstring{read\+\_\+labeled\+\_\+test\+\_\+images()}{read\_labeled\_test\_images()}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::shared\+\_\+ptr$<$\hyperlink{struct_test_image}{Test\+Image}$>$ $>$ Label\+Parser\+::read\+\_\+labeled\+\_\+test\+\_\+images (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{dir\+\_\+path }\end{DoxyParamCaption})}
+
+
+
+Parses ever labeled image file in the input directory. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dir\+\_\+path} & path of the desired dir \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$std\+::shared\+\_\+ptr$<$\+Test\+Image$>$ $>$ 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/media/diane/\+My Passport/\+U\+M\+D Masters/\+Fall 2021/\+E\+N\+P\+M 808\+X/\+Assignments/\+Midterm/\+A\+C\+M\+E\+\_\+perception\+\_\+proposal/include/\hyperlink{_label_parser_8hpp}{Label\+Parser.\+hpp}\end{DoxyCompactItemize}

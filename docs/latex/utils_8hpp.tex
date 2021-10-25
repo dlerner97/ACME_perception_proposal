@@ -1,0 +1,93 @@
+\hypertarget{utils_8hpp}{}\section{/media/diane/\+My Passport/\+U\+MD Masters/\+Fall 2021/\+E\+N\+PM 808\+X/\+Assignments/\+Midterm/\+A\+C\+M\+E\+\_\+perception\+\_\+proposal/include/utils.hpp File Reference}
+\label{utils_8hpp}\index{/media/diane/\+My Passport/\+U\+M\+D Masters/\+Fall 2021/\+E\+N\+P\+M 808\+X/\+Assignments/\+Midterm/\+A\+C\+M\+E\+\_\+perception\+\_\+proposal/include/utils.\+hpp@{/media/diane/\+My Passport/\+U\+M\+D Masters/\+Fall 2021/\+E\+N\+P\+M 808\+X/\+Assignments/\+Midterm/\+A\+C\+M\+E\+\_\+perception\+\_\+proposal/include/utils.\+hpp}}
+
+
+utils header  
+
+
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$stdexcept$>$}\newline
+Include dependency graph for utils.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=267pt]{utils_8hpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_invalid_file}{Invalid\+File}
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_invalid_file}{Invalid\+File} exception for parsers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Out $>$ }\\void \hyperlink{utils_8hpp_a03529396588a5d4dac36c432989fdfaa}{split} (const std\+::string \&s, char delim, Out result)
+\begin{DoxyCompactList}\small\item\em Splits a string into a series of alpha-\/numeric words. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::string $>$ \hyperlink{utils_8hpp_a6462346f3d490257a819c0a4f17de83a}{split} (const std\+::string \&s, char delim=\textquotesingle{} \textquotesingle{})
+\begin{DoxyCompactList}\small\item\em Splits string by the delimeter and returns a vector. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+utils header 
+
+\begin{DoxyAuthor}{Author}
+Dani Lerner 
+
+Diane Ngo 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2021-\/10-\/25
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2021 
+\end{DoxyCopyright}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{utils_8hpp_a03529396588a5d4dac36c432989fdfaa}\label{utils_8hpp_a03529396588a5d4dac36c432989fdfaa}} 
+\index{utils.\+hpp@{utils.\+hpp}!split@{split}}
+\index{split@{split}!utils.\+hpp@{utils.\+hpp}}
+\subsubsection{\texorpdfstring{split()}{split()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Out $>$ \\
+void split (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{s,  }\item[{char}]{delim,  }\item[{Out}]{result }\end{DoxyParamCaption})}
+
+
+
+Splits a string into a series of alpha-\/numeric words. 
+
+{\bfseries [https\+://stackoverflow.\+com/questions/236129/how-\/do-\/i-\/iterate-\/over-\/the-\/words-\/of-\/a-\/string]}
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Changes \char`\"{}out\char`\"{} container 
+\end{DoxyReturn}
+\mbox{\Hypertarget{utils_8hpp_a6462346f3d490257a819c0a4f17de83a}\label{utils_8hpp_a6462346f3d490257a819c0a4f17de83a}} 
+\index{utils.\+hpp@{utils.\+hpp}!split@{split}}
+\index{split@{split}!utils.\+hpp@{utils.\+hpp}}
+\subsubsection{\texorpdfstring{split()}{split()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::string$>$ split (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{s,  }\item[{char}]{delim = {\ttfamily \textquotesingle{}~\textquotesingle{}} }\end{DoxyParamCaption})}
+
+
+
+Splits string by the delimeter and returns a vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & \\
+\hline
+{\em delim} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$std\+::string$>$ 
+\end{DoxyReturn}

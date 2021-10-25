@@ -6,25 +6,31 @@
 ### Authors
 
 - Dani Lerner (dlerner97)
+* Add bio here
 - Diane Ngo (dngo13)
+* Diane Ngo graduated from Kennesaw State University from Georgia with a B.S. in Mechatronics Engineering, having specialized in a mix of Mech E., Elec E., and Controls she has decided to pursue AI/Machine Learning and programming experience at the University of Maryland's Master's program in Robotics Engineering.
 
-### Information
+### Project Overview and Description
 
-In this proposal, we will develop a human obstacle detection prototype for mobile robots.
-This repo contains coursework for the ENPM808X Midterm project. 
+This repo contains coursework for the ENPM808X Midterm project for Fall 2021.
+ACME Robotics has reached out in regards to needing a new module for their robots. The module that is implemented in this project is a perception module for human detection and tracking. This can be used on any of the ACME robots that work alongside humans and can be added with a front-facing camera. Essentially, the robot working in the dynamic environment can detect if a human is in its path and can alter its path or stop if necessary to avoid any possible accidents and collisions. The program can be broken down into a few main features: dataset preparation for the neural network, position estimation of humans, human detection, abd  distance calculation of the human from the robot. The program has to scale all the images to the proper dimensions needed for the neural network input, which is 416x416 pixels. The pre-trained neural network from YOLOv4 already has a set of weights that has been configured so we don't need to create a network from scratch. Then, the robot frame has to be transformed into the camera and world frame, so that the robot can calculate the position of the human in the correct frame and calculate the distance of how far away the human is (or if there is multiple humans, then the one closest to the robot).
 
-### Midterm Phase 1 Deliverables
+For each image in the dataset, each image with a human/(s) has a label with the top-left and bottom-right coordinate for a box to correspond to the detected human. The detection structure stores these coordinates and also the width and height of the box.  The Position Estimator has a probability threshold for classificaiton to determine if a human is detected or not, a rough estimate of the average human height, a transformation of the camera frame to the robot frame, and an estimate of the xyz position of the human (or a vector containing multiple humans if there is more than 1 in an image). The Vision API wraps up the human detector and the position estimator into a stack that runs the whole program nicely. The neural network runs off of the CPU backend, so it runs relatively fast with a decent computer processor. GPU Acceleration with CUDA is not enabled so the program won't be as fast in performance, since not everyone has a NVIDIA GPU. The main functionality of the program when running is that it reads in an image from the dataset, runs the stack, and prints out if a human was detected, the human's x, y, z position, and the distance of how far away the human was. The distance is read into a range of thresholds where the robot action will be determined if the human then the robot will stop, or else the robot will continue or alter its path accordingly. 
+
+### Midterm Phase 2 Deliverables
 
 - The most recent activity diagram and UML can be found in the [visual reps](/visual_reps) folder while the original UML can be found in the [Original UML](/original_UML) folder.
+- Agile Iterative Process (AIP): Please see this link to find our [AIP implementation document](https://docs.google.com/spreadsheets/d/1gBVo8C_xLlcH5OcivV810-puy338YpDrUkYAftgQPH4/edit?usp=sharing).
 
 ### Required Libraries and Software
 
-  1. **C++ Version C++17**. The "filesystem" library requires C++17.
+  1. **C++ Version C++14**. This program requires C++14.
   2. **OpenCV**. Please install the OpenCV package using the following link: [OpenCV Installation](https://docs.opencv.org/3.4.15/d7/d9f/tutorial_linux_install.html)
   3. **Eigen**. This library should already be installed on a standard linux system.
   4. **math**. This library should already be installed on a standard linux system.
   5. **C++ std libs**. This library is certainly installed on a standard linux system.
   6. **CMake**. This software should already be installed on a standard linux system.
+  7. **YOLOv4**. Please download the weights file from the link [weights] (https://drive.google.com/file/d/125kKy-FkMWs8C2s9kK0rVBYtv7kOsNwq/view?usp=sharing) and place in the /robot_params directory. This file is too large to place on github.
 
 ### Running the code
 To run the code, open a terminal and follow these steps:
@@ -64,9 +70,13 @@ make
 ./test/cpp-test
 ```
 
-### Agile Iterative Process (AIP)
-
-Please see this link to find our [AIP implementation document](https://docs.google.com/spreadsheets/d/1gBVo8C_xLlcH5OcivV810-puy338YpDrUkYAftgQPH4/edit?usp=sharing).
+### Doxygen Documentation Generation
+The documentation is already pre-generated in the docs(/docs) folder however if for some reason the files cannot be previewed, then you can generate it as seen below.
+```bash
+cd <absolute path>/ACME_perception_proposal/docs
+doxygen Doxyfile
+```
+To view the documentation, navigate to /html/index.html and open it in a browser. From there, you can navigate to Classes > Class List and click on any respective class for its documentation for each method.
 
 ### Visual Representations of Code
 
@@ -118,3 +128,7 @@ We will now use these derivation to solve one of the unit test scenarios.
 <img src="/visual_reps/LaTex_Imgs/x_robot.png" width="300">
 <img src="/visual_reps/LaTex_Imgs/z_robot.png" width="300">
 ---
+
+### Citations
+1. YOLOv4 [link](https://github.com/AlexeyAB/darknet)
+2. YOLO Object Detection Example [link](https://learnopencv.com/deep-learning-based-object-detection-using-yolov3-with-opencv-python-c/#disqus_thread)

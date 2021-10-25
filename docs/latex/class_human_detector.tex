@@ -7,29 +7,31 @@
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{class_human_detector_a1b7551240bdbc20560aa8f2b6c9dedf4}{Human\+Detector} (const std\+::unordered\+\_\+map$<$ std\+::string, double $>$ \&robot\+\_\+params)
+\hyperlink{class_human_detector_a2c252c0c3cf460930daa63635f5219da}{Human\+Detector} (const std\+::unordered\+\_\+map$<$ std\+::string, double $>$ \&robot\+\_\+params, const std\+::string \&\+\_\+coco\+\_\+name\+\_\+path, const std\+::string \&\+\_\+yolo\+\_\+cfg\+\_\+path, const std\+::string \&\+\_\+yolo\+\_\+weight\+\_\+path)
 \item 
-std\+::shared\+\_\+ptr$<$ cv\+::\+Mat $>$ \hyperlink{class_human_detector_abb95c995b5b11c93103484f0fc9027c5}{prep\+\_\+frame} (cv\+::\+Mat \&)
+std\+::shared\+\_\+ptr$<$ cv\+::\+Mat $>$ \hyperlink{class_human_detector_a32ae85763d07da7611f739cea9988308}{prep\+\_\+frame} (const cv\+::\+Mat \&img)
 \begin{DoxyCompactList}\small\item\em Prepares frame for human detection and NN input. \end{DoxyCompactList}\item 
-std\+::vector$<$ \hyperlink{struct_detection}{Detection} $>$ \hyperlink{class_human_detector_acd632914e98da1a05d80270b769cfdd3}{detect} (cv\+::\+Mat \&)
-\begin{DoxyCompactList}\small\item\em Detects humans in a given image. \end{DoxyCompactList}\end{DoxyCompactItemize}
+std\+::shared\+\_\+ptr$<$ std\+::vector$<$ \hyperlink{struct_detection}{Detection} $>$ $>$ \hyperlink{class_human_detector_ad63edaf628fd5fd819cfebfc5ce90466}{detect} (cv\+::\+Mat \&, bool show\+\_\+detections=false)
+\begin{DoxyCompactList}\small\item\em Detects humans in a given image. \end{DoxyCompactList}\item 
+std\+::array$<$ int, 2 $>$ \hyperlink{class_human_detector_a806bd77dc446642911093a6a1b1a6bf7}{get\+\_\+img\+\_\+dims} ()
+\begin{DoxyCompactList}\small\item\em Gets the image dimensions (width and height) \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_human_detector_a1b7551240bdbc20560aa8f2b6c9dedf4}\label{class_human_detector_a1b7551240bdbc20560aa8f2b6c9dedf4}} 
+\mbox{\Hypertarget{class_human_detector_a2c252c0c3cf460930daa63635f5219da}\label{class_human_detector_a2c252c0c3cf460930daa63635f5219da}} 
 \index{Human\+Detector@{Human\+Detector}!Human\+Detector@{Human\+Detector}}
 \index{Human\+Detector@{Human\+Detector}!Human\+Detector@{Human\+Detector}}
 \subsubsection{\texorpdfstring{Human\+Detector()}{HumanDetector()}}
-{\footnotesize\ttfamily Human\+Detector\+::\+Human\+Detector (\begin{DoxyParamCaption}\item[{const std\+::unordered\+\_\+map$<$ std\+::string, double $>$ \&}]{robot\+\_\+params }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily Human\+Detector\+::\+Human\+Detector (\begin{DoxyParamCaption}\item[{const std\+::unordered\+\_\+map$<$ std\+::string, double $>$ \&}]{robot\+\_\+params,  }\item[{const std\+::string \&}]{\+\_\+coco\+\_\+name\+\_\+path,  }\item[{const std\+::string \&}]{\+\_\+yolo\+\_\+cfg\+\_\+path,  }\item[{const std\+::string \&}]{\+\_\+yolo\+\_\+weight\+\_\+path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{class_human_detector_acd632914e98da1a05d80270b769cfdd3}\label{class_human_detector_acd632914e98da1a05d80270b769cfdd3}} 
+\mbox{\Hypertarget{class_human_detector_ad63edaf628fd5fd819cfebfc5ce90466}\label{class_human_detector_ad63edaf628fd5fd819cfebfc5ce90466}} 
 \index{Human\+Detector@{Human\+Detector}!detect@{detect}}
 \index{detect@{detect}!Human\+Detector@{Human\+Detector}}
 \subsubsection{\texorpdfstring{detect()}{detect()}}
-{\footnotesize\ttfamily std\+::vector$<$\hyperlink{struct_detection}{Detection}$>$ Human\+Detector\+::detect (\begin{DoxyParamCaption}\item[{cv\+::\+Mat \&}]{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$std\+::vector$<$\hyperlink{struct_detection}{Detection}$>$ $>$ Human\+Detector\+::detect (\begin{DoxyParamCaption}\item[{cv\+::\+Mat \&}]{,  }\item[{bool}]{show\+\_\+detections = {\ttfamily false} }\end{DoxyParamCaption})}
 
 
 
@@ -43,23 +45,38 @@ Detects humans in a given image.
 \begin{DoxyReturn}{Returns}
 A detection obj for each human detected in frame. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_human_detector_abb95c995b5b11c93103484f0fc9027c5}\label{class_human_detector_abb95c995b5b11c93103484f0fc9027c5}} 
+\mbox{\Hypertarget{class_human_detector_a806bd77dc446642911093a6a1b1a6bf7}\label{class_human_detector_a806bd77dc446642911093a6a1b1a6bf7}} 
+\index{Human\+Detector@{Human\+Detector}!get\+\_\+img\+\_\+dims@{get\+\_\+img\+\_\+dims}}
+\index{get\+\_\+img\+\_\+dims@{get\+\_\+img\+\_\+dims}!Human\+Detector@{Human\+Detector}}
+\subsubsection{\texorpdfstring{get\+\_\+img\+\_\+dims()}{get\_img\_dims()}}
+{\footnotesize\ttfamily std\+::array$<$int, 2$>$ Human\+Detector\+::get\+\_\+img\+\_\+dims (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the image dimensions (width and height) 
+
+\begin{DoxyReturn}{Returns}
+Array of image dimensions 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_human_detector_a32ae85763d07da7611f739cea9988308}\label{class_human_detector_a32ae85763d07da7611f739cea9988308}} 
 \index{Human\+Detector@{Human\+Detector}!prep\+\_\+frame@{prep\+\_\+frame}}
 \index{prep\+\_\+frame@{prep\+\_\+frame}!Human\+Detector@{Human\+Detector}}
 \subsubsection{\texorpdfstring{prep\+\_\+frame()}{prep\_frame()}}
-{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$cv\+::\+Mat$>$ Human\+Detector\+::prep\+\_\+frame (\begin{DoxyParamCaption}\item[{cv\+::\+Mat \&}]{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$cv\+::\+Mat$>$ Human\+Detector\+::prep\+\_\+frame (\begin{DoxyParamCaption}\item[{const cv\+::\+Mat \&}]{img }\end{DoxyParamCaption})}
 
 
 
 Prepares frame for human detection and NN input. 
 
+{\bfseries [https\+://github.\+com/spmallick/learnopencv]}
+
 
 \begin{DoxyParams}{Parameters}
-{\em img} & description \\
+{\em img} & Original image to be prepared for NN \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-shared pointer to the NN prepared frame 
+CV matrix for NN prepared frame 
 \end{DoxyReturn}
 
 
