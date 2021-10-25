@@ -1,0 +1,62 @@
+➜  build git:(main) ./test/cpp-test 
+[==========] Running 15 tests from 3 test cases.
+[----------] Global test environment set-up.
+[----------] 5 tests from PositionEstimatorTests
+[ RUN      ] PositionEstimatorTests.MissingRobotParamsTest
+[       OK ] PositionEstimatorTests.MissingRobotParamsTest (0 ms)
+[ RUN      ] PositionEstimatorTests.BuildRobot2HumanTransformTest
+[       OK ] PositionEstimatorTests.BuildRobot2HumanTransformTest (0 ms)
+[ RUN      ] PositionEstimatorTests.ApproximateZTest
+[       OK ] PositionEstimatorTests.ApproximateZTest (0 ms)
+[ RUN      ] PositionEstimatorTests.EstimateXYZTest
+[       OK ] PositionEstimatorTests.EstimateXYZTest (0 ms)
+[ RUN      ] PositionEstimatorTests.EstimateAllXYZTest
+[       OK ] PositionEstimatorTests.EstimateAllXYZTest (0 ms)
+[----------] 5 tests from PositionEstimatorTests (0 ms total)
+
+[----------] 5 tests from ParamParserTest
+[ RUN      ] ParamParserTest.TestTextFileExistence
+[       OK ] ParamParserTest.TestTextFileExistence (0 ms)
+[ RUN      ] ParamParserTest.VarVectorParserMismatchTest
+No unit provided. Assigning default unit.
+No unit provided. Assigning default unit.
+[       OK ] ParamParserTest.VarVectorParserMismatchTest (0 ms)
+[ RUN      ] ParamParserTest.UnitTest
+No unit provided. Assigning default unit.
+No unit provided. Assigning default unit.
+No unit provided. Assigning default unit.
+No unit provided. Assigning default unit.
+No unit provided. Assigning default unit.
+[       OK ] ParamParserTest.UnitTest (0 ms)
+[ RUN      ] ParamParserTest.UnitNotAllowedTest
+[       OK ] ParamParserTest.UnitNotAllowedTest (1 ms)
+[ RUN      ] ParamParserTest.VariousInputsTest
+No unit provided. Assigning default unit.
+No unit provided. Assigning default unit.
+No unit provided. Assigning default unit.
+No unit provided. Assigning default unit.
+[       OK ] ParamParserTest.VariousInputsTest (1 ms)
+[----------] 5 tests from ParamParserTest (3 ms total)
+
+[----------] 5 tests from HumanDetectorTests
+[ RUN      ] HumanDetectorTests.MissingRobotParamsTest
+[       OK ] HumanDetectorTests.MissingRobotParamsTest (120 ms)
+[ RUN      ] HumanDetectorTests.MissingYoloFilesTest
+[       OK ] HumanDetectorTests.MissingYoloFilesTest (0 ms)
+[ RUN      ] HumanDetectorTests.CorrectFrameSizeTest
+libpng warning: iCCP: known incorrect sRGB profile
+[       OK ] HumanDetectorTests.CorrectFrameSizeTest (101 ms)
+[ RUN      ] HumanDetectorTests.HumanDetectionAccuracyTest
+Percent detected: 89 %
+[       OK ] HumanDetectorTests.HumanDetectionAccuracyTest (18283 ms)
+[ RUN      ] HumanDetectorTests.NoDetectionsPresentTest
+libpng warning: iCCP: known incorrect sRGB profile
+libpng warning: iCCP: known incorrect sRGB profile
+libpng warning: iCCP: known incorrect sRGB profile
+Percent of no detections: 98.0392 %
+[       OK ] HumanDetectorTests.NoDetectionsPresentTest (23465 ms)
+[----------] 5 tests from HumanDetectorTests (41969 ms total)
+
+[----------] Global test environment tear-down
+[==========] 15 tests from 3 test cases ran. (41972 ms total)
+[  PASSED  ] 15 tests.
