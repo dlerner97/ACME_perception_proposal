@@ -17,7 +17,7 @@ std::shared_ptr<cv::Mat> HumanDetector::prep_frame(const cv::Mat& img) {
     return prepped_img;
 }
 
-std::shared_ptr<std::vector<Detection> > HumanDetector::parse_dnn_output(const std::vector<cv::Mat>& detections, cv::Mat& img, bool show_detections) {
+std::shared_ptr<std::vector<Detection> > HumanDetector::parse_dnn_output(const std::vector<cv::Mat>& detections, cv::Mat* img, bool show_detections) {
     std::vector<int> classIds;
     std::vector<float> confidences;
     std::vector<cv::Rect> boxes;
@@ -65,13 +65,13 @@ std::shared_ptr<std::vector<Detection> > HumanDetector::detect(cv::Mat& prepped_
         
     std::vector<cv::Mat> detections;
     net.forward(detections, detection_classes);
-    auto ret_detections_ptr = parse_dnn_output(detections, prepped_img, show_detections);
+    auto ret_detections_ptr = parse_dnn_output(detections, &prepped_img, show_detections);
 
     return ret_detections_ptr;
 }
 
-void HumanDetector::draw_pred(int classId, float conf, int left, int top, int right, int bottom, cv::Mat& frame) {
-    rectangle(frame, cv::Point(left, top), cv::Point(right, bottom), cv::Scalar(255, 178, 50), 3);
+void HumanDetector::draw_pred(int classId, float conf, int left, int top, int right, int bottom, cv::Mat* frame) {
+    rectangle(*frame, cv::Point(left, top), cv::Point(right, bottom), cv::Scalar(255, 178, 50), 3);
         std::string label = cv::format("%.2f", conf);
     if (!classes.empty()) {
         CV_Assert(classId < static_cast<int>(classes.size()));
@@ -81,8 +81,8 @@ void HumanDetector::draw_pred(int classId, float conf, int left, int top, int ri
     int baseLine;
     cv::Size labelSize = cv::getTextSize(label, cv::FONT_HERSHEY_SIMPLEX, 0.5, 1, &baseLine);
     top = cv::max(top, labelSize.height);
-    rectangle(frame, cv::Point(left, top - std::round(1.5*labelSize.height)), cv::Point(left + std::round(1.5*labelSize.width), top + baseLine), cv::Scalar(255, 255, 255), cv::FILLED);
-    putText(frame, label, cv::Point(left, top), cv::FONT_HERSHEY_SIMPLEX, 0.75, cv::Scalar(0,0,0),1);
+    rectangle(*frame, cv::Point(left, top - std::round(1.5*labelSize.height)), cv::Point(left + std::round(1.5*labelSize.width), top + baseLine), cv::Scalar(255, 255, 255), cv::FILLED);
+    putText(*frame, label, cv::Point(left, top), cv::FONT_HERSHEY_SIMPLEX, 0.75, cv::Scalar(0,0,0),1);
 }
 
 std::array<int, 2> HumanDetector::get_img_dims() {

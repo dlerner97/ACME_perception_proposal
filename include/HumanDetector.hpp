@@ -1,3 +1,15 @@
+/**
+ * @file Detection.hpp
+ * @author Dani Lerner
+ * @author Diane Ngo
+ * @brief Human Detector header
+ * @version 0.1
+ * @date 2021-10-25
+ * 
+ * @copyright Copyright (c) 2021
+ * 
+ */
+
 #pragma once
 
 #include <array>
@@ -17,7 +29,7 @@
 #include "Detection.hpp"
 
 class HumanDetector {
-  private:
+ private:
     /**
      * @brief Necessary img dimension
      *
@@ -42,7 +54,9 @@ class HumanDetector {
      * @param show_detections 
      * @return std::shared_ptr<std::vector<Detection> > all detections in image.
      */
-    std::shared_ptr<std::vector<Detection> > parse_dnn_output(const std::vector<cv::Mat>& detections, cv::Mat& img, bool show_detections);
+    std::shared_ptr<std::vector<Detection> > parse_dnn_output(
+      const std::vector<cv::Mat>& detections,
+      cv::Mat* img_ptr, bool show_detections);
 
     /**
      * @brief Draws prediction on image
@@ -57,16 +71,19 @@ class HumanDetector {
      * @param bottom 
      * @param frame 
      */
-    void draw_pred(int classId, float conf, int left, int top, int right, int bottom, cv::Mat& frame);
+    void draw_pred(int classId, float conf, int left, int top,
+      int right, int bottom, cv::Mat* frame);
 
-  public:
-    HumanDetector(const std::unordered_map<std::string, double>& robot_params, const std::string& _coco_name_path,
-                  const std::string& _yolo_cfg_path, const std::string& _yolo_weight_path) :
-                  net{cv::dnn::readNetFromDarknet(_yolo_cfg_path, _yolo_weight_path)} {
-
+ public:
+    HumanDetector(const std::unordered_map<std::string, double>& robot_params,
+      const std::string& _coco_name_path,
+      const std::string& _yolo_cfg_path, const std::string& _yolo_weight_path) :
+      net{cv::dnn::readNetFromDarknet(_yolo_cfg_path, _yolo_weight_path)}
+    {
       img_dim_[0] = static_cast<int>(robot_params.at("IMG_WIDTH_REQ"));
       img_dim_[1] = static_cast<int>(robot_params.at("IMG_HEIGHT_REQ"));
-      detection_probability_threshold = robot_params.at("DETECTION_PROBABILITY_THRESHOLD");
+      detection_probability_threshold = robot_params.at(
+        "DETECTION_PROBABILITY_THRESHOLD");
       nms_threshold = robot_params.at("NMS_THRESHOLD");
       score_threshold = robot_params.at("SCORE_THRESHOLD");
 
@@ -78,7 +95,7 @@ class HumanDetector {
       auto outLayers = net.getUnconnectedOutLayers();
       auto layerNames = net.getLayerNames();
       detection_classes.resize(outLayers.size());
-      for (std::size_t i = 0; i < outLayers.size(); i++) 
+      for (std::size_t i = 0; i < outLayers.size(); i++)
           detection_classes[i] = layerNames[outLayers[i] - 1];
     }
 
@@ -98,7 +115,8 @@ class HumanDetector {
      * @param prepped_frame A pre-processed frame for NN input
      * @return A detection obj for each human detected in frame.
      */
-    std::shared_ptr<std::vector<Detection> > detect(cv::Mat&, bool show_detections=false);
+    std::shared_ptr<std::vector<Detection> > detect(cv::Mat&,
+      bool show_detections = false);
 
     /**
      * @brief Gets the image dimensions (width and height)
