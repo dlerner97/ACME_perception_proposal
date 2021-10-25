@@ -1,5 +1,5 @@
 /**
- * @file Detection.hpp
+ * @file ParamParser.hpp
  * @author Dani Lerner
  * @author Diane Ngo
  * @brief Param Parser header

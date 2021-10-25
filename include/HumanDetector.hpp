@@ -1,5 +1,5 @@
 /**
- * @file Detection.hpp
+ * @file HumanDetector.hpp
  * @author Dani Lerner
  * @author Diane Ngo
  * @brief Human Detector header

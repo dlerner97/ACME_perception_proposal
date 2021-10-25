@@ -1,3 +1,15 @@
+/**
+ * @file utils.hpp
+ * @author Dani Lerner
+ * @author Diane Ngo
+ * @brief utils header
+ * @version 0.1
+ * @date 2021-10-25
+ * 
+ * @copyright Copyright (c) 2021
+ * 
+ */
+
 #pragma once
 
 #include <string>
@@ -9,13 +21,19 @@
  * 
  */
 class InvalidFile : public std::exception {
-  private:
+ private:
     std::string msg;
 
-  public:
+ public:
     explicit InvalidFile(const std::string& message = "") : msg{message} {}
-	const char* what () const throw() {
-    	return msg.c_str();
+
+    /**
+     * @brief What to throw upon call
+     * 
+     * @return const char* 
+     */
+    const char* what() const throw() {
+      return msg.c_str();
     }
 };
 
@@ -37,4 +55,4 @@ void split(const std::string &s, char delim, Out result);
  * @param delim 
  * @return std::vector<std::string> 
  */
-std::vector<std::string> split(const std::string &s, char delim=' ');
+std::vector<std::string> split(const std::string &s, char delim = ' ');

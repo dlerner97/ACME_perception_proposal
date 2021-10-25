@@ -1,5 +1,5 @@
 /**
- * @file Detection.hpp
+ * @file LabelParser.hpp
  * @author Dani Lerner
  * @author Diane Ngo
  * @brief Label Parser header

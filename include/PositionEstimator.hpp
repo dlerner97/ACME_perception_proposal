@@ -1,5 +1,5 @@
 /**
- * @file Detection.hpp
+ * @file PositionEstimator.hpp
  * @author Dani Lerner
  * @author Diane Ngo
  * @brief Position Estimator header
