@@ -1,3 +1,15 @@
+/**
+ * @file Detection.hpp
+ * @author Dani Lerner
+ * @author Diane Ngo
+ * @brief Label Parser header
+ * @version 0.1
+ * @date 2021-10-25
+ * 
+ * @copyright Copyright (c) 2021
+ * 
+ */
+
 #pragma once
 
 #include <array>
@@ -15,7 +27,7 @@ struct TestImage {
 };
 
 class LabelParser {
-  private:
+ private:
     /**
      * @brief Parses an individual corner. Conversion from string form to int
      * 
@@ -31,16 +43,17 @@ class LabelParser {
      * @param corner2: std::string
      * @return Detection instance
      */
-    Detection parse_detection(const std::string& corner1, const std::string& corner2);
+    Detection parse_detection(const std::string& corner1,
+      const std::string& corner2);
 
-  public:
+ public:
     /**
      * @brief Parses labeled image file
      * 
      * @param file_path: std::string
      * @return std::shared_ptr<TestImage> shared pointer to a TestImage instance. 
      */
-    std::shared_ptr<TestImage> parse_file(const std::string& file_path); 
+    std::shared_ptr<TestImage> parse_file(const std::string& file_path);
 
     /**
      * @brief Parses ever labeled image file in the input directory
@@ -48,5 +61,6 @@ class LabelParser {
      * @param dir_path: path of the desired dir
      * @return std::vector<std::shared_ptr<TestImage> >
      */
-    std::vector<std::shared_ptr<TestImage> > read_labeled_test_images(const std::string& dir_path);
+    std::vector<std::shared_ptr<TestImage> > read_labeled_test_images(
+      const std::string& dir_path);
 };
