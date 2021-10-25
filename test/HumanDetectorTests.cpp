@@ -112,12 +112,32 @@ TEST(HumanDetectorTests, HumanDetectionAccuracyTest) {
     std::cout << "Percent detected: " << 100*percent_detections << " %" << std::endl;
 
     EXPECT_GE(percent_detections, .50);
-    EXPECT_LT(average_x_diff, 20);
-    EXPECT_LT(average_y_diff, 20);
-    EXPECT_LT(average_width_diff, 20);
-    EXPECT_LT(average_height_diff, 20);
+    EXPECT_LT(average_x_diff, 30);
+    EXPECT_LT(average_y_diff, 30);
+    EXPECT_LT(average_width_diff, 30);
+    EXPECT_LT(average_height_diff, 30);
+}
+/**
+ * @brief Checks if string ends with a given substr
+ * @cite https://stackoverflow.com/questions/874134/find-out-if-string-ends-with-another-string-in-c
+ * 
+ * @param fullString 
+ * @param ending 
+ * @return true 
+ * @return false 
+ */
+bool hasEnding (std::string const &fullString, std::string const &ending) {
+    if (fullString.length() >= ending.length()) {
+        return (0 == fullString.compare (fullString.length() - ending.length(), ending.length(), ending));
+    } else {
+        return false;
+    }
 }
 
+/**
+ * @brief This test specifically looks at imgs with no humans present
+ * 
+ */
 TEST(HumanDetectorTests, NoDetectionsPresentTest) {
     ParamParser parser(params);
     auto ret_params = parser.parse_robot_params("../robot_params/robot_params.txt");
@@ -128,12 +148,14 @@ TEST(HumanDetectorTests, NoDetectionsPresentTest) {
     int num_imgs = 0;
 
     for (const auto& entry : boost::filesystem::directory_iterator("../dataset/1")) {
-        auto img = cv::imread(entry.path().string());
-        auto prepped_img = detector.prep_frame(img);
-        auto results = detector.detect(*prepped_img);
-        if (results.size() > 0)
-            num_detections++;
-        num_imgs++;
+        if (hasEnding(entry.path().string(), ".png")) {
+            auto img = cv::imread(entry.path().string());
+            auto prepped_img = detector.prep_frame(img);
+            auto results = detector.detect(*prepped_img);
+            if (results.size() > 0)
+                num_detections++;
+            num_imgs++;
+        }
     }
     double accuracy = (num_imgs - num_detections)/static_cast<double>(num_imgs);
     EXPECT_GT(accuracy, .75);
