@@ -5,8 +5,6 @@
  * 
  */
 struct Detection {
-    const int NO_HUMAN_DETECTED = -1;
-    double probabilty{0};
     int x{0}, y{0};
     int width{0}, height{0};
     Detection& operator=(const Detection& detect);
@@ -17,7 +15,6 @@ struct Detection {
     Detection() {}
 
     Detection(double prob, int x_, int y_, int w, int h) {
-        this->probabilty = prob;
         this->x = x_;
         this->y = y_;
         this->width = w;
@@ -25,7 +22,6 @@ struct Detection {
     }
 
     Detection(const Detection& detect) {
-        this->probabilty = detect.probabilty;
         this->x = detect.x;
         this->y = detect.y;
         this->width = detect.width;

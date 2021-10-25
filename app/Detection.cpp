@@ -3,7 +3,6 @@
 #include "../include/Detection.hpp"
 
 Detection& Detection::operator=(const Detection& detect) {
-    this->probabilty = detect.probabilty;
     this->x = detect.x;
     this->y = detect.y;
     this->width = detect.width;
