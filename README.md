@@ -33,6 +33,9 @@ For each image in the dataset, each image with a human/(s) has a label with the 
   7. **CMake**. This software should already be installed on a standard linux system.
   8. **YOLOv4**. Please download the weights file from the link [weights](https://drive.google.com/file/d/125kKy-FkMWs8C2s9kK0rVBYtv7kOsNwq/view?usp=sharing) and place in the /robot_params directory. This file is too large to place on github.
 
+### Travis Build Issues
+Travis has not been able to build since we have added the opencv dnn implementation. It seems this binary is not included in the libopencv-dev and Travis fails without it. While my computer has two seperate binaries for the opencv dnn (libopencv-dnn4.2 and libopencv-dnn-dev), Travis has failed to find both of these binaries in apt. With more time, we may have been able to solve this issue but we decided that building up the repo and making sure the code works was more important. Please see the Code Check Results section for unit test and code coverage results.
+
 ### Running the code
 To run the code, open a terminal and follow these steps:
 
