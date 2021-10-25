@@ -16,6 +16,12 @@ AVG_HUMAN_HEIGHT = 1.77 [m]
 // Probability of a human detection within an image to be considered a positive match
 DETECTION_PROBABILITY_THRESHOLD = 50 [%]
 
+// Non-maximum suppression threshold (used in human detection)
+NMS_THRESHOLD = 40 [%]
+
+// Score threshold (used in human detection)
+SCORE_THRESHOLD = 50 [%]
+
 // Neural network image dimension requirements
 IMG_WIDTH_REQ = 416 [px]
 IMG_HEIGHT_REQ = 416 [px]
