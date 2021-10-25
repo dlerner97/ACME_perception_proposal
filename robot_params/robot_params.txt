@@ -20,7 +20,7 @@ DETECTION_PROBABILITY_THRESHOLD = 50 [%]
 NMS_THRESHOLD = 40 [%]
 
 // Score threshold (used in human detection)
-SCORE_THRESHOLD = 50 [%]
+SCORE_THRESHOLD = 60 [%]
 
 // Neural network image dimension requirements
 IMG_WIDTH_REQ = 416 [px]
