@@ -1,0 +1,234 @@
+➜  build git:(main) ✗ make code_coverage
+Scanning dependencies of target code_coverage
+[100%] Resetting code coverage counters to zero.
+Processing code coverage counters and generating report.
+Deleting all .da files in . and subdirectories
+Done.
+[==========] Running 15 tests from 3 test cases.
+[----------] Global test environment set-up.
+[----------] 5 tests from PositionEstimatorTests
+[ RUN      ] PositionEstimatorTests.MissingRobotParamsTest
+[       OK ] PositionEstimatorTests.MissingRobotParamsTest (0 ms)
+[ RUN      ] PositionEstimatorTests.BuildRobot2HumanTransformTest
+[       OK ] PositionEstimatorTests.BuildRobot2HumanTransformTest (1 ms)
+[ RUN      ] PositionEstimatorTests.ApproximateZTest
+[       OK ] PositionEstimatorTests.ApproximateZTest (0 ms)
+[ RUN      ] PositionEstimatorTests.EstimateXYZTest
+[       OK ] PositionEstimatorTests.EstimateXYZTest (0 ms)
+[ RUN      ] PositionEstimatorTests.EstimateAllXYZTest
+[       OK ] PositionEstimatorTests.EstimateAllXYZTest (0 ms)
+[----------] 5 tests from PositionEstimatorTests (1 ms total)
+
+[----------] 5 tests from ParamParserTest
+[ RUN      ] ParamParserTest.TestTextFileExistence
+[       OK ] ParamParserTest.TestTextFileExistence (0 ms)
+[ RUN      ] ParamParserTest.VarVectorParserMismatchTest
+No unit provided. Assigning default unit.
+No unit provided. Assigning default unit.
+[       OK ] ParamParserTest.VarVectorParserMismatchTest (0 ms)
+[ RUN      ] ParamParserTest.UnitTest
+No unit provided. Assigning default unit.
+No unit provided. Assigning default unit.
+No unit provided. Assigning default unit.
+No unit provided. Assigning default unit.
+No unit provided. Assigning default unit.
+[       OK ] ParamParserTest.UnitTest (0 ms)
+[ RUN      ] ParamParserTest.UnitNotAllowedTest
+[       OK ] ParamParserTest.UnitNotAllowedTest (1 ms)
+[ RUN      ] ParamParserTest.VariousInputsTest
+No unit provided. Assigning default unit.
+No unit provided. Assigning default unit.
+No unit provided. Assigning default unit.
+No unit provided. Assigning default unit.
+[       OK ] ParamParserTest.VariousInputsTest (1 ms)
+[----------] 5 tests from ParamParserTest (2 ms total)
+
+[----------] 5 tests from HumanDetectorTests
+[ RUN      ] HumanDetectorTests.MissingRobotParamsTest
+[       OK ] HumanDetectorTests.MissingRobotParamsTest (106 ms)
+[ RUN      ] HumanDetectorTests.MissingYoloFilesTest
+[       OK ] HumanDetectorTests.MissingYoloFilesTest (0 ms)
+[ RUN      ] HumanDetectorTests.CorrectFrameSizeTest
+libpng warning: iCCP: known incorrect sRGB profile
+[       OK ] HumanDetectorTests.CorrectFrameSizeTest (98 ms)
+[ RUN      ] HumanDetectorTests.HumanDetectionAccuracyTest
+Percent detected: 89 %
+[       OK ] HumanDetectorTests.HumanDetectionAccuracyTest (18532 ms)
+[ RUN      ] HumanDetectorTests.NoDetectionsPresentTest
+libpng warning: iCCP: known incorrect sRGB profile
+libpng warning: iCCP: known incorrect sRGB profile
+libpng warning: iCCP: known incorrect sRGB profile
+Percent of no detections: 98.0392 %
+[       OK ] HumanDetectorTests.NoDetectionsPresentTest (25098 ms)
+[----------] 5 tests from HumanDetectorTests (43834 ms total)
+
+[----------] Global test environment tear-down
+[==========] 15 tests from 3 test cases ran. (43837 ms total)
+[  PASSED  ] 15 tests.
+Capturing coverage data from .
+Found gcov version: 9.3.0
+Using intermediate gcov format
+Scanning . for .gcda files ...
+Found 12 data files in .
+Processing vendor/googletest/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.gcda
+Processing test/CMakeFiles/cpp-test.dir/ParamParserTests.cpp.gcda
+Processing test/CMakeFiles/cpp-test.dir/main.cpp.gcda
+Processing test/CMakeFiles/cpp-test.dir/PositionEstimatorTests.cpp.gcda
+Processing test/CMakeFiles/cpp-test.dir/__/app/utils.cpp.gcda
+Processing test/CMakeFiles/cpp-test.dir/__/app/params_vec.cpp.gcda
+Processing test/CMakeFiles/cpp-test.dir/__/app/Detection.cpp.gcda
+Processing test/CMakeFiles/cpp-test.dir/__/app/HumanDetector.cpp.gcda
+Processing test/CMakeFiles/cpp-test.dir/__/app/LabelParser.cpp.gcda
+Processing test/CMakeFiles/cpp-test.dir/__/app/PositionEstimator.cpp.gcda
+Processing test/CMakeFiles/cpp-test.dir/__/app/ParamParser.cpp.gcda
+Processing test/CMakeFiles/cpp-test.dir/HumanDetectorTests.cpp.gcda
+Finished .info-file creation
+Reading tracefile /home/dani/ENPM808X/ACME_perception_proposal/build/coverage.info
+Removing /usr/include/boost/filesystem/operations.hpp
+Removing /usr/include/boost/filesystem/path.hpp
+Removing /usr/include/boost/iterator/iterator_facade.hpp
+Removing /usr/include/boost/smart_ptr/detail/atomic_count_std_atomic.hpp
+Removing /usr/include/boost/smart_ptr/detail/operator_bool.hpp
+Removing /usr/include/boost/smart_ptr/intrusive_ptr.hpp
+Removing /usr/include/boost/smart_ptr/intrusive_ref_counter.hpp
+Removing /usr/include/boost/system/detail/generic_category.hpp
+Removing /usr/include/boost/system/detail/std_interoperability.hpp
+Removing /usr/include/boost/system/detail/system_category_posix.hpp
+Removing /usr/include/boost/system/error_code.hpp
+Removing /usr/include/boost/system/system_error.hpp
+Removing /usr/include/boost/type_traits/integral_constant.hpp
+Removing /usr/include/c++/9/array
+Removing /usr/include/c++/9/atomic
+Removing /usr/include/c++/9/bits/alloc_traits.h
+Removing /usr/include/c++/9/bits/allocated_ptr.h
+Removing /usr/include/c++/9/bits/allocator.h
+Removing /usr/include/c++/9/bits/atomic_base.h
+Removing /usr/include/c++/9/bits/basic_string.h
+Removing /usr/include/c++/9/bits/basic_string.tcc
+Removing /usr/include/c++/9/bits/char_traits.h
+Removing /usr/include/c++/9/bits/cpp_type_traits.h
+Removing /usr/include/c++/9/bits/exception.h
+Removing /usr/include/c++/9/bits/functional_hash.h
+Removing /usr/include/c++/9/bits/hashtable.h
+Removing /usr/include/c++/9/bits/hashtable_policy.h
+Removing /usr/include/c++/9/bits/ios_base.h
+Removing /usr/include/c++/9/bits/list.tcc
+Removing /usr/include/c++/9/bits/move.h
+Removing /usr/include/c++/9/bits/predefined_ops.h
+Removing /usr/include/c++/9/bits/ptr_traits.h
+Removing /usr/include/c++/9/bits/shared_ptr.h
+Removing /usr/include/c++/9/bits/shared_ptr_base.h
+Removing /usr/include/c++/9/bits/std_mutex.h
+Removing /usr/include/c++/9/bits/stl_algo.h
+Removing /usr/include/c++/9/bits/stl_algobase.h
+Removing /usr/include/c++/9/bits/stl_construct.h
+Removing /usr/include/c++/9/bits/stl_function.h
+Removing /usr/include/c++/9/bits/stl_iterator.h
+Removing /usr/include/c++/9/bits/stl_iterator_base_funcs.h
+Removing /usr/include/c++/9/bits/stl_iterator_base_types.h
+Removing /usr/include/c++/9/bits/stl_list.h
+Removing /usr/include/c++/9/bits/stl_map.h
+Removing /usr/include/c++/9/bits/stl_pair.h
+Removing /usr/include/c++/9/bits/stl_set.h
+Removing /usr/include/c++/9/bits/stl_tree.h
+Removing /usr/include/c++/9/bits/stl_uninitialized.h
+Removing /usr/include/c++/9/bits/stl_vector.h
+Removing /usr/include/c++/9/bits/unique_ptr.h
+Removing /usr/include/c++/9/bits/unordered_map.h
+Removing /usr/include/c++/9/bits/vector.tcc
+Removing /usr/include/c++/9/ext/aligned_buffer.h
+Removing /usr/include/c++/9/ext/alloc_traits.h
+Removing /usr/include/c++/9/ext/atomicity.h
+Removing /usr/include/c++/9/ext/new_allocator.h
+Removing /usr/include/c++/9/ext/string_conversions.h
+Removing /usr/include/c++/9/ext/type_traits.h
+Removing /usr/include/c++/9/initializer_list
+Removing /usr/include/c++/9/iomanip
+Removing /usr/include/c++/9/new
+Removing /usr/include/c++/9/system_error
+Removing /usr/include/c++/9/tuple
+Removing /usr/include/c++/9/typeinfo
+Removing /usr/include/c++/9/utility
+Removing /usr/include/eigen3/Eigen/src/Core/AssignEvaluator.h
+Removing /usr/include/eigen3/Eigen/src/Core/CommaInitializer.h
+Removing /usr/include/eigen3/Eigen/src/Core/CoreEvaluators.h
+Removing /usr/include/eigen3/Eigen/src/Core/CwiseBinaryOp.h
+Removing /usr/include/eigen3/Eigen/src/Core/CwiseUnaryOp.h
+Removing /usr/include/eigen3/Eigen/src/Core/DenseBase.h
+Removing /usr/include/eigen3/Eigen/src/Core/DenseCoeffsBase.h
+Removing /usr/include/eigen3/Eigen/src/Core/DenseStorage.h
+Removing /usr/include/eigen3/Eigen/src/Core/EigenBase.h
+Removing /usr/include/eigen3/Eigen/src/Core/Fuzzy.h
+Removing /usr/include/eigen3/Eigen/src/Core/GeneralProduct.h
+Removing /usr/include/eigen3/Eigen/src/Core/GenericPacketMath.h
+Removing /usr/include/eigen3/Eigen/src/Core/MathFunctions.h
+Removing /usr/include/eigen3/Eigen/src/Core/Matrix.h
+Removing /usr/include/eigen3/Eigen/src/Core/MatrixBase.h
+Removing /usr/include/eigen3/Eigen/src/Core/NumTraits.h
+Removing /usr/include/eigen3/Eigen/src/Core/PlainObjectBase.h
+Removing /usr/include/eigen3/Eigen/src/Core/Product.h
+Removing /usr/include/eigen3/Eigen/src/Core/ProductEvaluators.h
+Removing /usr/include/eigen3/Eigen/src/Core/Redux.h
+Removing /usr/include/eigen3/Eigen/src/Core/Transpose.h
+Removing /usr/include/eigen3/Eigen/src/Core/arch/SSE/PacketMath.h
+Removing /usr/include/eigen3/Eigen/src/Core/functors/AssignmentFunctors.h
+Removing /usr/include/eigen3/Eigen/src/Core/functors/BinaryFunctors.h
+Removing /usr/include/eigen3/Eigen/src/Core/functors/UnaryFunctors.h
+Removing /usr/include/eigen3/Eigen/src/Core/util/Meta.h
+Removing /usr/include/eigen3/Eigen/src/Core/util/XprHelper.h
+Removing /usr/include/eigen3/Eigen/src/plugins/CommonCwiseBinaryOps.h
+Removing /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseUnaryOps.h
+Removing /usr/include/x86_64-linux-gnu/c++/9/bits/gthr-default.h
+Removing /usr/lib/gcc/x86_64-linux-gnu/9/include/emmintrin.h
+Removing /usr/local/include/opencv4/opencv2/core/mat.inl.hpp
+Removing /usr/local/include/opencv4/opencv2/core/matx.hpp
+Removing /usr/local/include/opencv4/opencv2/core/types.hpp
+Deleted 99 files
+Writing data to /home/dani/ENPM808X/ACME_perception_proposal/build/coverage.info.cleaned
+Summary coverage rate:
+  lines......: 35.5% (1403 of 3957 lines)
+  functions..: 37.6% (384 of 1021 functions)
+  branches...: no data found
+Reading data file /home/dani/ENPM808X/ACME_perception_proposal/build/coverage.info.cleaned
+Found 32 entries.
+Found common filename prefix "/home/dani/ENPM808X/ACME_perception_proposal"
+Writing .css and .png files.
+Generating output.
+Processing file app/PositionEstimator.cpp
+Processing file app/Detection.cpp
+Processing file app/LabelParser.cpp
+Processing file app/ParamParser.cpp
+Processing file app/HumanDetector.cpp
+Processing file app/utils.cpp
+Processing file include/HumanDetector.hpp
+Processing file include/ParamParser.hpp
+Processing file include/PositionEstimator.hpp
+Processing file include/utils.hpp
+Processing file include/Detection.hpp
+Processing file test/PositionEstimatorTests.cpp
+Processing file test/HumanDetectorTests.cpp
+Processing file test/ParamParserTests.cpp
+Processing file test/main.cpp
+Processing file vendor/googletest/googletest/include/gtest/gtest.h
+Processing file vendor/googletest/googletest/include/gtest/gtest-test-part.h
+Processing file vendor/googletest/googletest/include/gtest/gtest-printers.h
+Processing file vendor/googletest/googletest/include/gtest/gtest-message.h
+Processing file vendor/googletest/googletest/include/gtest/internal/gtest-filepath.h
+Processing file vendor/googletest/googletest/include/gtest/internal/gtest-death-test-internal.h
+Processing file vendor/googletest/googletest/include/gtest/internal/gtest-port.h
+Processing file vendor/googletest/googletest/include/gtest/internal/gtest-internal.h
+Processing file vendor/googletest/googletest/include/gtest/internal/gtest-param-util.h
+Processing file vendor/googletest/googletest/src/gtest-typed-test.cc
+Processing file vendor/googletest/googletest/src/gtest-internal-inl.h
+Processing file vendor/googletest/googletest/src/gtest-port.cc
+Processing file vendor/googletest/googletest/src/gtest.cc
+Processing file vendor/googletest/googletest/src/gtest-filepath.cc
+Processing file vendor/googletest/googletest/src/gtest-printers.cc
+Processing file vendor/googletest/googletest/src/gtest-test-part.cc
+Processing file vendor/googletest/googletest/src/gtest-death-test.cc
+Writing directory view page.
+Overall coverage rate:
+  lines......: 35.5% (1403 of 3957 lines)
+  functions..: 37.6% (384 of 1021 functions)
+Open ./coverage/index.html in your browser to view the coverage report.
+[100%] Built target code_coverage
