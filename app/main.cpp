@@ -4,11 +4,9 @@
 
 #include "../include/ParamParser.hpp"
 #include "../include/HumanDetector.hpp"
-// #include "../include/VisionAPI.hpp"
+#include "../include/VisionAPI.hpp"
 #include "../include/LabelParser.hpp"
 
-using std::cout;
-using std::endl;
 using std::vector;
 
 int main() {
@@ -26,10 +24,12 @@ int main() {
 
     ParamParser parser(params);
     auto ret_params = parser.parse_robot_params("../robot_params/robot_params.txt");
-    HumanDetector detector(ret_params, coco_name_path, yolo_cfg_path, yolo_weights_path);
+    VisionAPI vision(ret_params, coco_name_path, yolo_cfg_path, yolo_weights_path);
     auto img = cv::imread("../dataset/1/1_500.png");
-    auto prepped = detector.prep_frame(img);
-    detector.detect(*prepped);
-    
+    auto all_xyz = vision.get_xyz(img);
+    for (const auto& one_detect : *all_xyz) {
+        std::cout << "Position of Human: x\t: " << one_detect[0] << "\ty: " << one_detect[1] << "\tz: " << one_detect[2] << std::endl;
+    }
+    vision.print_alerts(*all_xyz);
     return 0;
 }

@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="ACME_perception_proposal"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\app\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\..\..\..\usr\;CMake Files\..\..\..\..\..\..\..\..\..\usr\local\;CMake Files\..\..\..\..\..\..\..\..\..\usr\local\lib\;CMake Files\..\..\..\..\..\..\..\..\..\usr\local\lib\cmake\;CMake Files\..\..\..\..\..\..\..\..\..\usr\local\lib\cmake\opencv4\;CMake Files\test\;CMake Files\vendor\;CMake Files\vendor\googletest\;CMake Files\vendor\googletest\googletest\;CMake Files\vendor\googletest\googletest\cmake\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/media/diane/My Passport/UMD Masters/Fall 2021/ENPM 808X/Assignments/Midterm/ACME_perception_proposal/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/media/diane/My\ Passport/UMD\ Masters/Fall\ 2021/ENPM\ 808X/Assignments/Midterm/ACME_perception_proposal/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/media/diane/My\ Passport/UMD\ Masters/Fall\ 2021/ENPM\ 808X/Assignments/Midterm/ACME_perception_proposal/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/media/diane/My\ Passport/UMD\ Masters/Fall\ 2021/ENPM\ 808X/Assignments/Midterm/ACME_perception_proposal/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/media/diane/My\ Passport/UMD\ Masters/Fall\ 2021/ENPM\ 808X/Assignments/Midterm/ACME_perception_proposal/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install/strip">
+				<Option working_dir="/media/diane/My Passport/UMD Masters/Fall 2021/ENPM 808X/Assignments/Midterm/ACME_perception_proposal/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/media/diane/My\ Passport/UMD\ Masters/Fall\ 2021/ENPM\ 808X/Assignments/Midterm/ACME_perception_proposal/cmake-build-debug/Makefile&quot;  VERBOSE=1 install/strip"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/media/diane/My\ Passport/UMD\ Masters/Fall\ 2021/ENPM\ 808X/Assignments/Midterm/ACME_perception_proposal/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/media/diane/My\ Passport/UMD\ Masters/Fall\ 2021/ENPM\ 808X/Assignments/Midterm/ACME_perception_proposal/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/media/diane/My\ Passport/UMD\ Masters/Fall\ 2021/ENPM\ 808X/Assignments/Midterm/ACME_perception_proposal/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install/local">
+				<Option working_dir="/media/diane/My Passport/UMD Masters/Fall 2021/ENPM 808X/Assignments/Midterm/ACME_perception_proposal/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/media/diane/My\ Passport/UMD\ Masters/Fall\ 2021/ENPM\ 808X/Assignments/Midterm/ACME_perception_proposal/cmake-build-debug/Makefile&quot;  VERBOSE=1 install/local"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/media/diane/My\ Passport/UMD\ Masters/Fall\ 2021/ENPM\ 808X/Assignments/Midterm/ACME_perception_proposal/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/media/diane/My\ Passport/UMD\ Masters/Fall\ 2021/ENPM\ 808X/Assignments/Midterm/ACME_perception_proposal/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/media/diane/My\ Passport/UMD\ Masters/Fall\ 2021/ENPM\ 808X/Assignments/Midterm/ACME_perception_proposal/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/media/diane/My Passport/UMD Masters/Fall 2021/ENPM 808X/Assignments/Midterm/ACME_perception_proposal/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/media/diane/My\ Passport/UMD\ Masters/Fall\ 2021/ENPM\ 808X/Assignments/Midterm/ACME_perception_proposal/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/media/diane/My\ Passport/UMD\ Masters/Fall\ 2021/ENPM\ 808X/Assignments/Midterm/ACME_perception_proposal/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/media/diane/My\ Passport/UMD\ Masters/Fall\ 2021/ENPM\ 808X/Assignments/Midterm/ACME_perception_proposal/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/media/diane/My\ Passport/UMD\ Masters/Fall\ 2021/ENPM\ 808X/Assignments/Midterm/ACME_perception_proposal/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/media/diane/My Passport/UMD Masters/Fall 2021/ENPM 808X/Assignments/Midterm/ACME_perception_proposal/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/media/diane/My\ Passport/UMD\ Masters/Fall\ 2021/ENPM\ 808X/Assignments/Midterm/ACME_perception_proposal/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/media/diane/My\ Passport/UMD\ Masters/Fall\ 2021/ENPM\ 808X/Assignments/Midterm/ACME_perception_proposal/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/media/diane/My\ Passport/UMD\ Masters/Fall\ 2021/ENPM\ 808X/Assignments/Midterm/ACME_perception_proposal/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/media/diane/My\ Passport/UMD\ Masters/Fall\ 2021/ENPM\ 808X/Assignments/Midterm/ACME_perception_proposal/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="list_install_components">
+				<Option working_dir="/media/diane/My Passport/UMD Masters/Fall 2021/ENPM 808X/Assignments/Midterm/ACME_perception_proposal/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/media/diane/My\ Passport/UMD\ Masters/Fall\ 2021/ENPM\ 808X/Assignments/Midterm/ACME_perception_proposal/cmake-build-debug/Makefile&quot;  VERBOSE=1 list_install_components"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/media/diane/My\ Passport/UMD\ Masters/Fall\ 2021/ENPM\ 808X/Assignments/Midterm/ACME_perception_proposal/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/media/diane/My\ Passport/UMD\ Masters/Fall\ 2021/ENPM\ 808X/Assignments/Midterm/ACME_perception_proposal/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/media/diane/My\ Passport/UMD\ Masters/Fall\ 2021/ENPM\ 808X/Assignments/Midterm/ACME_perception_proposal/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install">
+				<Option working_dir="/media/diane/My Passport/UMD Masters/Fall 2021/ENPM 808X/Assignments/Midterm/ACME_perception_proposal/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/media/diane/My\ Passport/UMD\ Masters/Fall\ 2021/ENPM\ 808X/Assignments/Midterm/ACME_perception_proposal/cmake-build-debug/Makefile&quot;  VERBOSE=1 install"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/media/diane/My\ Passport/UMD\ Masters/Fall\ 2021/ENPM\ 808X/Assignments/Midterm/ACME_perception_proposal/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/media/diane/My\ Passport/UMD\ Masters/Fall\ 2021/ENPM\ 808X/Assignments/Midterm/ACME_perception_proposal/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/media/diane/My\ Passport/UMD\ Masters/Fall\ 2021/ENPM\ 808X/Assignments/Midterm/ACME_perception_proposal/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="shell-app">
+				<Option output="/media/diane/My Passport/UMD Masters/Fall 2021/ENPM 808X/Assignments/Midterm/ACME_perception_proposal/cmake-build-debug/app/shell-app" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/media/diane/My Passport/UMD Masters/Fall 2021/ENPM 808X/Assignments/Midterm/ACME_perception_proposal/cmake-build-debug/app"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/diane/opencv/build"/>
+					<Add directory="/media/diane/My Passport/UMD Masters/Fall 2021/ENPM 808X/Assignments/Midterm/ACME_perception_proposal/include"/>
+					<Add directory="/usr/local/include/opencv4"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/media/diane/My\ Passport/UMD\ Masters/Fall\ 2021/ENPM\ 808X/Assignments/Midterm/ACME_perception_proposal/cmake-build-debug/app/Makefile&quot;  VERBOSE=1 shell-app"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/media/diane/My\ Passport/UMD\ Masters/Fall\ 2021/ENPM\ 808X/Assignments/Midterm/ACME_perception_proposal/cmake-build-debug/app/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/media/diane/My\ Passport/UMD\ Masters/Fall\ 2021/ENPM\ 808X/Assignments/Midterm/ACME_perception_proposal/cmake-build-debug/app/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/media/diane/My\ Passport/UMD\ Masters/Fall\ 2021/ENPM\ 808X/Assignments/Midterm/ACME_perception_proposal/cmake-build-debug/app/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="shell-app/fast">
+				<Option output="/media/diane/My Passport/UMD Masters/Fall 2021/ENPM 808X/Assignments/Midterm/ACME_perception_proposal/cmake-build-debug/app/shell-app" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/media/diane/My Passport/UMD Masters/Fall 2021/ENPM 808X/Assignments/Midterm/ACME_perception_proposal/cmake-build-debug/app"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/diane/opencv/build"/>
+					<Add directory="/media/diane/My Passport/UMD Masters/Fall 2021/ENPM 808X/Assignments/Midterm/ACME_perception_proposal/include"/>
+					<Add directory="/usr/local/include/opencv4"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/media/diane/My\ Passport/UMD\ Masters/Fall\ 2021/ENPM\ 808X/Assignments/Midterm/ACME_perception_proposal/cmake-build-debug/app/Makefile&quot;  VERBOSE=1 shell-app/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/media/diane/My\ Passport/UMD\ Masters/Fall\ 2021/ENPM\ 808X/Assignments/Midterm/ACME_perception_proposal/cmake-build-debug/app/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/media/diane/My\ Passport/UMD\ Masters/Fall\ 2021/ENPM\ 808X/Assignments/Midterm/ACME_perception_proposal/cmake-build-debug/app/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/media/diane/My\ Passport/UMD\ Masters/Fall\ 2021/ENPM\ 808X/Assignments/Midterm/ACME_perception_proposal/cmake-build-debug/app/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="cpp-test">
+				<Option output="/media/diane/My Passport/UMD Masters/Fall 2021/ENPM 808X/Assignments/Midterm/ACME_perception_proposal/cmake-build-debug/test/cpp-test" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/media/diane/My Passport/UMD Masters/Fall 2021/ENPM 808X/Assignments/Midterm/ACME_perception_proposal/cmake-build-debug/test"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/media/diane/My Passport/UMD Masters/Fall 2021/ENPM 808X/Assignments/Midterm/ACME_perception_proposal/test/../vendor/googletest/googletest/include"/>
+					<Add directory="/media/diane/My Passport/UMD Masters/Fall 2021/ENPM 808X/Assignments/Midterm/ACME_perception_proposal/include"/>
+					<Add directory="/media/diane/My Passport/UMD Masters/Fall 2021/ENPM 808X/Assignments/Midterm/ACME_perception_proposal/vendor/googletest/googletest/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/media/diane/My\ Passport/UMD\ Masters/Fall\ 2021/ENPM\ 808X/Assignments/Midterm/ACME_perception_proposal/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 cpp-test"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/media/diane/My\ Passport/UMD\ Masters/Fall\ 2021/ENPM\ 808X/Assignments/Midterm/ACME_perception_proposal/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/media/diane/My\ Passport/UMD\ Masters/Fall\ 2021/ENPM\ 808X/Assignments/Midterm/ACME_perception_proposal/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/media/diane/My\ Passport/UMD\ Masters/Fall\ 2021/ENPM\ 808X/Assignments/Midterm/ACME_perception_proposal/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="cpp-test/fast">
+				<Option output="/media/diane/My Passport/UMD Masters/Fall 2021/ENPM 808X/Assignments/Midterm/ACME_perception_proposal/cmake-build-debug/test/cpp-test" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/media/diane/My Passport/UMD Masters/Fall 2021/ENPM 808X/Assignments/Midterm/ACME_perception_proposal/cmake-build-debug/test"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/media/diane/My Passport/UMD Masters/Fall 2021/ENPM 808X/Assignments/Midterm/ACME_perception_proposal/test/../vendor/googletest/googletest/include"/>
+					<Add directory="/media/diane/My Passport/UMD Masters/Fall 2021/ENPM 808X/Assignments/Midterm/ACME_perception_proposal/include"/>
+					<Add directory="/media/diane/My Passport/UMD Masters/Fall 2021/ENPM 808X/Assignments/Midterm/ACME_perception_proposal/vendor/googletest/googletest/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/media/diane/My\ Passport/UMD\ Masters/Fall\ 2021/ENPM\ 808X/Assignments/Midterm/ACME_perception_proposal/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 cpp-test/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/media/diane/My\ Passport/UMD\ Masters/Fall\ 2021/ENPM\ 808X/Assignments/Midterm/ACME_perception_proposal/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/media/diane/My\ Passport/UMD\ Masters/Fall\ 2021/ENPM\ 808X/Assignments/Midterm/ACME_perception_proposal/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/media/diane/My\ Passport/UMD\ Masters/Fall\ 2021/ENPM\ 808X/Assignments/Midterm/ACME_perception_proposal/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="gtest_main">
+				<Option output="/media/diane/My Passport/UMD Masters/Fall 2021/ENPM 808X/Assignments/Midterm/ACME_perception_proposal/cmake-build-debug/vendor/googletest/googletest/libgtest_main.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/media/diane/My Passport/UMD Masters/Fall 2021/ENPM 808X/Assignments/Midterm/ACME_perception_proposal/cmake-build-debug/vendor/googletest/googletest"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/media/diane/My Passport/UMD Masters/Fall 2021/ENPM 808X/Assignments/Midterm/ACME_perception_proposal/vendor/googletest/googletest/include"/>
+					<Add directory="/media/diane/My Passport/UMD Masters/Fall 2021/ENPM 808X/Assignments/Midterm/ACME_perception_proposal/vendor/googletest/googletest"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/media/diane/My\ Passport/UMD\ Masters/Fall\ 2021/ENPM\ 808X/Assignments/Midterm/ACME_perception_proposal/cmake-build-debug/vendor/googletest/googletest/Makefile&quot;  VERBOSE=1 gtest_main"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/media/diane/My\ Passport/UMD\ Masters/Fall\ 2021/ENPM\ 808X/Assignments/Midterm/ACME_perception_proposal/cmake-build-debug/vendor/googletest/googletest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/media/diane/My\ Passport/UMD\ Masters/Fall\ 2021/ENPM\ 808X/Assignments/Midterm/ACME_perception_proposal/cmake-build-debug/vendor/googletest/googletest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/media/diane/My\ Passport/UMD\ Masters/Fall\ 2021/ENPM\ 808X/Assignments/Midterm/ACME_perception_proposal/cmake-build-debug/vendor/googletest/googletest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="gtest_main/fast">
+				<Option output="/media/diane/My Passport/UMD Masters/Fall 2021/ENPM 808X/Assignments/Midterm/ACME_perception_proposal/cmake-build-debug/vendor/googletest/googletest/libgtest_main.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/media/diane/My Passport/UMD Masters/Fall 2021/ENPM 808X/Assignments/Midterm/ACME_perception_proposal/cmake-build-debug/vendor/googletest/googletest"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/media/diane/My Passport/UMD Masters/Fall 2021/ENPM 808X/Assignments/Midterm/ACME_perception_proposal/vendor/googletest/googletest/include"/>
+					<Add directory="/media/diane/My Passport/UMD Masters/Fall 2021/ENPM 808X/Assignments/Midterm/ACME_perception_proposal/vendor/googletest/googletest"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/media/diane/My\ Passport/UMD\ Masters/Fall\ 2021/ENPM\ 808X/Assignments/Midterm/ACME_perception_proposal/cmake-build-debug/vendor/googletest/googletest/Makefile&quot;  VERBOSE=1 gtest_main/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/media/diane/My\ Passport/UMD\ Masters/Fall\ 2021/ENPM\ 808X/Assignments/Midterm/ACME_perception_proposal/cmake-build-debug/vendor/googletest/googletest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/media/diane/My\ Passport/UMD\ Masters/Fall\ 2021/ENPM\ 808X/Assignments/Midterm/ACME_perception_proposal/cmake-build-debug/vendor/googletest/googletest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/media/diane/My\ Passport/UMD\ Masters/Fall\ 2021/ENPM\ 808X/Assignments/Midterm/ACME_perception_proposal/cmake-build-debug/vendor/googletest/googletest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="gtest">
+				<Option output="/media/diane/My Passport/UMD Masters/Fall 2021/ENPM 808X/Assignments/Midterm/ACME_perception_proposal/cmake-build-debug/vendor/googletest/googletest/libgtest.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/media/diane/My Passport/UMD Masters/Fall 2021/ENPM 808X/Assignments/Midterm/ACME_perception_proposal/cmake-build-debug/vendor/googletest/googletest"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/media/diane/My Passport/UMD Masters/Fall 2021/ENPM 808X/Assignments/Midterm/ACME_perception_proposal/vendor/googletest/googletest/include"/>
+					<Add directory="/media/diane/My Passport/UMD Masters/Fall 2021/ENPM 808X/Assignments/Midterm/ACME_perception_proposal/vendor/googletest/googletest"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/media/diane/My\ Passport/UMD\ Masters/Fall\ 2021/ENPM\ 808X/Assignments/Midterm/ACME_perception_proposal/cmake-build-debug/vendor/googletest/googletest/Makefile&quot;  VERBOSE=1 gtest"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/media/diane/My\ Passport/UMD\ Masters/Fall\ 2021/ENPM\ 808X/Assignments/Midterm/ACME_perception_proposal/cmake-build-debug/vendor/googletest/googletest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/media/diane/My\ Passport/UMD\ Masters/Fall\ 2021/ENPM\ 808X/Assignments/Midterm/ACME_perception_proposal/cmake-build-debug/vendor/googletest/googletest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/media/diane/My\ Passport/UMD\ Masters/Fall\ 2021/ENPM\ 808X/Assignments/Midterm/ACME_perception_proposal/cmake-build-debug/vendor/googletest/googletest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="gtest/fast">
+				<Option output="/media/diane/My Passport/UMD Masters/Fall 2021/ENPM 808X/Assignments/Midterm/ACME_perception_proposal/cmake-build-debug/vendor/googletest/googletest/libgtest.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/media/diane/My Passport/UMD Masters/Fall 2021/ENPM 808X/Assignments/Midterm/ACME_perception_proposal/cmake-build-debug/vendor/googletest/googletest"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/media/diane/My Passport/UMD Masters/Fall 2021/ENPM 808X/Assignments/Midterm/ACME_perception_proposal/vendor/googletest/googletest/include"/>
+					<Add directory="/media/diane/My Passport/UMD Masters/Fall 2021/ENPM 808X/Assignments/Midterm/ACME_perception_proposal/vendor/googletest/googletest"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/media/diane/My\ Passport/UMD\ Masters/Fall\ 2021/ENPM\ 808X/Assignments/Midterm/ACME_perception_proposal/cmake-build-debug/vendor/googletest/googletest/Makefile&quot;  VERBOSE=1 gtest/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/media/diane/My\ Passport/UMD\ Masters/Fall\ 2021/ENPM\ 808X/Assignments/Midterm/ACME_perception_proposal/cmake-build-debug/vendor/googletest/googletest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/media/diane/My\ Passport/UMD\ Masters/Fall\ 2021/ENPM\ 808X/Assignments/Midterm/ACME_perception_proposal/cmake-build-debug/vendor/googletest/googletest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/media/diane/My\ Passport/UMD\ Masters/Fall\ 2021/ENPM\ 808X/Assignments/Midterm/ACME_perception_proposal/cmake-build-debug/vendor/googletest/googletest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/media/diane/My Passport/UMD Masters/Fall 2021/ENPM 808X/Assignments/Midterm/ACME_perception_proposal/app/HumanDetector.cpp">
+			<Option target="shell-app"/>
+		</Unit>
+		<Unit filename="/media/diane/My Passport/UMD Masters/Fall 2021/ENPM 808X/Assignments/Midterm/ACME_perception_proposal/app/ParamParser.cpp">
+			<Option target="shell-app"/>
+			<Option target="cpp-test"/>
+		</Unit>
+		<Unit filename="/media/diane/My Passport/UMD Masters/Fall 2021/ENPM 808X/Assignments/Midterm/ACME_perception_proposal/app/PositionEstimator.cpp">
+			<Option target="shell-app"/>
+			<Option target="cpp-test"/>
+		</Unit>
+		<Unit filename="/media/diane/My Passport/UMD Masters/Fall 2021/ENPM 808X/Assignments/Midterm/ACME_perception_proposal/app/VisionAPI.cpp">
+			<Option target="shell-app"/>
+		</Unit>
+		<Unit filename="/media/diane/My Passport/UMD Masters/Fall 2021/ENPM 808X/Assignments/Midterm/ACME_perception_proposal/app/main.cpp">
+			<Option target="shell-app"/>
+		</Unit>
+		<Unit filename="/media/diane/My Passport/UMD Masters/Fall 2021/ENPM 808X/Assignments/Midterm/ACME_perception_proposal/test/HumanDetectorTests.cpp">
+			<Option target="cpp-test"/>
+		</Unit>
+		<Unit filename="/media/diane/My Passport/UMD Masters/Fall 2021/ENPM 808X/Assignments/Midterm/ACME_perception_proposal/test/ParamParserTests.cpp">
+			<Option target="cpp-test"/>
+		</Unit>
+		<Unit filename="/media/diane/My Passport/UMD Masters/Fall 2021/ENPM 808X/Assignments/Midterm/ACME_perception_proposal/test/PositionEstimatorTests.cpp">
+			<Option target="cpp-test"/>
+		</Unit>
+		<Unit filename="/media/diane/My Passport/UMD Masters/Fall 2021/ENPM 808X/Assignments/Midterm/ACME_perception_proposal/test/main.cpp">
+			<Option target="cpp-test"/>
+		</Unit>
+		<Unit filename="/media/diane/My Passport/UMD Masters/Fall 2021/ENPM 808X/Assignments/Midterm/ACME_perception_proposal/vendor/googletest/googletest/src/gtest-all.cc">
+			<Option target="gtest"/>
+		</Unit>
+		<Unit filename="/media/diane/My Passport/UMD Masters/Fall 2021/ENPM 808X/Assignments/Midterm/ACME_perception_proposal/vendor/googletest/googletest/src/gtest_main.cc">
+			<Option target="gtest_main"/>
+		</Unit>
+		<Unit filename="/media/diane/My Passport/UMD Masters/Fall 2021/ENPM 808X/Assignments/Midterm/ACME_perception_proposal/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/media/diane/My Passport/UMD Masters/Fall 2021/ENPM 808X/Assignments/Midterm/ACME_perception_proposal/app/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\app\"/>
+		</Unit>
+		<Unit filename="/media/diane/My Passport/UMD Masters/Fall 2021/ENPM 808X/Assignments/Midterm/ACME_perception_proposal/../../../../../../../../../usr/local/lib/cmake/opencv4/OpenCVConfig-version.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\..\..\usr\local\lib\cmake\opencv4\"/>
+		</Unit>
+		<Unit filename="/media/diane/My Passport/UMD Masters/Fall 2021/ENPM 808X/Assignments/Midterm/ACME_perception_proposal/../../../../../../../../../usr/local/lib/cmake/opencv4/OpenCVConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\..\..\usr\local\lib\cmake\opencv4\"/>
+		</Unit>
+		<Unit filename="/media/diane/My Passport/UMD Masters/Fall 2021/ENPM 808X/Assignments/Midterm/ACME_perception_proposal/../../../../../../../../../usr/local/lib/cmake/opencv4/OpenCVModules-release.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\..\..\usr\local\lib\cmake\opencv4\"/>
+		</Unit>
+		<Unit filename="/media/diane/My Passport/UMD Masters/Fall 2021/ENPM 808X/Assignments/Midterm/ACME_perception_proposal/../../../../../../../../../usr/local/lib/cmake/opencv4/OpenCVModules.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\..\..\usr\local\lib\cmake\opencv4\"/>
+		</Unit>
+		<Unit filename="/media/diane/My Passport/UMD Masters/Fall 2021/ENPM 808X/Assignments/Midterm/ACME_perception_proposal/test/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\test\"/>
+		</Unit>
+		<Unit filename="/media/diane/My Passport/UMD Masters/Fall 2021/ENPM 808X/Assignments/Midterm/ACME_perception_proposal/vendor/googletest/googletest/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\vendor\googletest\googletest\"/>
+		</Unit>
+		<Unit filename="/media/diane/My Passport/UMD Masters/Fall 2021/ENPM 808X/Assignments/Midterm/ACME_perception_proposal/vendor/googletest/googletest/cmake/internal_utils.cmake">
+			<Option virtualFolder="CMake Files\vendor\googletest\googletest\cmake\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
