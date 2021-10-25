@@ -16,17 +16,9 @@
 #include <vector>
 
 #include "../include/Detection.hpp"
+#include "../include/params_vec.hpp"
 #include "../include/ParamParser.hpp"
 #include "../include/PositionEstimator.hpp"
-
-std::vector<Var> params{{"DX_CAM2ROBOT_CENTER", "m"},
-        {"DY_CAM2ROBOT_CENTER", "m"}, {"DZ_CAM2ROBOT_CENTER", "m"},
-        {"PITCH_CAM2ROBOT_CENTER", "rad"}, {"AVG_HUMAN_HEIGHT", "m"},
-        {"CAM_FOCAL_LEN", "m"}, {"CAM_PIXEL_DENSITY", "ppm"},
-        {"DETECTION_PROBABILITY_THRESHOLD", "fraction"},
-        {"SCORE_THRESHOLD", "fraction"}, {"NMS_THRESHOLD", "fraction"},
-        {"IMG_WIDTH_REQ", "px"}, {"IMG_HEIGHT_REQ", "px"},
-        {"LOW_ALERT_THRESHOLD", "m"}, {"HIGH_ALERT_THRESHOLD", "m"}};
 
 TEST(PositionEstimatorTests, MissingRobotParamsTest) {
   std::unordered_map<std::string, double> ret_params{};
@@ -55,7 +47,7 @@ TEST(PositionEstimatorTests, BuildRobot2HumanTransformTest) {
 TEST(PositionEstimatorTests, ApproximateZTest) {
   Detection detection;
   detection.height = 100;
-  ParamParser parser(params);
+  ParamParser parser(all_params::params);
   auto ret_params = parser.parse_robot_params(
     "../test/robot_params_textfiles/position_estimator_params_test.txt");
   PositionEstimator testimator(ret_params);
@@ -70,7 +62,7 @@ TEST(PositionEstimatorTests, EstimateXYZTest) {
   detection.width = 60;
   detection.height = 100;
 
-  ParamParser parser(params);
+  ParamParser parser(all_params::params);
   auto ret_params = parser.parse_robot_params(
     "../test/robot_params_textfiles/position_estimator_params_test.txt");
   PositionEstimator testimator(ret_params);
@@ -97,7 +89,7 @@ TEST(PositionEstimatorTests, EstimateAllXYZTest) {
 
   std::vector<Detection> all_detections{detection1, detection2};
 
-  ParamParser parser(params);
+  ParamParser parser(all_params::params);
   auto ret_params = parser.parse_robot_params(
     "../test/robot_params_textfiles/position_estimator_params_test.txt");
   PositionEstimator testimator(ret_params);

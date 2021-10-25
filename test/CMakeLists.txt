@@ -12,6 +12,7 @@ add_executable(
     ../app/utils.cpp
     ../app/Detection.cpp
     ../app/HumanDetector.cpp
+    ../app/params_vec.cpp
 )
 
 set(Boost_USE_STATIC_LIBS OFF) 

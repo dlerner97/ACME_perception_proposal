@@ -7,6 +7,7 @@ add_executable(shell-app
                LabelParser.cpp
                utils.cpp
                Detection.cpp
+               params_vec.cpp
 )
 
 set(Boost_USE_STATIC_LIBS OFF) 

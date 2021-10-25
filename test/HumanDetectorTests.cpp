@@ -21,6 +21,7 @@
 #include <boost/filesystem.hpp>
 
 #include "../include/Detection.hpp"
+#include "../include/params_vec.hpp"
 #include "../include/LabelParser.hpp"
 #include "../include/ParamParser.hpp"
 #include "../include/HumanDetector.hpp"
@@ -28,15 +29,6 @@
 const auto coco_name_path = "../robot_params/coco.names";
 const auto yolo_cfg_path = "../robot_params/yolov4.cfg";
 const auto yolo_weights_path = "../robot_params/yolov4.weights";
-
-std::vector<Var> params{{"DX_CAM2ROBOT_CENTER", "m"},
-        {"DY_CAM2ROBOT_CENTER", "m"}, {"DZ_CAM2ROBOT_CENTER", "m"},
-        {"PITCH_CAM2ROBOT_CENTER", "rad"}, {"AVG_HUMAN_HEIGHT", "m"},
-        {"CAM_FOCAL_LEN", "m"}, {"CAM_PIXEL_DENSITY", "ppm"},
-        {"DETECTION_PROBABILITY_THRESHOLD", "fraction"},
-        {"SCORE_THRESHOLD", "fraction"}, {"NMS_THRESHOLD", "fraction"},
-        {"IMG_WIDTH_REQ", "px"}, {"IMG_HEIGHT_REQ", "px"},
-        {"LOW_ALERT_THRESHOLD", "m"}, {"HIGH_ALERT_THRESHOLD", "m"}};
 
 TEST(HumanDetectorTests, MissingRobotParamsTest) {
     std::unordered_map<std::string, double> ret_params{};
@@ -97,7 +89,7 @@ Detection getClosestDiff(const Detection& detection,
  */
 TEST(HumanDetectorTests, HumanDetectionAccuracyTest) {
     if (boost::filesystem::exists("../robot_params/yolov4.weights")) {
-        ParamParser parser(params);
+        ParamParser parser(all_params::params);
         auto ret_params = parser.parse_robot_params(
             "../robot_params/robot_params.txt");
 
@@ -177,7 +169,7 @@ bool hasEnding(std::string const &fullString, std::string const &ending) {
  */
 TEST(HumanDetectorTests, NoDetectionsPresentTest) {
     if (boost::filesystem::exists("../robot_params/yolov4.weights")) {
-        ParamParser parser(params);
+        ParamParser parser(all_params::params);
         auto ret_params = parser.parse_robot_params(
             "../robot_params/robot_params.txt");
 
