@@ -14,7 +14,7 @@ struct Detection {
 
     Detection() {}
 
-    Detection(double prob, int x_, int y_, int w, int h) {
+    Detection(int x_, int y_, int w, int h) {
         this->x = x_;
         this->y = y_;
         this->width = w;

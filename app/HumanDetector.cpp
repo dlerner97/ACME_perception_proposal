@@ -53,7 +53,7 @@ std::shared_ptr<std::vector<Detection> > HumanDetector::parse_dnn_output(const s
         if (show_detections)
             draw_pred(classIds[idx], confidences[idx], box.x, box.y,
                      box.x + box.width, box.y + box.height, img);
-        ret_detections_ptr->push_back({confidences[idx], box.x, box.y, box.width, box.height});      
+        ret_detections_ptr->push_back({box.x, box.y, box.width, box.height});      
     }
     return ret_detections_ptr;
 }
