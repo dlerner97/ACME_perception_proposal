@@ -70,32 +70,26 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a39de44247f8c8feaed5bd1de8438245f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_position_estimator.html#a39de44247f8c8feaed5bd1de8438245f">PositionEstimator</a> (double x, double y, double z, double pitch, double f_x, double f_y, double s, double px, double py, double avg_height)</td></tr>
-<tr class="separator:a39de44247f8c8feaed5bd1de8438245f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a162766d49cc6acd2ff0bb59737ec75c9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_position_estimator.html#a162766d49cc6acd2ff0bb59737ec75c9">PositionEstimator</a> (double x, double y, double z, double pitch, double f, double pix_density, double img_w, double img_h, double avg_height)</td></tr>
+<tr class="separator:a162766d49cc6acd2ff0bb59737ec75c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af0b8305de010b7f15f0b18499d8d50c3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_position_estimator.html#af0b8305de010b7f15f0b18499d8d50c3">PositionEstimator</a> (const std::unordered_map&lt; std::string, double &gt; &amp;robot_params)</td></tr>
 <tr class="separator:af0b8305de010b7f15f0b18499d8d50c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6414758ee472d223f6b97369abe27968"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_position_estimator.html#a6414758ee472d223f6b97369abe27968">threshold_frame</a> (double probability)</td></tr>
-<tr class="memdesc:a6414758ee472d223f6b97369abe27968"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function removes noise by discarding frames with low probability of human detection.  <a href="#a6414758ee472d223f6b97369abe27968">More...</a><br /></td></tr>
-<tr class="separator:a6414758ee472d223f6b97369abe27968"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaa7e82a010bfb5dbcc795af9718c9eb0"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_position_estimator.html#aaa7e82a010bfb5dbcc795af9718c9eb0">approximate_camera_z</a> (<a class="el" href="struct_detection.html">Detection</a> &amp;detection)</td></tr>
-<tr class="memdesc:aaa7e82a010bfb5dbcc795af9718c9eb0"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function approximates the z location of the human in the CAMERA frame based on the size of the bounding box.  <a href="#aaa7e82a010bfb5dbcc795af9718c9eb0">More...</a><br /></td></tr>
-<tr class="separator:aaa7e82a010bfb5dbcc795af9718c9eb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a90f4ced196e47ac347fcf53e834fbcab"><td class="memItemLeft" align="right" valign="top">std::array&lt; double, 3 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_position_estimator.html#a90f4ced196e47ac347fcf53e834fbcab">estimate_xyz</a> (<a class="el" href="struct_detection.html">Detection</a> &amp;)</td></tr>
-<tr class="memdesc:a90f4ced196e47ac347fcf53e834fbcab"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method estimates the xyz position of a SINGLE detected human in the WORLD frame.  <a href="#a90f4ced196e47ac347fcf53e834fbcab">More...</a><br /></td></tr>
-<tr class="separator:a90f4ced196e47ac347fcf53e834fbcab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9bc700bc3de4749f5ec40a892c52a09d"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::array&lt; double, 3 &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_position_estimator.html#a9bc700bc3de4749f5ec40a892c52a09d">estimate_all_xyz</a> (std::vector&lt; <a class="el" href="struct_detection.html">Detection</a> &gt; &amp;detection)</td></tr>
-<tr class="memdesc:a9bc700bc3de4749f5ec40a892c52a09d"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method estimates the xyz position of EACH detected human in the WORLD frame.  <a href="#a9bc700bc3de4749f5ec40a892c52a09d">More...</a><br /></td></tr>
-<tr class="separator:a9bc700bc3de4749f5ec40a892c52a09d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4af8448b844393e6320d3570868f1aaa"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_position_estimator.html#a4af8448b844393e6320d3570868f1aaa">approximate_camera_z</a> (const <a class="el" href="struct_detection.html">Detection</a> &amp;detection)</td></tr>
+<tr class="memdesc:a4af8448b844393e6320d3570868f1aaa"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function approximates the z location of the human in the CAMERA frame based on the size of the bounding box.  <a href="#a4af8448b844393e6320d3570868f1aaa">More...</a><br /></td></tr>
+<tr class="separator:a4af8448b844393e6320d3570868f1aaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7aca1c0fa82d6836ae698ebe0826edd"><td class="memItemLeft" align="right" valign="top">std::array&lt; double, 3 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_position_estimator.html#ab7aca1c0fa82d6836ae698ebe0826edd">estimate_xyz</a> (const <a class="el" href="struct_detection.html">Detection</a> &amp;)</td></tr>
+<tr class="memdesc:ab7aca1c0fa82d6836ae698ebe0826edd"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method estimates the xyz position of a SINGLE detected human in the WORLD frame.  <a href="#ab7aca1c0fa82d6836ae698ebe0826edd">More...</a><br /></td></tr>
+<tr class="separator:ab7aca1c0fa82d6836ae698ebe0826edd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02dafec98e58e3354ac3abb0a5f53153"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; std::vector&lt; std::array&lt; double, 3 &gt; &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_position_estimator.html#a02dafec98e58e3354ac3abb0a5f53153">estimate_all_xyz</a> (const std::vector&lt; <a class="el" href="struct_detection.html">Detection</a> &gt; &amp;detection)</td></tr>
+<tr class="memdesc:a02dafec98e58e3354ac3abb0a5f53153"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method estimates the xyz position of EACH detected human in the WORLD frame.  <a href="#a02dafec98e58e3354ac3abb0a5f53153">More...</a><br /></td></tr>
+<tr class="separator:a02dafec98e58e3354ac3abb0a5f53153"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a12ae9fe6ea2f7ca1e2054e018c5dabf5"><td class="memItemLeft" align="right" valign="top">const Eigen::Matrix&lt; double, 4, 4 &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_position_estimator.html#a12ae9fe6ea2f7ca1e2054e018c5dabf5">get_cam2robot_transform</a> ()</td></tr>
 <tr class="memdesc:a12ae9fe6ea2f7ca1e2054e018c5dabf5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the cam2robot transform object.  <a href="#a12ae9fe6ea2f7ca1e2054e018c5dabf5">More...</a><br /></td></tr>
 <tr class="separator:a12ae9fe6ea2f7ca1e2054e018c5dabf5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6832a1905352d24cbc834f2f205ba09b"><td class="memItemLeft" align="right" valign="top">const Eigen::Matrix&lt; double, 3, 3 &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_position_estimator.html#a6832a1905352d24cbc834f2f205ba09b">get_inv_camera_matrix</a> ()</td></tr>
-<tr class="memdesc:a6832a1905352d24cbc834f2f205ba09b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the camera matrix object.  <a href="#a6832a1905352d24cbc834f2f205ba09b">More...</a><br /></td></tr>
-<tr class="separator:a6832a1905352d24cbc834f2f205ba09b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a39de44247f8c8feaed5bd1de8438245f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a39de44247f8c8feaed5bd1de8438245f">&#9670;&nbsp;</a></span>PositionEstimator() <span class="overload">[1/2]</span></h2>
+<a id="a162766d49cc6acd2ff0bb59737ec75c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a162766d49cc6acd2ff0bb59737ec75c9">&#9670;&nbsp;</a></span>PositionEstimator() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -131,31 +125,25 @@ Public Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>f_x</em>, </td>
+          <td class="paramname"><em>f</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>f_y</em>, </td>
+          <td class="paramname"><em>pix_density</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>s</em>, </td>
+          <td class="paramname"><em>img_w</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>px</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>py</em>, </td>
+          <td class="paramname"><em>img_h</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -205,8 +193,8 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="aaa7e82a010bfb5dbcc795af9718c9eb0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaa7e82a010bfb5dbcc795af9718c9eb0">&#9670;&nbsp;</a></span>approximate_camera_z()</h2>
+<a id="a4af8448b844393e6320d3570868f1aaa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4af8448b844393e6320d3570868f1aaa">&#9670;&nbsp;</a></span>approximate_camera_z()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -214,7 +202,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">double PositionEstimator::approximate_camera_z </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct_detection.html">Detection</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="struct_detection.html">Detection</a> &amp;&#160;</td>
           <td class="paramname"><em>detection</em></td><td>)</td>
           <td></td>
         </tr>
@@ -232,16 +220,16 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a9bc700bc3de4749f5ec40a892c52a09d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9bc700bc3de4749f5ec40a892c52a09d">&#9670;&nbsp;</a></span>estimate_all_xyz()</h2>
+<a id="a02dafec98e58e3354ac3abb0a5f53153"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02dafec98e58e3354ac3abb0a5f53153">&#9670;&nbsp;</a></span>estimate_all_xyz()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;std::array&lt;double, 3&gt; &gt; PositionEstimator::estimate_all_xyz </td>
+          <td class="memname">std::shared_ptr&lt;std::vector&lt;std::array&lt;double, 3&gt; &gt; &gt; PositionEstimator::estimate_all_xyz </td>
           <td>(</td>
-          <td class="paramtype">std::vector&lt; <a class="el" href="struct_detection.html">Detection</a> &gt; &amp;&#160;</td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="struct_detection.html">Detection</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>detection</em></td><td>)</td>
           <td></td>
         </tr>
@@ -255,12 +243,12 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>std::vector&lt;std::array&lt;double, 3&gt;&gt;: x, y, z position of EACH human in ROBOT frame UNIT: [m] </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>std::shared_ptr&lt;std::vector&lt;std::array&lt;double, 3&gt;&gt;&gt;: x, y, z position of EACH human in ROBOT frame UNIT: [m] </dd></dl>
 
 </div>
 </div>
-<a id="a90f4ced196e47ac347fcf53e834fbcab"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a90f4ced196e47ac347fcf53e834fbcab">&#9670;&nbsp;</a></span>estimate_xyz()</h2>
+<a id="ab7aca1c0fa82d6836ae698ebe0826edd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7aca1c0fa82d6836ae698ebe0826edd">&#9670;&nbsp;</a></span>estimate_xyz()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -268,7 +256,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">std::array&lt;double, 3&gt; PositionEstimator::estimate_xyz </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct_detection.html">Detection</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="struct_detection.html">Detection</a> &amp;&#160;</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
@@ -311,61 +299,6 @@ Public Member Functions</h2></td></tr>
 
 <p>Get the cam2robot transform object. </p>
 <dl class="section return"><dt>Returns</dt><dd>const Eigen::Matrix&lt;double, 4, 4&gt;&amp; </dd></dl>
-
-</div>
-</div>
-<a id="a6832a1905352d24cbc834f2f205ba09b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6832a1905352d24cbc834f2f205ba09b">&#9670;&nbsp;</a></span>get_inv_camera_matrix()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const Eigen::Matrix&lt;double, 3, 3&gt;&amp; PositionEstimator::get_inv_camera_matrix </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Get the camera matrix object. </p>
-<dl class="section return"><dt>Returns</dt><dd>const Eigen::Matrix&lt;2, 2, double&gt;&amp; </dd></dl>
-
-</div>
-</div>
-<a id="a6414758ee472d223f6b97369abe27968"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6414758ee472d223f6b97369abe27968">&#9670;&nbsp;</a></span>threshold_frame()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool PositionEstimator::threshold_frame </td>
-          <td>(</td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>probability</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>This function removes noise by discarding frames with low probability of human detection. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">probability</td><td>Human detection probability </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>whether we have decided the frame has a human in it or not </dd></dl>
 
 </div>
 </div>

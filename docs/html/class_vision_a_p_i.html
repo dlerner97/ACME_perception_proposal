@@ -70,15 +70,21 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a1ebc6d928618773c2fa97e2e593afaa4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vision_a_p_i.html#a1ebc6d928618773c2fa97e2e593afaa4">VisionAPI</a> (const std::unordered_map&lt; std::string, double &gt; &amp;_robot_params)</td></tr>
-<tr class="separator:a1ebc6d928618773c2fa97e2e593afaa4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2abdb5d06b3c66789a970d541a44f55e"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::array&lt; double, 3 &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vision_a_p_i.html#a2abdb5d06b3c66789a970d541a44f55e">get_xyz</a> (cv::Mat)</td></tr>
-<tr class="memdesc:a2abdb5d06b3c66789a970d541a44f55e"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method takes an image, finds all people within the image, and outputs the estimated postions in the ROBOT frame.  <a href="#a2abdb5d06b3c66789a970d541a44f55e">More...</a><br /></td></tr>
-<tr class="separator:a2abdb5d06b3c66789a970d541a44f55e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afcf1ee4354678a29ef29852b8a2e13b5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vision_a_p_i.html#afcf1ee4354678a29ef29852b8a2e13b5">VisionAPI</a> (const std::unordered_map&lt; std::string, double &gt; &amp;_robot_params, const std::string &amp;_coco_name_path, const std::string &amp;_yolo_cfg_path, const std::string &amp;_yolo_weight_path)</td></tr>
+<tr class="separator:afcf1ee4354678a29ef29852b8a2e13b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7a4230270a858147e81ced0707f6056"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; std::vector&lt; std::array&lt; double, 3 &gt; &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vision_a_p_i.html#ab7a4230270a858147e81ced0707f6056">get_xyz</a> (const cv::Mat &amp;)</td></tr>
+<tr class="memdesc:ab7a4230270a858147e81ced0707f6056"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method takes an image, finds all people within the image, and outputs the estimated postions in the ROBOT frame.  <a href="#ab7a4230270a858147e81ced0707f6056">More...</a><br /></td></tr>
+<tr class="separator:ab7a4230270a858147e81ced0707f6056"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86585c063f61f943222eee3290040572"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vision_a_p_i.html#a86585c063f61f943222eee3290040572">calculate_distance</a> (std::array&lt; double, 3 &gt; xyz)</td></tr>
+<tr class="memdesc:a86585c063f61f943222eee3290040572"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the distance of how far the human is away from the robot.  <a href="#a86585c063f61f943222eee3290040572">More...</a><br /></td></tr>
+<tr class="separator:a86585c063f61f943222eee3290040572"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67fb3aea734b0517548102bf757cc6ed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vision_a_p_i.html#a67fb3aea734b0517548102bf757cc6ed">print_alerts</a> (const std::vector&lt; std::array&lt; double, 3 &gt; &gt; &amp;all_xyz)</td></tr>
+<tr class="memdesc:a67fb3aea734b0517548102bf757cc6ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints the robot's actions based on how far the human is away from the robot.  <a href="#a67fb3aea734b0517548102bf757cc6ed">More...</a><br /></td></tr>
+<tr class="separator:a67fb3aea734b0517548102bf757cc6ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a1ebc6d928618773c2fa97e2e593afaa4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1ebc6d928618773c2fa97e2e593afaa4">&#9670;&nbsp;</a></span>VisionAPI()</h2>
+<a id="afcf1ee4354678a29ef29852b8a2e13b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afcf1ee4354678a29ef29852b8a2e13b5">&#9670;&nbsp;</a></span>VisionAPI()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -90,8 +96,30 @@ Public Member Functions</h2></td></tr>
           <td class="memname">VisionAPI::VisionAPI </td>
           <td>(</td>
           <td class="paramtype">const std::unordered_map&lt; std::string, double &gt; &amp;&#160;</td>
-          <td class="paramname"><em>_robot_params</em></td><td>)</td>
+          <td class="paramname"><em>_robot_params</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>_coco_name_path</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>_yolo_cfg_path</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>_yolo_weight_path</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -104,16 +132,43 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a2abdb5d06b3c66789a970d541a44f55e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2abdb5d06b3c66789a970d541a44f55e">&#9670;&nbsp;</a></span>get_xyz()</h2>
+<a id="a86585c063f61f943222eee3290040572"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86585c063f61f943222eee3290040572">&#9670;&nbsp;</a></span>calculate_distance()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;std::array&lt;double, 3&gt; &gt; VisionAPI::get_xyz </td>
+          <td class="memname">double VisionAPI::calculate_distance </td>
           <td>(</td>
-          <td class="paramtype">cv::Mat&#160;</td>
+          <td class="paramtype">std::array&lt; double, 3 &gt;&#160;</td>
+          <td class="paramname"><em>xyz</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Calculates the distance of how far the human is away from the robot. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">xyz</td><td>passes in x, y z position </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>double distance of how far the human is away </dd></dl>
+
+</div>
+</div>
+<a id="ab7a4230270a858147e81ced0707f6056"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7a4230270a858147e81ced0707f6056">&#9670;&nbsp;</a></span>get_xyz()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt;std::vector&lt;std::array&lt;double, 3&gt; &gt; &gt; VisionAPI::get_xyz </td>
+          <td>(</td>
+          <td class="paramtype">const cv::Mat &amp;&#160;</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
@@ -128,6 +183,32 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>All estimated x, y, z positions of people in a given image. </dd></dl>
+
+</div>
+</div>
+<a id="a67fb3aea734b0517548102bf757cc6ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67fb3aea734b0517548102bf757cc6ed">&#9670;&nbsp;</a></span>print_alerts()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void VisionAPI::print_alerts </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; std::array&lt; double, 3 &gt; &gt; &amp;&#160;</td>
+          <td class="paramname"><em>all_xyz</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Prints the robot's actions based on how far the human is away from the robot. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">all_xyz</td><td>high alert is 1m, low alert is 3m </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

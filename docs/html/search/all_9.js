@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['var',['Var',['../struct_var.html',1,'Var'],['../struct_var.html#acd32463974964de2ddbb3de36a508ed0',1,'Var::Var()']]],
-  ['visionapi',['VisionAPI',['../class_vision_a_p_i.html',1,'VisionAPI'],['../class_vision_a_p_i.html#a1ebc6d928618773c2fa97e2e593afaa4',1,'VisionAPI::VisionAPI()']]],
-  ['visionapi_2ehpp',['VisionAPI.hpp',['../_vision_a_p_i_8hpp.html',1,'']]]
+  ['operator_2b',['operator+',['../struct_detection.html#a69eb856cdc75d10db04c169d557815d1',1,'Detection']]],
+  ['operator_2b_3d',['operator+=',['../struct_detection.html#a51bbeca262f4c0328f85eb9b32e97020',1,'Detection']]],
+  ['operator_2d',['operator-',['../struct_detection.html#ae156f11b8c51921c6c785a921fc43e85',1,'Detection']]],
+  ['operator_3d',['operator=',['../struct_detection.html#a98d5bca326ea2f369156fb07be1f5466',1,'Detection']]]
 ];

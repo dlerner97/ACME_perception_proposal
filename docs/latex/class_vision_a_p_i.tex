@@ -7,27 +7,49 @@
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{class_vision_a_p_i_a1ebc6d928618773c2fa97e2e593afaa4}{Vision\+A\+PI} (const std\+::unordered\+\_\+map$<$ std\+::string, double $>$ \&\+\_\+robot\+\_\+params)
+\hyperlink{class_vision_a_p_i_afcf1ee4354678a29ef29852b8a2e13b5}{Vision\+A\+PI} (const std\+::unordered\+\_\+map$<$ std\+::string, double $>$ \&\+\_\+robot\+\_\+params, const std\+::string \&\+\_\+coco\+\_\+name\+\_\+path, const std\+::string \&\+\_\+yolo\+\_\+cfg\+\_\+path, const std\+::string \&\+\_\+yolo\+\_\+weight\+\_\+path)
 \item 
-std\+::vector$<$ std\+::array$<$ double, 3 $>$ $>$ \hyperlink{class_vision_a_p_i_a2abdb5d06b3c66789a970d541a44f55e}{get\+\_\+xyz} (cv\+::\+Mat)
-\begin{DoxyCompactList}\small\item\em This method takes an image, finds all people within the image, and outputs the estimated postions in the R\+O\+B\+OT frame. \end{DoxyCompactList}\end{DoxyCompactItemize}
+std\+::shared\+\_\+ptr$<$ std\+::vector$<$ std\+::array$<$ double, 3 $>$ $>$ $>$ \hyperlink{class_vision_a_p_i_ab7a4230270a858147e81ced0707f6056}{get\+\_\+xyz} (const cv\+::\+Mat \&)
+\begin{DoxyCompactList}\small\item\em This method takes an image, finds all people within the image, and outputs the estimated postions in the R\+O\+B\+OT frame. \end{DoxyCompactList}\item 
+double \hyperlink{class_vision_a_p_i_a86585c063f61f943222eee3290040572}{calculate\+\_\+distance} (std\+::array$<$ double, 3 $>$ xyz)
+\begin{DoxyCompactList}\small\item\em Calculates the distance of how far the human is away from the robot. \end{DoxyCompactList}\item 
+void \hyperlink{class_vision_a_p_i_a67fb3aea734b0517548102bf757cc6ed}{print\+\_\+alerts} (const std\+::vector$<$ std\+::array$<$ double, 3 $>$ $>$ \&all\+\_\+xyz)
+\begin{DoxyCompactList}\small\item\em Prints the robot\textquotesingle{}s actions based on how far the human is away from the robot. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_vision_a_p_i_a1ebc6d928618773c2fa97e2e593afaa4}\label{class_vision_a_p_i_a1ebc6d928618773c2fa97e2e593afaa4}} 
+\mbox{\Hypertarget{class_vision_a_p_i_afcf1ee4354678a29ef29852b8a2e13b5}\label{class_vision_a_p_i_afcf1ee4354678a29ef29852b8a2e13b5}} 
 \index{Vision\+A\+PI@{Vision\+A\+PI}!Vision\+A\+PI@{Vision\+A\+PI}}
 \index{Vision\+A\+PI@{Vision\+A\+PI}!Vision\+A\+PI@{Vision\+A\+PI}}
 \subsubsection{\texorpdfstring{Vision\+A\+P\+I()}{VisionAPI()}}
-{\footnotesize\ttfamily Vision\+A\+P\+I\+::\+Vision\+A\+PI (\begin{DoxyParamCaption}\item[{const std\+::unordered\+\_\+map$<$ std\+::string, double $>$ \&}]{\+\_\+robot\+\_\+params }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily Vision\+A\+P\+I\+::\+Vision\+A\+PI (\begin{DoxyParamCaption}\item[{const std\+::unordered\+\_\+map$<$ std\+::string, double $>$ \&}]{\+\_\+robot\+\_\+params,  }\item[{const std\+::string \&}]{\+\_\+coco\+\_\+name\+\_\+path,  }\item[{const std\+::string \&}]{\+\_\+yolo\+\_\+cfg\+\_\+path,  }\item[{const std\+::string \&}]{\+\_\+yolo\+\_\+weight\+\_\+path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{class_vision_a_p_i_a2abdb5d06b3c66789a970d541a44f55e}\label{class_vision_a_p_i_a2abdb5d06b3c66789a970d541a44f55e}} 
+\mbox{\Hypertarget{class_vision_a_p_i_a86585c063f61f943222eee3290040572}\label{class_vision_a_p_i_a86585c063f61f943222eee3290040572}} 
+\index{Vision\+A\+PI@{Vision\+A\+PI}!calculate\+\_\+distance@{calculate\+\_\+distance}}
+\index{calculate\+\_\+distance@{calculate\+\_\+distance}!Vision\+A\+PI@{Vision\+A\+PI}}
+\subsubsection{\texorpdfstring{calculate\+\_\+distance()}{calculate\_distance()}}
+{\footnotesize\ttfamily double Vision\+A\+P\+I\+::calculate\+\_\+distance (\begin{DoxyParamCaption}\item[{std\+::array$<$ double, 3 $>$}]{xyz }\end{DoxyParamCaption})}
+
+
+
+Calculates the distance of how far the human is away from the robot. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em xyz} & passes in x, y z position \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+double distance of how far the human is away 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_vision_a_p_i_ab7a4230270a858147e81ced0707f6056}\label{class_vision_a_p_i_ab7a4230270a858147e81ced0707f6056}} 
 \index{Vision\+A\+PI@{Vision\+A\+PI}!get\+\_\+xyz@{get\+\_\+xyz}}
 \index{get\+\_\+xyz@{get\+\_\+xyz}!Vision\+A\+PI@{Vision\+A\+PI}}
 \subsubsection{\texorpdfstring{get\+\_\+xyz()}{get\_xyz()}}
-{\footnotesize\ttfamily std\+::vector$<$std\+::array$<$double, 3$>$ $>$ Vision\+A\+P\+I\+::get\+\_\+xyz (\begin{DoxyParamCaption}\item[{cv\+::\+Mat}]{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$std\+::vector$<$std\+::array$<$double, 3$>$ $>$ $>$ Vision\+A\+P\+I\+::get\+\_\+xyz (\begin{DoxyParamCaption}\item[{const cv\+::\+Mat \&}]{ }\end{DoxyParamCaption})}
 
 
 
@@ -41,6 +63,21 @@ This method takes an image, finds all people within the image, and outputs the e
 \begin{DoxyReturn}{Returns}
 All estimated x, y, z positions of people in a given image. 
 \end{DoxyReturn}
+\mbox{\Hypertarget{class_vision_a_p_i_a67fb3aea734b0517548102bf757cc6ed}\label{class_vision_a_p_i_a67fb3aea734b0517548102bf757cc6ed}} 
+\index{Vision\+A\+PI@{Vision\+A\+PI}!print\+\_\+alerts@{print\+\_\+alerts}}
+\index{print\+\_\+alerts@{print\+\_\+alerts}!Vision\+A\+PI@{Vision\+A\+PI}}
+\subsubsection{\texorpdfstring{print\+\_\+alerts()}{print\_alerts()}}
+{\footnotesize\ttfamily void Vision\+A\+P\+I\+::print\+\_\+alerts (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::array$<$ double, 3 $>$ $>$ \&}]{all\+\_\+xyz }\end{DoxyParamCaption})}
+
+
+
+Prints the robot\textquotesingle{}s actions based on how far the human is away from the robot. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em all\+\_\+xyz} & high alert is 1m, low alert is 3m \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

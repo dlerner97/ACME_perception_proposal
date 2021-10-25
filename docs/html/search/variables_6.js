@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['y',['y',['../struct_detection.html#afa5d065ea13ce74dfd52c6a569313270',1,'Detection']]]
+  ['width',['width',['../struct_detection.html#af88e469657d3bc4807caff6c5f9e9475',1,'Detection']]]
 ];

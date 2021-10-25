@@ -9,62 +9,111 @@ This struct will be used to pass detection information between the human detecto
 
 {\ttfamily \#include $<$Detection.\+hpp$>$}
 
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{struct_detection}{Detection} \& \hyperlink{struct_detection_a98d5bca326ea2f369156fb07be1f5466}{operator=} (const \hyperlink{struct_detection}{Detection} \&detect)
+\item 
+\hyperlink{struct_detection}{Detection} \hyperlink{struct_detection_a69eb856cdc75d10db04c169d557815d1}{operator+} (const \hyperlink{struct_detection}{Detection} \&detect) const
+\item 
+\hyperlink{struct_detection}{Detection} \hyperlink{struct_detection_ae156f11b8c51921c6c785a921fc43e85}{operator-\/} (const \hyperlink{struct_detection}{Detection} \&detect) const
+\item 
+\hyperlink{struct_detection}{Detection} \& \hyperlink{struct_detection_a51bbeca262f4c0328f85eb9b32e97020}{operator+=} (const \hyperlink{struct_detection}{Detection} \&detect)
+\item 
+\hyperlink{struct_detection_a86e6ebf5a660a29e78ee7a7f08292260}{Detection} ()
+\item 
+\hyperlink{struct_detection_ac35051436ab3ae544f40f9aa08a0ebb1}{Detection} (int x\+\_\+, int y\+\_\+, int w, int h)
+\item 
+\hyperlink{struct_detection_ad50a7695ff3ce61ee5c10443d9210c1e}{Detection} (const \hyperlink{struct_detection}{Detection} \&detect)
+\end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-const int \hyperlink{struct_detection_a12871dcbd7a9d16cdc3c5443db2bd356}{N\+O\+\_\+\+H\+U\+M\+A\+N\+\_\+\+D\+E\+T\+E\+C\+T\+ED} = -\/1
+int \hyperlink{struct_detection_a7b71921325261514cd6dd42c8e90ba70}{x} \{0\}
 \item 
-double \hyperlink{struct_detection_abcfbc8fb8adf19f178bfcbc036f3bbfb}{probabilty} \{\}
+int \hyperlink{struct_detection_afa5d065ea13ce74dfd52c6a569313270}{y} \{0\}
 \item 
-int \hyperlink{struct_detection_a7b71921325261514cd6dd42c8e90ba70}{x} \{\}
+int \hyperlink{struct_detection_af88e469657d3bc4807caff6c5f9e9475}{width} \{0\}
 \item 
-int \hyperlink{struct_detection_afa5d065ea13ce74dfd52c6a569313270}{y} \{\}
-\item 
-int \hyperlink{struct_detection_af88e469657d3bc4807caff6c5f9e9475}{width} \{\}
-\item 
-int \hyperlink{struct_detection_a4f3d0bf4072f7e5a200767ab3d838fe2}{height} \{\}
+int \hyperlink{struct_detection_a4f3d0bf4072f7e5a200767ab3d838fe2}{height} \{0\}
 \end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
 This struct will be used to pass detection information between the human detector and position estimator classes. See the U\+ML for more information. 
 
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{struct_detection_a86e6ebf5a660a29e78ee7a7f08292260}\label{struct_detection_a86e6ebf5a660a29e78ee7a7f08292260}} 
+\index{Detection@{Detection}!Detection@{Detection}}
+\index{Detection@{Detection}!Detection@{Detection}}
+\subsubsection{\texorpdfstring{Detection()}{Detection()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Detection\+::\+Detection (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{struct_detection_ac35051436ab3ae544f40f9aa08a0ebb1}\label{struct_detection_ac35051436ab3ae544f40f9aa08a0ebb1}} 
+\index{Detection@{Detection}!Detection@{Detection}}
+\index{Detection@{Detection}!Detection@{Detection}}
+\subsubsection{\texorpdfstring{Detection()}{Detection()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Detection\+::\+Detection (\begin{DoxyParamCaption}\item[{int}]{x\+\_\+,  }\item[{int}]{y\+\_\+,  }\item[{int}]{w,  }\item[{int}]{h }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{struct_detection_ad50a7695ff3ce61ee5c10443d9210c1e}\label{struct_detection_ad50a7695ff3ce61ee5c10443d9210c1e}} 
+\index{Detection@{Detection}!Detection@{Detection}}
+\index{Detection@{Detection}!Detection@{Detection}}
+\subsubsection{\texorpdfstring{Detection()}{Detection()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Detection\+::\+Detection (\begin{DoxyParamCaption}\item[{const \hyperlink{struct_detection}{Detection} \&}]{detect }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{struct_detection_a69eb856cdc75d10db04c169d557815d1}\label{struct_detection_a69eb856cdc75d10db04c169d557815d1}} 
+\index{Detection@{Detection}!operator+@{operator+}}
+\index{operator+@{operator+}!Detection@{Detection}}
+\subsubsection{\texorpdfstring{operator+()}{operator+()}}
+{\footnotesize\ttfamily \hyperlink{struct_detection}{Detection} Detection\+::operator+ (\begin{DoxyParamCaption}\item[{const \hyperlink{struct_detection}{Detection} \&}]{detect }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{struct_detection_a51bbeca262f4c0328f85eb9b32e97020}\label{struct_detection_a51bbeca262f4c0328f85eb9b32e97020}} 
+\index{Detection@{Detection}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!Detection@{Detection}}
+\subsubsection{\texorpdfstring{operator+=()}{operator+=()}}
+{\footnotesize\ttfamily \hyperlink{struct_detection}{Detection}\& Detection\+::operator+= (\begin{DoxyParamCaption}\item[{const \hyperlink{struct_detection}{Detection} \&}]{detect }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_detection_ae156f11b8c51921c6c785a921fc43e85}\label{struct_detection_ae156f11b8c51921c6c785a921fc43e85}} 
+\index{Detection@{Detection}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!Detection@{Detection}}
+\subsubsection{\texorpdfstring{operator-\/()}{operator-()}}
+{\footnotesize\ttfamily \hyperlink{struct_detection}{Detection} Detection\+::operator-\/ (\begin{DoxyParamCaption}\item[{const \hyperlink{struct_detection}{Detection} \&}]{detect }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{struct_detection_a98d5bca326ea2f369156fb07be1f5466}\label{struct_detection_a98d5bca326ea2f369156fb07be1f5466}} 
+\index{Detection@{Detection}!operator=@{operator=}}
+\index{operator=@{operator=}!Detection@{Detection}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \hyperlink{struct_detection}{Detection}\& Detection\+::operator= (\begin{DoxyParamCaption}\item[{const \hyperlink{struct_detection}{Detection} \&}]{detect }\end{DoxyParamCaption})}
+
+
+
 \subsection{Member Data Documentation}
 \mbox{\Hypertarget{struct_detection_a4f3d0bf4072f7e5a200767ab3d838fe2}\label{struct_detection_a4f3d0bf4072f7e5a200767ab3d838fe2}} 
 \index{Detection@{Detection}!height@{height}}
 \index{height@{height}!Detection@{Detection}}
 \subsubsection{\texorpdfstring{height}{height}}
-{\footnotesize\ttfamily int Detection\+::height \{\}}
-
-\mbox{\Hypertarget{struct_detection_a12871dcbd7a9d16cdc3c5443db2bd356}\label{struct_detection_a12871dcbd7a9d16cdc3c5443db2bd356}} 
-\index{Detection@{Detection}!N\+O\+\_\+\+H\+U\+M\+A\+N\+\_\+\+D\+E\+T\+E\+C\+T\+ED@{N\+O\+\_\+\+H\+U\+M\+A\+N\+\_\+\+D\+E\+T\+E\+C\+T\+ED}}
-\index{N\+O\+\_\+\+H\+U\+M\+A\+N\+\_\+\+D\+E\+T\+E\+C\+T\+ED@{N\+O\+\_\+\+H\+U\+M\+A\+N\+\_\+\+D\+E\+T\+E\+C\+T\+ED}!Detection@{Detection}}
-\subsubsection{\texorpdfstring{N\+O\+\_\+\+H\+U\+M\+A\+N\+\_\+\+D\+E\+T\+E\+C\+T\+ED}{NO\_HUMAN\_DETECTED}}
-{\footnotesize\ttfamily const int Detection\+::\+N\+O\+\_\+\+H\+U\+M\+A\+N\+\_\+\+D\+E\+T\+E\+C\+T\+ED = -\/1}
-
-\mbox{\Hypertarget{struct_detection_abcfbc8fb8adf19f178bfcbc036f3bbfb}\label{struct_detection_abcfbc8fb8adf19f178bfcbc036f3bbfb}} 
-\index{Detection@{Detection}!probabilty@{probabilty}}
-\index{probabilty@{probabilty}!Detection@{Detection}}
-\subsubsection{\texorpdfstring{probabilty}{probabilty}}
-{\footnotesize\ttfamily double Detection\+::probabilty \{\}}
+{\footnotesize\ttfamily int Detection\+::height \{0\}}
 
 \mbox{\Hypertarget{struct_detection_af88e469657d3bc4807caff6c5f9e9475}\label{struct_detection_af88e469657d3bc4807caff6c5f9e9475}} 
 \index{Detection@{Detection}!width@{width}}
 \index{width@{width}!Detection@{Detection}}
 \subsubsection{\texorpdfstring{width}{width}}
-{\footnotesize\ttfamily int Detection\+::width \{\}}
+{\footnotesize\ttfamily int Detection\+::width \{0\}}
 
 \mbox{\Hypertarget{struct_detection_a7b71921325261514cd6dd42c8e90ba70}\label{struct_detection_a7b71921325261514cd6dd42c8e90ba70}} 
 \index{Detection@{Detection}!x@{x}}
 \index{x@{x}!Detection@{Detection}}
 \subsubsection{\texorpdfstring{x}{x}}
-{\footnotesize\ttfamily int Detection\+::x \{\}}
+{\footnotesize\ttfamily int Detection\+::x \{0\}}
 
 \mbox{\Hypertarget{struct_detection_afa5d065ea13ce74dfd52c6a569313270}\label{struct_detection_afa5d065ea13ce74dfd52c6a569313270}} 
 \index{Detection@{Detection}!y@{y}}
 \index{y@{y}!Detection@{Detection}}
 \subsubsection{\texorpdfstring{y}{y}}
-{\footnotesize\ttfamily int Detection\+::y \{\}}
+{\footnotesize\ttfamily int Detection\+::y \{0\}}
 
 
 
