@@ -1,16 +1,29 @@
+/**
+ * @file Detection.hpp
+ * @author Dani Lerner
+ * @author Diane Ngo
+ * @brief Position Estimator header
+ * @version 0.1
+ * @date 2021-10-25
+ * 
+ * @copyright Copyright (c) 2021
+ * 
+ */
+
 #pragma once
+
+#include <eigen3/Eigen/Dense>
 
 #include <array>
 #include <vector>
 #include <string>
 #include <memory>
 #include <unordered_map>
-#include <eigen3/Eigen/Dense>
 
 #include "Detection.hpp"
 
 class PositionEstimator {
-  private:
+ private:
     double avg_human_height{};
     double cam_focal_len{};
     double cam_pix_density{};
@@ -32,8 +45,8 @@ class PositionEstimator {
    * 
    * @result Input instance vars should be defined.
    */
-  void set_values(double x, double y, double z, double pitch, double f, double pix_density, 
-                  double img_w, double img_h, double avg_height);
+  void set_values(double x, double y, double z, double pitch, double f,
+      double pix_density, double img_w, double img_h, double avg_height);
 
   /**
    * @brief Computes homogenous transform between robot center and camera
@@ -46,21 +59,22 @@ class PositionEstimator {
    */
     void compute_transform_from_xyzp(double x, double y, double z, double p);
 
-  public:
-    PositionEstimator(double x, double y, double z, double pitch, double f, double pix_density, 
-                      double img_w, double img_h, double avg_height) {     
+ public:
+    PositionEstimator(double x, double y, double z, double pitch, double f,
+        double pix_density, double img_w, double img_h, double avg_height) {
       set_values(x, y, z, pitch, f, pix_density, img_w, img_h, avg_height);
     }
 
-    PositionEstimator(const std::unordered_map<std::string, double>& robot_params) {
+    PositionEstimator(const std::unordered_map<std::string, double>&
+          robot_params) {
       double x = robot_params.at("DX_CAM2ROBOT_CENTER");
       double y = robot_params.at("DY_CAM2ROBOT_CENTER");
       double z = robot_params.at("DZ_CAM2ROBOT_CENTER");
       double pitch = robot_params.at("PITCH_CAM2ROBOT_CENTER");
-      
+
       double f = robot_params.at("CAM_FOCAL_LEN");
       double pix_density = robot_params.at("CAM_PIXEL_DENSITY");
-      
+
       double avg_height = robot_params.at("AVG_HUMAN_HEIGHT");
 
       double img_w = robot_params.at("IMG_WIDTH_REQ");
@@ -91,7 +105,8 @@ class PositionEstimator {
      * @param detections vector of Detection objs
      * @return std::shared_ptr<std::vector<std::array<double, 3>>>: x, y, z position of EACH human in ROBOT frame UNIT: [m]
      */
-    std::shared_ptr<std::vector<std::array<double, 3> > > estimate_all_xyz(const std::vector<Detection>& detection);
+    std::shared_ptr<std::vector<std::array<double, 3> > >
+      estimate_all_xyz(const std::vector<Detection>& detection);
 
     /**
      * @brief Get the cam2robot transform object
