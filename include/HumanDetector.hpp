@@ -27,11 +27,37 @@ class HumanDetector {
     std::vector<cv::String> detection_classes{};
     std::vector<std::string> classes{};
 
+    double detection_probability_threshold{};
+    double nms_threshold{};
+    double score_threshold{};
+
     const std::string coco_path;
 
     cv::dnn::Net net;
 
-    void drawPred(int classId, float conf, int left, int top, int right, int bottom, cv::Mat& frame);
+    /**
+     * @brief Parse the DNN return values.
+     * 
+     * @param detections 
+     * @param show_detections 
+     * @return std::shared_ptr<std::vector<Detection> > all detections in image.
+     */
+    std::shared_ptr<std::vector<Detection> > parse_dnn_output(const std::vector<cv::Mat>& detections, cv::Mat& img, bool show_detections);
+
+    /**
+     * @brief Draws prediction on image
+     * 
+     * @cite https://github.com/spmallick/learnopencv
+     * 
+     * @param classId 
+     * @param conf 
+     * @param left 
+     * @param top 
+     * @param right 
+     * @param bottom 
+     * @param frame 
+     */
+    void draw_pred(int classId, float conf, int left, int top, int right, int bottom, cv::Mat& frame);
 
   public:
     HumanDetector(const std::unordered_map<std::string, double>& robot_params, const std::string& _coco_name_path,
@@ -40,8 +66,11 @@ class HumanDetector {
 
       img_dim_[0] = static_cast<int>(robot_params.at("IMG_WIDTH_REQ"));
       img_dim_[1] = static_cast<int>(robot_params.at("IMG_HEIGHT_REQ"));
-      net.setPreferableBackend(cv::dnn::DNN_TARGET_CPU);
+      detection_probability_threshold = robot_params.at("DETECTION_PROBABILITY_THRESHOLD");
+      nms_threshold = robot_params.at("NMS_THRESHOLD");
+      score_threshold = robot_params.at("SCORE_THRESHOLD");
 
+      net.setPreferableBackend(cv::dnn::DNN_TARGET_CPU);
       std::ifstream ifs(_coco_name_path.c_str());
       std::string line;
       while (getline(ifs, line)) classes.push_back(line);
@@ -52,11 +81,12 @@ class HumanDetector {
       for (std::size_t i = 0; i < outLayers.size(); i++) 
           detection_classes[i] = layerNames[outLayers[i] - 1];
     }
-    // ~HumanDetector();
 
     /**
      * @brief Prepares frame for human detection and NN input
-     *
+     * 
+     * @cite https://github.com/spmallick/learnopencv
+     * 
      * @param img Original image to be prepared for NN
      * @return CV matrix for NN prepared frame
      */
@@ -68,7 +98,7 @@ class HumanDetector {
      * @param prepped_frame A pre-processed frame for NN input
      * @return A detection obj for each human detected in frame.
      */
-    std::vector<Detection> detect(const cv::Mat&);
+    std::shared_ptr<std::vector<Detection> > detect(cv::Mat&, bool show_detections=false);
 
     /**
      * @brief Gets the image dimensions (width and height)

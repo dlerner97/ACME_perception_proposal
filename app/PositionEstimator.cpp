@@ -2,18 +2,18 @@
 #include <math.h>
 #include <array>
 #include <vector>
+#include <memory>
 #include <eigen3/Eigen/Dense>
 
 #include "../include/PositionEstimator.hpp"
 
 void PositionEstimator::set_values(double x, double y, double z, double pitch, double f, double pix_density, 
-                double img_w, double img_h, double threshold, double avg_height) {
+                double img_w, double img_h, double avg_height) {
      compute_transform_from_xyzp(x, y, z, pitch);
      cam_focal_len = f;
      cam_pix_density = pix_density;
      avg_human_height = avg_height;
      img_center = {img_w/2.0, img_h/2.0};
-     prob_threshold = threshold;
 }
 
 void PositionEstimator::compute_transform_from_xyzp(double x, double y, double z, double p) {
@@ -24,10 +24,6 @@ void PositionEstimator::compute_transform_from_xyzp(double x, double y, double z
                                 0, 1,     0, y,
                            -sin_p, 0, cos_p, z,
                                 0, 0,     0, 1;
-}
-
-bool PositionEstimator::threshold_frame(double probability) {
-     return probability > prob_threshold;
 }
 
 double PositionEstimator::approximate_camera_z(const Detection& detection) {
@@ -49,10 +45,10 @@ std::array<double, 3> PositionEstimator::estimate_xyz(const Detection& detection
      return std::array<double, 3>{rob_frame[0], rob_frame[1], rob_frame[2]};
 }
 
-std::vector<std::array<double, 3> > PositionEstimator::estimate_all_xyz(const std::vector<Detection>& detections) {
-     std::vector<std::array<double, 3> > all_xyz{};
+std::shared_ptr<std::vector<std::array<double, 3> > > PositionEstimator::estimate_all_xyz(const std::vector<Detection>& detections) {
+     auto all_xyz = std::make_shared<std::vector<std::array<double, 3> > >();
      for (const auto& detection : detections)
-          all_xyz.push_back(estimate_xyz(detection));
+          all_xyz->push_back(estimate_xyz(detection));
      
      return all_xyz;
 }
