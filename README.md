@@ -83,9 +83,13 @@ To view the documentation, navigate to /html/index.html and open it in a browser
 
 ### Code Check Results
 [Code Coverage results](/code-check-results/code_coverage.txt)
+
 [Cppcheck results](/code-check-results/cppcheck.txt)
+
 [Cpplint results](/code-check-results/cpplint.txt)
+
 [Unit Test results](/code-check-results/unit_tests.txt)
+
 [Valgrind results](/code-check-results/valgrind.txt)
 
 ### Visual Representations of Code
