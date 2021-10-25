@@ -31,6 +31,19 @@ class HumanDetector {
 
     cv::dnn::Net net;
 
+    /**
+     * @brief Draws prediction on image
+     * 
+     * @cite https://github.com/spmallick/learnopencv
+     * 
+     * @param classId 
+     * @param conf 
+     * @param left 
+     * @param top 
+     * @param right 
+     * @param bottom 
+     * @param frame 
+     */
     void drawPred(int classId, float conf, int left, int top, int right, int bottom, cv::Mat& frame);
 
   public:
@@ -56,7 +69,9 @@ class HumanDetector {
 
     /**
      * @brief Prepares frame for human detection and NN input
-     *
+     * 
+     * @cite https://github.com/spmallick/learnopencv
+     * 
      * @param img Original image to be prepared for NN
      * @return CV matrix for NN prepared frame
      */
